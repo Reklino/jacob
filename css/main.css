@@ -502,7 +502,7 @@ nav {
   height: 100%;
   width: 5em;
   text-align: center;
-  background: #404346; }
+  background: #282a2b; }
   nav a {
     display: block;
     height: 3em;
@@ -625,4 +625,45 @@ footer {
 
 article header {
   text-align: center;
-  padding: 6em 0; }
+  padding: 3em 0; }
+  article header:after {
+    content: '';
+    display: block;
+    clear: both; }
+  article header figure {
+    padding: 0 3em; }
+
+article footer {
+  text-align: center; }
+  article footer p {
+    color: #c4cacd; }
+
+.screenshot {
+  width: 100%;
+  position: relative;
+  background: transparent;
+  margin: 0;
+  text-align: center;
+  padding: 39px 6.5px 6.5px;
+  border: 3px solid #fafbfd;
+  border-radius: 7px; }
+  .screenshot span {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 13px;
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    background: #ffca41;
+    margin-left: 39px; }
+    .screenshot span:nth-child(1) {
+      background: #ea2b0e;
+      margin-left: 13px; }
+    .screenshot span:nth-child(3) {
+      background: #8bdb30;
+      margin-left: 65px; }
+  .screenshot img {
+    border-radius: 4px;
+    max-height: 600px;
+    max-width: 100%; }

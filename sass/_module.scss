@@ -32,6 +32,50 @@
 article {
 	header {
 		text-align: center;
-		padding: 6em 0;
+		padding: 3em 0;
+		@include clearfix;
+		figure {
+			padding: 0 3em;
+		}
+	}
+	footer {
+		text-align: center;
+		p {
+			color: lighten($body, 15);
+		}
 	}
 }
+
+
+$screenshot-button-size: 13px;
+$screenshot-border-color: lighten(#e9ecf4, 5);
+$screenshot-color1: #ea2b0e;
+$screenshot-color2: #ffca41;
+$screenshot-color3: #8bdb30;
+
+.screenshot {
+	width: 100%;
+	position: relative;
+	background: transparent;
+	margin: 0;
+	text-align: center;
+	padding: $screenshot-button-size*3 $screenshot-button-size/2 $screenshot-button-size/2;
+	border: 3px solid $screenshot-border-color;
+	border-radius: 7px;
+	span {
+		position: absolute;
+		display: block;
+		left: 0;
+		top: $screenshot-button-size;
+		width: $screenshot-button-size;
+		height: $screenshot-button-size;
+		border-radius: 100%;
+		background: $screenshot-color2; margin-left: $screenshot-button-size*3;
+		&:nth-child(1) { background: $screenshot-color1; margin-left: $screenshot-button-size; }
+		&:nth-child(3) { background: $screenshot-color3; margin-left: $screenshot-button-size*5; }
+	}
+	img { border-radius: 4px; max-height: 600px; max-width: 100%; }
+}
+
+
+

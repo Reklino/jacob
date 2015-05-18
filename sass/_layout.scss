@@ -25,7 +25,7 @@ nav {
 	height: 100%;
 	width: 5em;
 	text-align: center;
-	background: $header;
+	background: darken($header, 10);
 	a {
 		display: block;
 		height: 3em;
