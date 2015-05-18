@@ -1,0 +1,124 @@
+body, html, #masterUI {
+	height: 100%;
+	// background: url(http://subtlepatterns.com/patterns/lightpaperfibers.png);
+}
+
+.project-view {
+	#header, #projects {
+		transform: translateX(-200%);
+	}
+	#project {
+		transform: translateX(0);
+	}
+	nav {
+		transform: translateX(5em);
+		right: 100%;
+	}
+}
+
+nav {
+	@include quick;
+	right: -5em;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	height: 100%;
+	width: 5em;
+	text-align: center;
+	background: $header;
+	a {
+		display: block;
+		height: 3em;
+		line-height: 3em;
+		border-width: 0 0 1px 0;
+		font-weight: 300;
+		font-family: $mono;
+		text-decoration: none;
+		color: white;
+		@include clickable;
+	}
+}
+
+#header {
+	position: relative;
+	@include quick;
+	text-align: center;
+	padding: 3em 0;
+	.social {
+		a {
+			color: lighten($body, 20);
+			margin: 0 0.5em;
+			&:hover { color: $color2; }
+		}
+	}
+}
+
+#project {
+	transform: translateX(100%);
+	@include quick;
+	height: 100%;
+	width: 100%;
+	padding-left: 5em;
+	position: fixed;
+	overflow-y: scroll;
+	left: 0;
+}
+
+#projects {
+	@include quick;
+}
+
+
+@include susy-breakpoint(700px, $tablet) {
+	#header {
+		width: 50%;
+		height: 100%;
+		float: left;
+		overflow: hidden;
+	}
+	#projects {
+		position: relative;
+		border-left: 1px solid #EFEFEF;
+		padding: 0 1em;
+		width: 50%;
+		height: 100%;
+		overflow-y: scroll;
+		float: left;
+	}
+}
+
+footer {
+	padding-top: 2em;
+	@include small;
+}
+
+/*==================================
+=            Animations            =
+==================================*/
+
+.project-ui.ng-enter, .project-ui.ng-leave {
+  -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+
+.project-ui.ng-enter {
+  opacity: 0;
+}
+
+.project-ui.ng-enter-active {
+  opacity: 1;
+}
+
+.project-ui.ng-leave {
+  opacity: 1; 
+}
+
+.project-ui.ng-leave-active {
+  opacity: 0;
+}
+
+
+/*-----  End of Animations  ------*/
+

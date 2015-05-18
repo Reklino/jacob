@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+	<title>:)</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="//use.typekit.net/mcc6liw.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/Reklino/strings/master/strings.css">
+</head>
+
+<body ng-controller="MainController" ng-class="{'project-view' : activeProject !== false}">
+
+<header id="one">
+	<section class="container">
+		<div class="col-8 col-offset-2">
+			<div id="profile"></div>
+			<h5>Hello, I'm Jacob.</h5>
+			<h3>Frontend Developer &amp; Designer</h3>
+			<br>
+			<p>I strive to build useful, real world interactivity that provides a unique and pleasent experience.</p>
+		</div>
+		<div class="col-6 col-offset-3 social">
+			 <a href=""><i class="fa fa-github-alt fa-2x"></i></a>
+			 <a href=""><i class="fa fa-codepen fa-2x"></i></a>
+			 <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+		</div>
+	</section>
+</header>
+
+<main id="two">
+
+	<hr>
+
+	<section class="container">
+		<div class="col-12">
+			<h5 class="small">Selected Works</h5>
+		</div>
+		<div class="project" ng-repeat="project in projects track by $index" ng-class="{'active' : $parent.activeProject === $index}">
+			<div class="info col-12" ng-click="$parent.activeProject = $index">
+				<h4>{{ $index }}. {{ project.name }}</h4>
+				<p class="remove-bottom">{{ project.desc }}</p>
+				<span class="small">
+					Designer &amp; Developer - <span class="time">{{ project.date }}</span>
+				</span>
+			</div>
+			<div class="article">
+				<a class="close-button" ng-href="" ng-click="$parent.activeProject = false">close</a>
+				<header>
+					<div class="info">
+						<h2>{{ project.name }}</h2>
+						<p>{{ project.desc }}</p>
+					</div>
+				</header>
+				<section class="container">
+					<div class="col-8 col-offset-2">
+						<p>Sed lorem augue! Sociis sagittis sagittis elementum, et, tincidunt quis ridiculus aliquet a, pulvinar? Vel pulvinar augue eu, non tempor cras ac mauris ac facilisis odio. Et scelerisque sed auctor odio dis aliquam ridiculus eu cras, nisi elit scelerisque cursus, tortor magna aenean magna vut, nec tincidunt est, porta non. Tristique amet auctor elit proin? Dis! Ac? Ac, scelerisque rhoncus dis placerat hac?
+						</p>
+						<blockquote>Mauris facilisis integer vut pulvinar et. In ut lundium in. Sed hac lorem, cursus, parturient, nunc.</blockquote>
+						<p>
+						Turpis, quis odio, phasellus odio, vut lundium nunc ac augue, habitasse urna a proin lundium rhoncus cursus. Sed mid nec, odio! Nec turpis! Tincidunt scelerisque? Amet duis? Pulvinar ac! Montes, tincidunt, massa in elementum? Ultrices cursus, augue parturient elementum velit integer.</p>
+						<p>Proin! Vel montes nunc nisi, magnis in sed magnis est amet placerat vut risus, elementum et, amet? Nisi non, cursus pellentesque velit vel, a ac aenean, in, egestas augue, dis natoque est parturient parturient, auctor? Turpis non ut nascetur! Hac sagittis! Egestas nisi mattis, aliquam dis a! Augue ut. Tristique arcu sit ac magna etiam, ultricies. Lundium nisi ac, pellentesque egestas, adipiscing tristique placerat aliquet sociis lacus facilisis sociis facilisis, adipiscing nisi sociis et, integer et augue purus integer! Adipiscing platea amet enim massa vut, mattis in velit platea facilisis tincidunt nec rhoncus ultrices eros? Aliquam! Lectus turpis elementum odio vel nisi nunc lacus. Nascetur dapibus sit et ac, nec tempor integer ac! Sit rhoncus lundium urna eros integer.</p>
+						<p>In pid ac in odio placerat, integer facilisis et tincidunt montes, habitasse habitasse platea auctor aliquet odio auctor aliquet placerat. Tristique rhoncus a elementum elementum? Scelerisque aliquet et cum, scelerisque cras, lorem natoque et natoque, pellentesque est. Platea sociis sed cum porta magna aliquet. Est rhoncus turpis. Nascetur rhoncus? Proin magnis, rhoncus penatibus parturient dis porttitor dictumst, facilisis dolor, integer magna lacus. Enim tempor amet, ultrices massa. Non et auctor pulvinar? Mauris sed, rhoncus porta aliquet mattis adipiscing duis, hac, integer porttitor, nunc? Elementum augue sagittis! Placerat turpis cras! Augue turpis purus a platea tristique elementum in aenean, placerat ultrices sit, porttitor tempor, dolor! In ut mus, tincidunt lacus, et cursus, pulvinar odio, nisi tortor eu sed magna egestas.</p>
+						<p>Vut dis sagittis amet ridiculus, facilisis nisi odio. Dapibus magna scelerisque, ut dapibus! Sociis diam proin. Tincidunt, lundium elementum nec nec et enim vut, placerat eu augue a, mus? Quis nunc lectus urna pulvinar parturient et augue placerat! Sociis? Velit est sit, in, penatibus, aliquet? Egestas turpis dictumst enim, etiam risus nisi aenean purus non, dolor tristique ut sed? Aliquam eu augue amet sit ultrices? Sed augue pid! Natoque lacus ridiculus, sagittis enim aenean massa dolor in platea dis, dis, et mauris in pulvinar magnis placerat habitasse! Enim elit, adipiscing aenean. Ultrices, et urna cursus, sociis pulvinar adipiscing tortor nascetur rhoncus! Purus tristique integer placerat parturient risus egestas turpis placerat auctor amet platea, porta mattis, pellentesque ac nisi dapibus.</p>
+						<p>A porta sed diam sagittis purus odio elit? Rhoncus dictumst tincidunt, odio magna! Amet cursus. Purus proin. Massa magna mus vel elit arcu porttitor sit sit rhoncus magnis mus etiam nec sed odio? Urna urna, est et? Nec nisi, integer urna nisi ut pulvinar, turpis ultricies purus? Nec nisi, nisi tristique? Ultricies sed sed vel magna urna sagittis cum, sit nisi placerat vut. Egestas ac, tincidunt sed urna quis, diam magna. Dapibus, magna et etiam tortor enim aliquam tempor, tincidunt lacus et ac mattis turpis enim, platea! A cursus? Eros mattis pulvinar adipiscing a sit magna in, scelerisque risus rhoncus magna ultricies aenean natoque porta quis eu? Vel placerat ultrices parturient et lundium, egestas purus massa non parturient ac.</p>
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="col-12">
+			<p>This is the portfolio site for Jacob Frickin' Davidson &copy;2015</p>
+		</div>
+	</footer>
+
+</main>
+
+<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="node_modules/angular-ui-router/build/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="node_modules/angular-animate/angular-animate.min.js"></script>
+<script type="text/javascript" src="node_modules/angular-hotkeys/build/hotkeys.min.js"></script>
+
+<script type="text/javascript" src="app/app.js"></script>
+</body>
+</html>

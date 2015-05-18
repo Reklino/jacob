@@ -1,0 +1,5 @@
+<nav>
+	<a ui-sref="projects">Home</a>
+	<a ng-hide="activeProject == 0" ui-sref="projects.detail({id: activeProject - 1})">Prev</a>
+	<a ng-hide="activeProject == (projects.length - 1)" ui-sref="projects.detail({id: activeProject + 1})">Next</a>
+</nav>

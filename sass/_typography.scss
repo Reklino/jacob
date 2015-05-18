@@ -1,0 +1,121 @@
+
+body {
+    /* 20px / 28px */
+    font-size: $font-size / 16 * 1em;
+    line-height: #{$line}em;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+@mixin small {
+    /* 13px / 18px */
+    font-size: #{($font-size*0.8125) / $em}em;
+    line-height: ($line-int*1) / ($font-size*0.8125) * 1em;
+}
+@mixin normal {
+    /* 20px / 28px */
+    font-size: #{$font-size / $em}em;
+    line-height: #{$line-int / $em}em; /* 28 */
+}
+
+@mixin large {
+    /* 28 / 36px */
+    font-size: #{28 / $em}em;
+    line-height: ($line-int*1) / 28 * 1em;
+}
+
+@mixin huge {
+    /* 52px / 48px */
+    font-size: #{40 / $em}em;
+    line-height: ($line-int*1.5) / 40 * 1em;
+}
+
+@mixin massive {
+    /* 84px / 72px */
+    font-size: #{56 / $em}em;
+    line-height: ($line-int*2) / 56 * 1em;
+}
+
+@mixin gigantic {
+    /* 135px / 120px */
+    font-size: #{80 / $em}em;
+    line-height: ($line-int*2.5) / 80 * 1em;
+}
+
+
+$serif: 'adriane', serif;
+$sans-serif: 'proxima-nova', sans-serif;
+$mono: 'source-code-pro', sans-serif;
+
+h1 {
+    color: $header;
+    font-weight: 700;
+    font-family: $serif;
+    @include gigantic;
+    margin: 0 0 ($line-int*2.5) / 80 * 1em;
+}
+h2 {
+    color: $header;
+    font-weight: 700;
+    font-family: $serif;
+    @include massive;
+    margin: 0 0 ($line-int*1) / 56 * 1em;
+}
+h3 {
+    color: $header;
+    font-weight: 700;
+    font-family: $serif;
+    @include huge;
+    margin: 0 0 ($line-int*1) / 40 * 1em;
+}
+h4 {
+    color: $header;
+    font-weight: 700;
+    font-family: $serif;
+    @include large;
+    margin: 0 0 ($line-int*1) / 28 * 1em;
+}
+h5 {
+    color: $body;
+    color: $color2;
+    font-weight: 400;
+    font-family: $sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    @include normal;
+    margin: 0 0 #{$line-int / $em}em;
+}
+h6 {
+    font-weight: 400;
+    font-family: $serif;
+    @include small;
+    margin: 0 0 #{$line-int / $em}em;
+}
+
+p {
+    color: darken($body, 20);
+    font-weight: 400;
+    font-family: $sans-serif;
+    margin: 0 0 #{$line-int / $em}em;
+}
+
+.small {
+    color: $body;
+    font-weight: 700;
+    font-family: $sans-serif;
+    @include small;
+    margin: 0 0 #{$line-int / $em}em;
+}
+
+blockquote {
+    @include large;
+    color: lighten($body, 15);
+    font-family: $serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+
+

@@ -1,0 +1,37 @@
+#profile {
+	background-image: url(../img/mech-bw.png);
+	background-size: cover;
+	background-position: center center;
+	width: 10em; height: 10em;
+	border-radius: 10em;
+	margin: 0 auto 3em;
+}
+
+.info {
+	text-decoration: none;
+	cursor: pointer;
+	padding: 1em;
+	h4 {
+		color: lighten($body, 25);
+		@include quick;
+		letter-spacing: normal;
+	}
+	.time { color: $color2; }
+	&:hover {
+		h4 { color: $color2; }
+		transform: translateX(15px);
+		background: white;
+	}
+}
+
+.project {
+	margin: 1em 0;
+	@include clearfix;
+}
+
+article {
+	header {
+		text-align: center;
+		padding: 6em 0;
+	}
+}

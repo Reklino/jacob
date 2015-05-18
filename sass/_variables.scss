@@ -1,0 +1,43 @@
+$primary: #6DA246;
+$body: #9AA5AA;
+$header: #404346;
+
+$color1: #B2242B;
+$color2: #6ED138;
+$color3: #2992CC;
+$color4: #2D83B2;
+
+
+@mixin clearfix() {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin quick() {
+	transition: all 0.25s cubic-bezier(.3,.53,0,1);
+}
+
+@mixin clickable() {
+	cursor: pointer;
+	user-select: none;
+}

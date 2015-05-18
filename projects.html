@@ -1,0 +1,49 @@
+<header id="header">
+	<section class="container">
+		<div class="col-8 col-offset-2">
+			<div id="profile"></div>
+			<h5>Hello, I'm Jacob.</h5>
+			<h3>Frontend Developer &amp; Designer</h3>
+			<br>
+			<p>I strive to build useful, real world interactivity that provides a unique and pleasent experience.</p>
+		</div>
+		<div class="col-6 col-offset-3 social">
+			 <a href=""><i class="fa fa-github-alt fa-2x"></i></a>
+			 <a href=""><i class="fa fa-codepen fa-2x"></i></a>
+			 <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+		</div>
+	</section>
+</header>
+
+<main id="projects">
+
+	<section class="container">
+		<div class="col-12">
+			<h5 class="small">Selected Works</h5>
+		</div>
+		<div class="project" ng-repeat="project in projects track by $index">
+			<a class="info col-12" ui-sref="projects.detail({id: $index})">
+				<h4>{{ $index }}. {{ project.name }}</h4>
+				<p class="remove-bottom">{{ project.desc }}</p>
+				<span class="small">
+					Designer &amp; Developer - <span class="time">{{ project.date }}</span>
+				</span>
+			</a>
+		</div>
+	</section>
+
+	<footer>
+		<div class="col-12">
+			<p>This is the portfolio site for Jacob Davidson &copy;2015</p>
+		</div>
+	</footer>
+
+</main>
+
+<nav>
+	<a ui-sref="projects">Home</a>
+	<a ui-sref="projects.detail({id: activeProject - 1})">Prev</a>
+	<a ui-sref="projects.detail({id: activeProject + 1})">Next</a>
+</nav>
+
+<div class="project-ui" ui-view></div>
