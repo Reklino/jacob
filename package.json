@@ -26,7 +26,9 @@
     "browser-sync": "^2.7.1",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.2.0",
+    "gulp-inject": "^1.2.0",
     "gulp-sass": "^2.0.0",
+    "gulp-svgstore": "^5.0.1",
     "susy": "^2.2.3"
   },
   "dependencies": {

@@ -171,7 +171,10 @@ body {
       clear: both; }
   figure.outset-left {
     width: 75%;
-    margin-left: -16.66667%; } }
+    margin-left: -16.66667%; }
+  blockquote {
+    width: 149%;
+    margin-left: -25.25%; } }
 
 @media (min-width: 1100px) {
   .col-1 {
@@ -284,10 +287,7 @@ body {
       clear: both; }
   figure.outset-left {
     width: 74.5%;
-    margin-left: -12.75%; }
-  blockquote {
-    width: 149%;
-    margin-left: -25.25%; } }
+    margin-left: -12.75%; } }
 
 @media (min-width: 1600px) {
   .container {
@@ -486,7 +486,11 @@ input {
   margin-bottom: 0 !important; }
 
 body, html, #masterUI {
+  overflow: hidden;
   height: 100%; }
+
+#masterUI {
+  overflow: scroll; }
 
 .project-view #header, .project-view #projects {
   -webkit-transform: translateX(-200%);
@@ -503,6 +507,11 @@ body, html, #masterUI {
       -ms-transform: translateX(5em);
           transform: translateX(5em);
   right: 100%; }
+
+.project-ui {
+  width: 100%;
+  position: fixed;
+  top: 0; }
 
 nav {
   -webkit-transition: all 0.5s cubic-bezier(0.3, 0.53, 0, 1);

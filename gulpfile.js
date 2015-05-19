@@ -2,7 +2,9 @@ var gulp 			= require('gulp'),
 	autoprefixer 	= require('gulp-autoprefixer'),
 	sass			= require('gulp-sass'),
 	browserSync 	= require('browser-sync').create(),
-	reload      	= browserSync.reload;
+	reload      	= browserSync.reload,
+	svgstore		= require('gulp-svgstore'),
+	inject 			= require('gulp-inject');
 
 gulp.task('sass', function() {
 	return gulp.src('sass/*.scss')
@@ -16,6 +18,23 @@ gulp.task('sass', function() {
 		.pipe(reload({stream: true}));
 })
 
+gulp.task('svgstore', function() {
+
+	var svgs = gulp
+       .src('svg/*.svg')
+       .pipe(svgstore({ inlineSvg: true }));
+
+   function fileContents (filePath, file) {
+       return file.contents.toString();
+   }
+
+   return gulp
+       .src('index.html')
+       .pipe(inject(svgs, { transform: fileContents }))
+       .pipe(gulp.dest('svg'));
+
+})
+
 gulp.task('watch', function() {
 	browserSync.init({
 		server: {
@@ -25,6 +44,7 @@ gulp.task('watch', function() {
 	gulp.watch('sass/*.scss', ['sass']);
 	gulp.watch('**/*.js').on('change', reload);
 	gulp.watch('*.html').on('change', reload);
+	gulp.watch('svg/*.svg', ['svgstore']).on('change', reload);
 })
 
-gulp.task('default', ['sass', 'watch']);
+gulp.task('default', ['sass', 'svgstore', 'watch']);

@@ -1,9 +1,13 @@
 body, html, #masterUI {
+	overflow: hidden;
 	height: 100%;
 	// background: url(http://subtlepatterns.com/patterns/lightpaperfibers.png);
 }
 
+#masterUI { overflow: scroll; }
+
 .project-view {
+	// &, #masterUI { overflow: hidden; }
 	#header, #projects {
 		transform: translateX(-200%);
 	}
@@ -14,6 +18,12 @@ body, html, #masterUI {
 		transform: translateX(5em);
 		right: 100%;
 	}
+}
+
+.project-ui {
+	width: 100%;
+	position: fixed;
+	top: 0;
 }
 
 nav {

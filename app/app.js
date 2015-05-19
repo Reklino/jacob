@@ -11,7 +11,9 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		})
 		.state('projects.detail', {
 			url: ':id',
-			templateUrl: 'projects.detail.html',
+			templateUrl: function(attrs){
+				return "projects." + attrs.id + ".html";
+			},
 			controller: function($scope, $stateParams) {
 				$scope.project = $scope.projects[$stateParams.id];
 			}
