@@ -17,7 +17,7 @@ body, html, #masterUI {
 }
 
 nav {
-	@include quick;
+	@include slow;
 	right: -5em;
 	position: absolute;
 	z-index: 1;
@@ -33,6 +33,7 @@ nav {
 		border-width: 0 0 1px 0;
 		font-weight: 300;
 		font-family: $mono;
+		font-size: 1.5em;
 		text-decoration: none;
 		color: white;
 		@include clickable;
@@ -41,7 +42,7 @@ nav {
 
 #header {
 	position: relative;
-	@include quick;
+	@include slow;
 	text-align: center;
 	padding: 3em 0;
 	.social {
@@ -55,7 +56,7 @@ nav {
 
 #project {
 	transform: translateX(100%);
-	@include quick;
+	@include slow;
 	height: 100%;
 	width: 100%;
 	padding-left: 5em;
@@ -65,7 +66,7 @@ nav {
 }
 
 #projects {
-	@include quick;
+	@include slow;
 }
 
 

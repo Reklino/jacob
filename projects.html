@@ -3,7 +3,7 @@
 		<div class="col-8 col-offset-2">
 			<div id="profile"></div>
 			<h5>Hello, I'm Jacob.</h5>
-			<h3>Frontend Developer &amp; Designer</h3>
+			<h2>Frontend Developer &amp; Designer</h2>
 			<br>
 			<p>I strive to build useful, real world interactivity that provides a unique and pleasent experience.</p>
 		</div>
@@ -41,9 +41,9 @@
 </main>
 
 <nav>
-	<a ui-sref="projects">Home</a>
-	<a ui-sref="projects.detail({id: activeProject - 1})">Prev</a>
-	<a ui-sref="projects.detail({id: activeProject + 1})">Next</a>
+	<a ui-sref="projects"><i class="s-times"></i></a>
+	<a ui-sref="projects.detail({id: activeProject - 1})"><i class="s-arrow-left"></i></a>
+	<a ui-sref="projects.detail({id: activeProject + 1})"><i class="s-arrow-right"></i></a>
 </nav>
 
 <div class="project-ui" ui-view></div>

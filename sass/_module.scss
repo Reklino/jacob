@@ -12,7 +12,7 @@
 	cursor: pointer;
 	padding: 1em;
 	h4 {
-		color: lighten($body, 25);
+		color: lighten($body, 15);
 		@include quick;
 		letter-spacing: normal;
 	}
@@ -32,11 +32,18 @@
 article {
 	header {
 		text-align: center;
-		padding: 3em 0;
+		padding: 6em 0;
 		@include clearfix;
+		h4 {
+			font-family: $sans-serif;
+			font-weight: 200;
+		}
 		figure {
 			padding: 0 3em;
 		}
+	}
+	main {
+		padding: 2em 0;
 	}
 	footer {
 		text-align: center;

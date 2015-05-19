@@ -98,7 +98,7 @@ body {
 
   body {
       /* 20px / 28px */
-      font-size: $font-size / 16 * 1em;
+      font-size: ($font-size - 1) / 16 * 1em;
       line-height: #{$line-int / $em}em;
   }
 

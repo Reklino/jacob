@@ -1,8 +1,6 @@
 
 body {
     /* 20px / 28px */
-    font-size: $font-size / 16 * 1em;
-    line-height: #{$line}em;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
@@ -44,7 +42,7 @@ body {
 }
 
 
-$serif: 'adriane', serif;
+$serif: 'Playfair Display', serif;
 $sans-serif: 'proxima-nova', sans-serif;
 $mono: 'source-code-pro', sans-serif;
 
@@ -71,7 +69,7 @@ h3 {
 }
 h4 {
     color: $header;
-    font-weight: 700;
+    font-weight: 400;
     font-family: $serif;
     @include large;
     margin: 0 0 ($line-int*1) / 28 * 1em;
@@ -114,6 +112,7 @@ blockquote {
     font-family: $serif;
     font-weight: 400;
     font-style: italic;
+    margin-bottom: ($line-int*1) / 28 * 1em;
 }
 
 

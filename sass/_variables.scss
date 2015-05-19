@@ -1,9 +1,9 @@
 $primary: #6DA246;
 $body: #9AA5AA;
-$header: #404346;
+$header: #4B5660;
 
 $color1: #B2242B;
-$color2: #6ED138;
+$color2: #000000;
 $color3: #2992CC;
 $color4: #2D83B2;
 
@@ -35,6 +35,10 @@ $color4: #2D83B2;
 
 @mixin quick() {
 	transition: all 0.25s cubic-bezier(.3,.53,0,1);
+}
+
+@mixin slow() {
+  transition: all 0.5s cubic-bezier(.3,.53,0,1);
 }
 
 @mixin clickable() {

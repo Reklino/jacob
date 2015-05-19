@@ -1,11 +1,22 @@
 * { box-sizing: border-box; }
 
 hr {
-	width: 200px;
-	margin: 0 auto 0em;
-	background: lighten($body, 25);
-	height: 1px;
+  position: relative;
+	width: 50px;
+	margin: 0 auto 3em;
 	border: 0;
+  &:after, &:before {
+    content: '';
+    height: 1px;
+    display: block;
+    background: lighten($body, 25);
+    transform: rotate(45deg);
+    position: absolute;
+    width: 100%;
+  }
+  &:before {
+    transform: rotate(-45deg);
+  }
 }
 
 
