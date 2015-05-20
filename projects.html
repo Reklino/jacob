@@ -41,9 +41,21 @@
 </main>
 
 <nav>
-	<a ui-sref="projects"><i class="s-times"></i></a>
-	<a ui-sref="projects.detail({id: activeProject - 1})"><i class="s-arrow-left"></i></a>
-	<a ui-sref="projects.detail({id: activeProject + 1})"><i class="s-arrow-right"></i></a>
+	<a ui-sref="projects">
+		<svg class="icon">
+		  <use xlink:href="#icon-times"></use>
+		</svg>
+	</a>
+	<a ui-sref="projects.detail({id: activeProject - 1})">
+		<svg class="icon">
+		  <use xlink:href="#icon-arrow-left"></use>
+		</svg>
+	</a>
+	<a ui-sref="projects.detail({id: activeProject + 1})">
+		<svg class="icon">
+		  <use xlink:href="#icon-arrow-right"></use>
+		</svg>
+	</a>
 	<span class="nav-profile">
 		<span class="name">Jacob Davidson</span><span class="title">FRONTEND DEVELOPER</span>
 	</span>

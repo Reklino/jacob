@@ -390,6 +390,23 @@ blockquote {
   font-style: italic;
   margin-bottom: 1.07143em; }
 
+svg.icon {
+  height: 36px;
+  width: 36px;
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: baseline; }
+  button svg.icon {
+    height: 18px;
+    width: 18px;
+    margin: 4px -4px 0 4px;
+    -webkit-filter: drop-shadow(0 1px #eee);
+            filter: drop-shadow(0 1px #eee);
+    float: right; }
+
+svg use {
+  pointer-events: none; }
+
 * {
   box-sizing: border-box; }
 
@@ -529,8 +546,6 @@ nav {
   background: #353c43; }
   nav a {
     display: block;
-    height: 3em;
-    line-height: 3em;
     border-width: 0 0 1px 0;
     font-weight: 300;
     font-family: "source-code-pro", sans-serif;
@@ -542,6 +557,11 @@ nav {
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none; }
+    nav a .icon {
+      fill: #9AA5AA;
+      width: 1.5em;
+      height: 1.5em;
+      margin: 1em 0 0; }
   nav .nav-profile {
     position: absolute;
     display: block;
@@ -674,9 +694,7 @@ footer {
     clear: both; }
 
 article {
-  background: #2D3949; }
-  article p {
-    color: #b6bec1; }
+  background: #344255; }
   article .video {
     position: absolute; }
     article .video:before {
@@ -684,8 +702,8 @@ article {
       display: block;
       position: absolute;
       z-index: 1;
-      background-image: -webkit-linear-gradient(rgba(45, 57, 73, 0), #2D3949);
-      background-image: linear-gradient(rgba(45, 57, 73, 0), #2D3949);
+      background-image: -webkit-linear-gradient(rgba(52, 66, 85, 0), #344255);
+      background-image: linear-gradient(rgba(52, 66, 85, 0), #344255);
       width: 100%;
       height: 50%;
       top: 50%;
@@ -713,6 +731,15 @@ article {
     position: relative;
     z-index: 1;
     padding: 2em 0; }
+    article main p {
+      color: #b6bec1; }
+      article main p:first-child:first-letter {
+        float: left;
+        /* 84px / 72px */
+        font-size: 2.8em;
+        line-height: 1.07143em;
+        padding-right: 0.15em;
+        font-weight: 700; }
   article footer {
     padding: 2em 0 3em;
     text-align: center; }

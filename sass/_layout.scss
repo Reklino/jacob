@@ -38,8 +38,6 @@ nav {
 	background: darken($header, 10);
 	a {
 		display: block;
-		height: 3em;
-		line-height: 3em;
 		border-width: 0 0 1px 0;
 		font-weight: 300;
 		font-family: $mono;
@@ -47,6 +45,12 @@ nav {
 		text-decoration: none;
 		color: white;
 		@include clickable;
+		.icon {
+			fill: $body;
+			width: 1.5em;
+			height: 1.5em;
+			margin: 1em 0 0;
+		}
 	}
 	.nav-profile {
 		position: absolute;

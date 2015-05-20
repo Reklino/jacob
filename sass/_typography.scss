@@ -115,6 +115,33 @@ blockquote {
     margin-bottom: ($line-int*1) / 28 * 1em;
 }
 
+// ==== ICONS ==== //
+ 
+// SVG icon sets; style icons individually, by set, or as a group
+svg {
+  &.icon {
+    height: 36px;
+    width: 36px;
+    display: inline-block;
+    fill: currentColor; // Inherit color
+    vertical-align: baseline; // Options: baseline, sub, super, text-top, text-bottom, middle, top, bottom
+ 
+    // Different styling for when an icon appears in a button element
+    button & {
+      height: 18px;
+      width: 18px;
+      margin: 4px -4px 0 4px;
+      filter: drop-shadow( 0 1px #eee );
+      float: right;
+    }
+  }
+ 
+  // Fix jQuery bug: http://bugs.jquery.com/ticket/11352
+  use {
+    pointer-events: none;
+  }
+}
+
 
 
 

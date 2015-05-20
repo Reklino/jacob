@@ -30,8 +30,7 @@
 }
 
 article {
-	background: #2D3949;
-	p { color: lighten($body, 10); }
+	background: #344255;
 	.video {
 		position: absolute;
 		&:before {
@@ -40,8 +39,8 @@ article {
 			position: absolute;
 			z-index: 1;
 			background-image: linear-gradient(
-				rgba(#2D3949, 0),
-				#2D3949
+				rgba(#344255, 0),
+				#344255
 				);
 			width: 100%; height: 50%;
 			top: 50%; left: 0;
@@ -70,6 +69,15 @@ article {
 		position: relative;
 		z-index: 1;
 		padding: 2em 0;
+		p {
+			color: lighten($body, 10);
+			&:first-child:first-letter {
+				float: left;
+				@include massive;
+				padding-right: 0.15em;
+				font-weight: 700;
+			}
+		}
 	}
 	footer {
 		padding: 2em 0 3em;
