@@ -31,7 +31,7 @@ gulp.task('svgstore', function() {
    return gulp
        .src('index.html')
        .pipe(inject(svgs, { transform: fileContents }))
-       .pipe(gulp.dest('svg'));
+       .pipe(gulp.dest('./'));
 
 })
 

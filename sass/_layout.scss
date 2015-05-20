@@ -33,7 +33,7 @@ nav {
 	z-index: 1;
 	top: 0;
 	height: 100%;
-	width: 5em;
+	width: 90px;
 	text-align: center;
 	background: darken($header, 10);
 	a {
@@ -47,6 +47,32 @@ nav {
 		text-decoration: none;
 		color: white;
 		@include clickable;
+	}
+	.nav-profile {
+		position: absolute;
+		display: block;
+		bottom: 145px;
+		left: -80px;
+		width: 250px;
+
+		text-align: left;
+		@include small;
+		font-family: $sans-serif;
+		transform: rotate(-90deg);
+		text-transform: uppercase;
+		letter-spacing: 1px;
+
+		.name {
+			white-space: nowrap;
+			font-weight: 400;
+			color: lighten($body, 25);
+			margin-right: 2em;
+		}
+		.title {
+			white-space: nowrap;
+			font-weight: 400;
+			color: darken($body, 10);
+		}
 	}
 }
 
