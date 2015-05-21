@@ -2,15 +2,26 @@
 	<section class="container">
 		<div class="col-8 col-offset-2">
 			<div id="profile"></div>
-			<h5>Hello, I'm Jacob.</h5>
-			<h2>Frontend Developer &amp; Designer</h2>
+			<h1>Hey there.</h1>
 			<br>
-			<p>I strive to build useful, real world interactivity that provides a unique and pleasent experience.</p>
+			<p>My name is Jacob. I like making stuff. Click on a project to the right to see something I've made.</p>
 		</div>
 		<div class="col-6 col-offset-3 social">
-			 <a href=""><i class="fa fa-github-alt fa-2x"></i></a>
-			 <a href=""><i class="fa fa-codepen fa-2x"></i></a>
-			 <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+			 <a href="">
+			 	<svg class="icon">
+			 	  <use xlink:href="#icon-github-alt"></use>
+			 	</svg>
+			 </a>
+			 <a href="">
+			 	<svg class="icon">
+			 	  <use xlink:href="#icon-codepen"></use>
+			 	</svg>
+			 </a>
+			 <a href="">
+			 	<svg class="icon">
+			 	  <use xlink:href="#icon-twitter"></use>
+			 	</svg>
+			 </a>
 		</div>
 	</section>
 </header>
@@ -19,7 +30,13 @@
 
 	<section class="container">
 		<div class="col-12">
-			<h5 class="small">Selected Works</h5>
+			<nav>
+				<ul>
+					<li>Projects</li>
+					<li>About Me</li>
+					<li>Contact</li>
+				</ul>
+			</nav>
 		</div>
 		<div class="project" ng-repeat="project in projects track by $index">
 			<a class="info col-12" ui-sref="projects.detail({id: $index})">
@@ -40,7 +57,7 @@
 
 </main>
 
-<nav>
+<nav id="project-nav">
 	<a ui-sref="projects">
 		<svg class="icon">
 		  <use xlink:href="#icon-times"></use>

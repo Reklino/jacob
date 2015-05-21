@@ -309,17 +309,17 @@ body {
   -webkit-font-smoothing: antialiased !important; }
 
 h1 {
-  color: #4B5660;
-  font-weight: 700;
+  color: #3A424A;
+  font-weight: 900;
   font-family: "Playfair Display", serif;
   /* 135px / 120px */
   font-size: 4em;
-  line-height: 0.9375em;
+  line-height: 1.03125em;
   margin: 0 0 0.9375em; }
 
 h2 {
-  color: #4B5660;
-  font-weight: 700;
+  color: #3A424A;
+  font-weight: 900;
   font-family: "Playfair Display", serif;
   /* 84px / 72px */
   font-size: 2.8em;
@@ -327,7 +327,7 @@ h2 {
   margin: 0 0 0.53571em; }
 
 h3 {
-  color: #4B5660;
+  color: #3A424A;
   font-weight: 700;
   font-family: "Playfair Display", serif;
   /* 52px / 48px */
@@ -336,7 +336,7 @@ h3 {
   margin: 0 0 0.75em; }
 
 h4 {
-  color: #4B5660;
+  color: #3A424A;
   font-weight: 400;
   font-family: "Playfair Display", serif;
   /* 28 / 36px */
@@ -346,7 +346,6 @@ h4 {
 
 h5 {
   color: #9AA5AA;
-  color: #000000;
   font-weight: 400;
   font-family: "proxima-nova", sans-serif;
   text-transform: uppercase;
@@ -384,7 +383,7 @@ blockquote {
   /* 28 / 36px */
   font-size: 1.4em;
   line-height: 1.07143em;
-  color: #edeff0;
+  color: #b6bec1;
   font-family: "Playfair Display", serif;
   font-weight: 400;
   font-style: italic;
@@ -522,7 +521,7 @@ body, html, #masterUI {
       -ms-transform: translateX(0);
           transform: translateX(0); }
 
-.project-view nav {
+.project-view #project-nav {
   -webkit-transform: translateX(5em);
       -ms-transform: translateX(5em);
           transform: translateX(5em);
@@ -533,7 +532,7 @@ body, html, #masterUI {
   position: fixed;
   top: 0; }
 
-nav {
+#project-nav {
   -webkit-transition: all 0.5s cubic-bezier(0.3, 0.53, 0, 1);
           transition: all 0.5s cubic-bezier(0.3, 0.53, 0, 1);
   right: -5em;
@@ -543,8 +542,8 @@ nav {
   height: 100%;
   width: 90px;
   text-align: center;
-  background: #353c43; }
-  nav a {
+  background: #3A424A; }
+  #project-nav a {
     display: block;
     border-width: 0 0 1px 0;
     font-weight: 300;
@@ -557,12 +556,12 @@ nav {
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none; }
-    nav a .icon {
+    #project-nav a .icon {
       fill: #9AA5AA;
-      width: 1.5em;
-      height: 1.5em;
+      width: 1.25em;
+      height: 1.25em;
       margin: 1em 0 0; }
-  nav .nav-profile {
+  #project-nav .nav-profile {
     position: absolute;
     display: block;
     bottom: 145px;
@@ -578,12 +577,12 @@ nav {
             transform: rotate(-90deg);
     text-transform: uppercase;
     letter-spacing: 1px; }
-    nav .nav-profile .name {
+    #project-nav .nav-profile .name {
       white-space: nowrap;
       font-weight: 400;
       color: #dfe3e4;
       margin-right: 2em; }
-    nav .nav-profile .title {
+    #project-nav .nav-profile .title {
       white-space: nowrap;
       font-weight: 400;
       color: #7e8c93; }
@@ -596,9 +595,13 @@ nav {
   padding: 3em 0; }
   #header .social a {
     color: #d1d6d9;
-    margin: 0 0.5em; }
+    margin: 0 0.5em;
+    text-decoration: none; }
     #header .social a:hover {
       color: #000000; }
+    #header .social a .icon {
+      width: 2.5em;
+      height: 2.5em; }
 
 #project {
   -webkit-transform: translateX(100%);
@@ -672,7 +675,8 @@ footer {
   cursor: pointer;
   padding: 1em; }
   .info h4 {
-    color: #c4cacd;
+    color: #738291;
+    font-weight: 600;
     -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
             transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
     letter-spacing: normal; }
@@ -694,22 +698,7 @@ footer {
     clear: both; }
 
 article {
-  background: #344255; }
-  article .video {
-    position: absolute; }
-    article .video:before {
-      content: '';
-      display: block;
-      position: absolute;
-      z-index: 1;
-      background-image: -webkit-linear-gradient(rgba(52, 66, 85, 0), #344255);
-      background-image: linear-gradient(rgba(52, 66, 85, 0), #344255);
-      width: 100%;
-      height: 50%;
-      top: 50%;
-      left: 0; }
-  article video {
-    width: 100%; }
+  background: white; }
   article header {
     position: relative;
     z-index: 1;
@@ -719,10 +708,7 @@ article {
       content: '';
       display: block;
       clear: both; }
-    article header h1 {
-      color: white; }
     article header h4 {
-      color: white;
       font-family: "proxima-nova", sans-serif;
       font-weight: 200; }
     article header figure {
@@ -731,15 +717,15 @@ article {
     position: relative;
     z-index: 1;
     padding: 2em 0; }
-    article main p {
-      color: #b6bec1; }
-      article main p:first-child:first-letter {
-        float: left;
-        /* 84px / 72px */
-        font-size: 2.8em;
-        line-height: 1.07143em;
-        padding-right: 0.15em;
-        font-weight: 700; }
+    article main p:first-child:first-letter {
+      float: left;
+      /* 84px / 72px */
+      font-size: 2.8em;
+      line-height: 1.07143em;
+      color: #3A424A;
+      line-height: 1em;
+      padding-right: 0.15em;
+      font-weight: 700; }
   article footer {
     padding: 2em 0 3em;
     text-align: center; }
