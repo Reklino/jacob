@@ -429,6 +429,12 @@ hr {
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg); }
 
+.icon.seperator {
+  display: block;
+  width: 50px;
+  margin: 0 auto;
+  color: #9AA5AA; }
+
 .btn {
   display: block;
   float: left;
