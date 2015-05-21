@@ -141,11 +141,20 @@ footer {
 =            Animations            =
 ==================================*/
 
+@keyframes fadeIn {
+  from {
+    top: -90px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
 .project-ui.ng-enter, .project-ui.ng-leave {
-  -webkit-transition:all .5s ease-in-out;
-    -moz-transition:all .5s ease-in-out;
-    -o-transition:all .5s ease-in-out;
-    transition:all .5s ease-in-out;
+  @include quick;
+  article header h1, article header h4, article main { position: relative; }
 }
 
 .project-ui.ng-enter {
@@ -154,6 +163,9 @@ footer {
 
 .project-ui.ng-enter-active {
   opacity: 1;
+  article header h1 {	animation-name: fadeIn; animation-duration: 0.3s; animation-delay: 0s; animation-timing-function: ease-in-out; }
+  article header h4 {	animation-name: fadeIn; animation-duration: 0.3s; animation-delay: 0.2s; animation-timing-function: ease-in-out; }
+  article main 		{	animation-name: fadeIn; animation-duration: 0.3s; animation-delay: 0.4s; animation-timing-function: ease-in-out; }
 }
 
 .project-ui.ng-leave {

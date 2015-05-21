@@ -38,7 +38,7 @@ $color4: #2D83B2;
 }
 
 @mixin slow() {
-  transition: all 0.5s cubic-bezier(.3,.53,0,1);
+  transition: all 0.6s cubic-bezier(.3,.53,0,1);
 }
 
 @mixin clickable() {
