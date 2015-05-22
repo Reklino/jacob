@@ -28,6 +28,7 @@ body, html, #masterUI {
 
 #project-nav {
 	@include slow;
+	transform: translatez(0);
 	right: -5em;
 	position: absolute;
 	z-index: 1;
@@ -83,6 +84,7 @@ body, html, #masterUI {
 #header {
 	position: relative;
 	@include slow;
+	transform: translatez(0);
 	text-align: center;
 	padding: 3em 0;
 	.social {
@@ -101,6 +103,7 @@ body, html, #masterUI {
 #project {
 	transform: translateX(100%);
 	@include slow;
+	transform: translatez(0);
 	height: 100%;
 	width: 100%;
 	padding-left: 5em;
@@ -111,6 +114,21 @@ body, html, #masterUI {
 
 #projects {
 	@include slow;
+	transform: translatez(0);
+	nav {
+		a {
+			display: block;
+			float: left;
+			height: 3em;
+			line-height: 3em;
+			padding: 0 1em;
+			text-decoration: none;
+			font-family: $sans-serif;
+			color: $body;
+		}
+		@include clearfix;
+		border-bottom: 1px solid #EFEFEF;
+	}
 }
 
 
@@ -124,7 +142,6 @@ body, html, #masterUI {
 	#projects {
 		position: relative;
 		border-left: 1px solid #EFEFEF;
-		padding: 0 1em;
 		width: 50%;
 		height: 100%;
 		overflow-y: scroll;
@@ -154,8 +171,8 @@ footer {
 
 .project-ui.ng-enter, .project-ui.ng-leave {
   @include quick;
-  article header h1, article header h4, article main { position: relative; }
 }
+.project-ui.ng-enter { transition-delay: 0.15s; }
 
 .project-ui.ng-enter {
   opacity: 0;
@@ -163,9 +180,6 @@ footer {
 
 .project-ui.ng-enter-active {
   opacity: 1;
-  article header h1 {	animation-name: fadeIn; animation-duration: 0.3s; animation-delay: 0s; animation-timing-function: ease-in-out; }
-  article header h4 {	animation-name: fadeIn; animation-duration: 0.3s; animation-delay: 0.2s; animation-timing-function: ease-in-out; }
-  article main 		{	animation-name: fadeIn; animation-duration: 0.3s; animation-delay: 0.4s; animation-timing-function: ease-in-out; }
 }
 
 .project-ui.ng-leave {

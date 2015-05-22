@@ -2,7 +2,7 @@
 	<section class="container">
 		<div class="col-8 col-offset-2">
 			<div id="profile"></div>
-			<h1>Hey there.</h1>
+			<h2>Frontend Developer &amp; Designer</h2>
 			<br>
 			<p>My name is Jacob. I like making stuff. Click on a project to the right to see something I've made.</p>
 		</div>
@@ -27,17 +27,15 @@
 </header>
 
 <main id="projects">
-
+	<nav>
+		<ul>
+			<li><a href="">Projects</a></li>
+			<li><a href="">About Me</a></li>
+			<li><a href="">Contact</a></li>
+		</ul>
+	</nav>
 	<section class="container">
-		<div class="col-12">
-			<nav>
-				<ul>
-					<li>Projects</li>
-					<li>About Me</li>
-					<li>Contact</li>
-				</ul>
-			</nav>
-		</div>
+
 		<div class="project" ng-repeat="project in projects track by $index">
 			<a class="info col-12" ui-sref="projects.detail({id: $index})">
 				<h4>{{ $index }}. {{ project.name }}</h4>
@@ -47,6 +45,7 @@
 				</span>
 			</a>
 		</div>
+
 	</section>
 
 	<footer>
@@ -63,12 +62,12 @@
 		  <use xlink:href="#icon-times"></use>
 		</svg>
 	</a>
-	<a ui-sref="projects.detail({id: activeProject - 1})">
+	<a ng-show="projects.length > activeProject" ui-sref="projects.detail({id: activeProject - 1})">
 		<svg class="icon">
 		  <use xlink:href="#icon-arrow-left"></use>
 		</svg>
 	</a>
-	<a ui-sref="projects.detail({id: activeProject + 1})">
+	<a ng-show="projects.length > activeProject" ui-sref="projects.detail({id: activeProject + 1})">
 		<svg class="icon">
 		  <use xlink:href="#icon-arrow-right"></use>
 		</svg>
