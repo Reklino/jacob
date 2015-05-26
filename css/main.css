@@ -328,7 +328,7 @@ h2 {
 
 h3 {
   color: #3A424A;
-  font-weight: 700;
+  font-weight: 900;
   font-family: "Playfair Display", serif;
   /* 52px / 48px */
   font-size: 2em;
@@ -337,7 +337,7 @@ h3 {
 
 h4 {
   color: #3A424A;
-  font-weight: 400;
+  font-weight: 900;
   font-family: "Playfair Display", serif;
   /* 28 / 36px */
   font-size: 1.4em;
@@ -372,8 +372,10 @@ p {
 
 .small {
   color: #9AA5AA;
-  font-weight: 700;
+  font-weight: 300;
   font-family: "proxima-nova", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .5px;
   /* 13px / 18px */
   font-size: 0.8125em;
   line-height: 1.84615em;
@@ -510,17 +512,25 @@ input {
 .remove-bottom {
   margin-bottom: 0 !important; }
 
+.half-bottom {
+  margin-bottom: 0.75em !important; }
+
 body, html, #masterUI {
   overflow: hidden;
   height: 100%; }
 
 #masterUI {
-  overflow: scroll; }
+  position: relative; }
 
-.project-view #header, .project-view #projects {
+.project-view #projects {
   -webkit-transform: translateX(-200%);
       -ms-transform: translateX(-200%);
           transform: translateX(-200%); }
+
+.project-view #header {
+  -webkit-transform: translateX(-300%);
+      -ms-transform: translateX(-300%);
+          transform: translateX(-300%); }
 
 .project-view #project {
   -webkit-transform: translateX(0);
@@ -616,9 +626,6 @@ body, html, #masterUI {
       height: 2.5em; }
 
 #project {
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%);
   -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
           transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
   -webkit-transform: translatez(0);
@@ -637,21 +644,27 @@ body, html, #masterUI {
   -webkit-transform: translatez(0);
       -ms-transform: translatez(0);
           transform: translatez(0); }
-  #projects nav {
-    border-bottom: 1px solid #EFEFEF; }
-    #projects nav a {
-      display: block;
-      float: left;
-      height: 3em;
-      line-height: 3em;
-      padding: 0 1em;
-      text-decoration: none;
-      font-family: "proxima-nova", sans-serif;
-      color: #9AA5AA; }
-    #projects nav:after {
-      content: '';
-      display: block;
-      clear: both; }
+  #projects nav a {
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    display: block;
+    float: left;
+    height: 3em;
+    line-height: 3em;
+    padding: 0 1em;
+    margin-right: 2em;
+    text-decoration: none;
+    font-family: "proxima-nova", sans-serif;
+    color: #9AA5AA; }
+    #projects nav a.active {
+      color: #72C336; }
+  #projects nav:after {
+    content: '';
+    display: block;
+    clear: both; }
 
 @media (min-width: 700px) {
   #header {
@@ -664,6 +677,7 @@ body, html, #masterUI {
     border-left: 1px solid #EFEFEF;
     width: 50%;
     height: 100%;
+    overflow-x: hidden;
     overflow-y: scroll;
     float: left; } }
 
@@ -691,25 +705,54 @@ footer {
     top: 0;
     opacity: 1; } }
 
-.project-ui.ng-enter, .project-ui.ng-leave {
-  -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
-          transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1); }
+.project-ui {
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
+          transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1); }
 
-.project-ui.ng-enter {
-  -webkit-transition-delay: 0.15s;
-          transition-delay: 0.15s; }
+.project-ui.ng-enter #project {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%); }
 
-.project-ui.ng-enter {
-  opacity: 0; }
+.project-ui.ng-enter.ng-enter-active #project, .project-ui.ng-leave #project {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
 
-.project-ui.ng-enter-active {
-  opacity: 1; }
+.project-ui.ng-leave.ng-leave-active #project {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%); }
 
-.project-ui.ng-leave {
-  opacity: 1; }
+.tab {
+  margin-top: 3em;
+  width: 100%;
+  padding: 0 1em; }
 
-.project-ui.ng-leave-active {
-  opacity: 0; }
+.tab.ng-enter, .tab.ng-leave {
+  position: absolute;
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
+          transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1); }
+
+.tab.ng-enter {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%); }
+
+.tab.ng-enter-active {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
+
+.tab.ng-leave {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
+
+.tab.ng-leave-active {
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%); }
 
 /*-----  End of Animations  ------*/
 #profile {
@@ -723,16 +766,13 @@ footer {
 
 .info {
   text-decoration: none;
-  cursor: pointer;
-  padding: 1em; }
+  cursor: pointer; }
   .info h4 {
-    color: #738291;
-    font-weight: 600;
     -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
             transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
     letter-spacing: normal; }
   .info .time {
-    color: #000000; }
+    color: #9AA5AA; }
   .info:hover {
     -webkit-transform: translateX(15px);
         -ms-transform: translateX(15px);
@@ -742,7 +782,7 @@ footer {
       color: #000000; }
 
 .project {
-  margin: 1em 0; }
+  margin: 0 0 3em; }
   .project:after {
     content: '';
     display: block;

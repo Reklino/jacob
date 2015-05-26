@@ -28,6 +28,8 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		$rootScope.activeProject = toParams.id ? parseInt(toParams.id) : 0;
 	})
 
+	$scope.tab = 0;
+
 	$scope.projects = [
 		{
 			'name' : 'Sleepy Monkey',

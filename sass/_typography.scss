@@ -62,14 +62,14 @@ h2 {
 }
 h3 {
     color: $header;
-    font-weight: 700;
+    font-weight: 900;
     font-family: $serif;
     @include huge;
     margin: 0 0 ($line-int*1) / 40 * 1em;
 }
 h4 {
     color: $header;
-    font-weight: 400;
+    font-weight: 900;
     font-family: $serif;
     @include large;
     margin: 0 0 ($line-int*1) / 28 * 1em;
@@ -99,8 +99,10 @@ p {
 
 .small {
     color: $body;
-    font-weight: 700;
+    font-weight: 300;
     font-family: $sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .5px;
     @include small;
     margin: 0 0 #{$line-int / $em}em;
 }

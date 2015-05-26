@@ -27,32 +27,53 @@
 </header>
 
 <main id="projects">
-	<nav>
-		<ul>
-			<li><a href="">Projects</a></li>
-			<li><a href="">About Me</a></li>
-			<li><a href="">Contact</a></li>
+
+	<nav class="container">
+		<ul class="col-12">
+			<li><a ng-click="tab = 0" ng-class="{ 'active' : tab == 0 }">Projects</a></li>
+			<li><a ng-click="tab = 1" ng-class="{ 'active' : tab == 1 }">Info</a></li>
+			<li><a ng-click="tab = 2" ng-class="{ 'active' : tab == 2 }">Stats</a></li>
 		</ul>
 	</nav>
-	<section class="container">
 
-		<div class="project" ng-repeat="project in projects track by $index">
-			<a class="info col-12" ui-sref="projects.detail({id: $index})">
-				<h4>{{ $index }}. {{ project.name }}</h4>
-				<p class="remove-bottom">{{ project.desc }}</p>
-				<span class="small">
-					Designer &amp; Developer - <span class="time">{{ project.date }}</span>
-				</span>
-			</a>
-		</div>
+	<div class="tabs" ng-switch on="tab">
 
-	</section>
+		<section class="tab container" ng-switch-when="0">
 
-	<footer>
-		<div class="col-12">
-			<p>This is the portfolio site for Jacob Davidson &copy;2015</p>
-		</div>
-	</footer>
+			<div class="project" ng-repeat="project in projects track by $index">
+				<a class="info col-12" ui-sref="projects.detail({id: $index})">
+					<h4>{{ $index }}. {{ project.name }}</h4>
+					<p class="half-bottom">{{ project.desc }}</p>
+					<p class="small">
+						Designer &amp; Developer - <span class="time">{{ project.date }}</span>
+					</p>
+				</a>
+			</div>
+
+		</section>
+
+		<section class="tab container" ng-switch-when="1">
+
+			<div class="col-12">
+				<p class="small">2012 - present</p>
+				<h4>Halifax Media Group</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet velit illum, aliquid laudantium deserunt autem accusantium aliquam libero ratione fugiat eaque, aspernatur iste odio minus, molestias, voluptas temporibus ipsum dignissimos.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet velit illum, aliquid laudantium deserunt autem accusantium aliquam libero ratione fugiat eaque, aspernatur iste odio minus, molestias, voluptas temporibus ipsum dignissimos.</p>
+			</div>
+
+		</section>
+
+		<section class="tab container" ng-switch-when="2">
+			
+			<div class="col-12">
+				<h3>About Me</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet velit illum, aliquid laudantium deserunt autem accusantium aliquam libero ratione fugiat eaque, aspernatur iste odio minus, molestias, voluptas temporibus ipsum dignissimos.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet velit illum, aliquid laudantium deserunt autem accusantium aliquam libero ratione fugiat eaque, aspernatur iste odio minus, molestias, voluptas temporibus ipsum dignissimos.</p>
+			</div>
+
+		</section>
+
+	</div>
 
 </main>
 

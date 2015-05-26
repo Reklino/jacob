@@ -10,14 +10,11 @@
 .info {
 	text-decoration: none;
 	cursor: pointer;
-	padding: 1em;
 	h4 {
-		color: lighten($header, 25);
-		font-weight: 600;
 		@include quick;
 		letter-spacing: normal;
 	}
-	.time { color: $color2; }
+	.time { color: $body; }
 	&:hover {
 		h4 { color: $color2; }
 		transform: translateX(15px);
@@ -26,7 +23,7 @@
 }
 
 .project {
-	margin: 1em 0;
+	margin: 0 0 3em;
 	@include clearfix;
 }
 

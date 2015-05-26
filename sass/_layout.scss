@@ -4,12 +4,14 @@ body, html, #masterUI {
 	// background: url(http://subtlepatterns.com/patterns/lightpaperfibers.png);
 }
 
-#masterUI { overflow: scroll; }
+#masterUI { position: relative; }
 
 .project-view {
-	// &, #masterUI { overflow: hidden; }
-	#header, #projects {
+	#projects {
 		transform: translateX(-200%);
+	}
+	#header {
+		transform: translateX(-300%);
 	}
 	#project {
 		transform: translateX(0);
@@ -101,7 +103,6 @@ body, html, #masterUI {
 }
 
 #project {
-	transform: translateX(100%);
 	@include slow;
 	transform: translatez(0);
 	height: 100%;
@@ -117,17 +118,22 @@ body, html, #masterUI {
 	transform: translatez(0);
 	nav {
 		a {
+			@include clickable;
 			display: block;
 			float: left;
 			height: 3em;
 			line-height: 3em;
 			padding: 0 1em;
+			margin-right: 2em;
 			text-decoration: none;
 			font-family: $sans-serif;
 			color: $body;
+			&.active {
+				color: $primary;
+			}
 		}
 		@include clearfix;
-		border-bottom: 1px solid #EFEFEF;
+		//border-bottom: 1px solid lighten($body, 20);
 	}
 }
 
@@ -144,6 +150,7 @@ body, html, #masterUI {
 		border-left: 1px solid #EFEFEF;
 		width: 50%;
 		height: 100%;
+		overflow-x: hidden;
 		overflow-y: scroll;
 		float: left;
 	}
@@ -169,25 +176,47 @@ footer {
   }
 }
 
-.project-ui.ng-enter, .project-ui.ng-leave {
-  @include quick;
-}
-.project-ui.ng-enter { transition-delay: 0.15s; }
-
-.project-ui.ng-enter {
-  opacity: 0;
+.project-ui {
+    @include slow;
 }
 
-.project-ui.ng-enter-active {
-  opacity: 1;
+.project-ui.ng-enter #project {
+    transform: translateX(100%);
 }
 
-.project-ui.ng-leave {
-  opacity: 1; 
+.project-ui.ng-enter.ng-enter-active #project, .project-ui.ng-leave #project {
+    transform: translateX(0);
 }
 
-.project-ui.ng-leave-active {
-  opacity: 0;
+.project-ui.ng-leave.ng-leave-active #project {
+    transform: translateX(100%);
+}
+
+.tab { 
+	margin-top: 3em;
+	width: 100%;
+	padding: 0 1em;
+}
+
+.tab.ng-enter, .tab.ng-leave {
+	position: absolute;
+  @include slow;
+}
+
+.tab.ng-enter {
+  transform: translateX(100%);
+}
+
+.tab.ng-enter-active {
+  transform: translateX(0);
+}
+
+.tab.ng-leave {
+  transform: translateX(0); 
+}
+
+.tab.ng-leave-active {
+  transform: translateX(-100%);
 }
 
 
