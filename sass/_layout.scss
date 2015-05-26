@@ -181,15 +181,18 @@ footer {
 }
 
 .project-ui.ng-enter #project {
+	opacity: 0;
     transform: translateX(100%);
 }
 
 .project-ui.ng-enter.ng-enter-active #project, .project-ui.ng-leave #project {
+	opacity: 1;
     transform: translateX(0);
 }
 
 .project-ui.ng-leave.ng-leave-active #project {
-    transform: translateX(100%);
+	opacity: 0;
+    transform: translateX(-100%);
 }
 
 .tab { 
