@@ -341,12 +341,12 @@ h4 {
   font-family: "Playfair Display", serif;
   /* 28 / 36px */
   font-size: 1.4em;
-  line-height: 1.07143em;
+  line-height: 1.60714em;
   margin: 0 0 1.07143em; }
 
 h5 {
-  color: #9AA5AA;
-  font-weight: 400;
+  color: #3A424A;
+  font-weight: 900;
   font-family: "proxima-nova", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -381,10 +381,15 @@ p {
   line-height: 1.84615em;
   margin: 0 0 1.5em; }
 
+.skinny {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 300;
+  text-transform: none; }
+
 blockquote {
   /* 28 / 36px */
   font-size: 1.4em;
-  line-height: 1.07143em;
+  line-height: 1.60714em;
   text-align: center;
   color: #b6bec1;
   font-family: "Playfair Display", serif;
@@ -414,9 +419,11 @@ svg use {
 
 hr {
   position: relative;
-  width: 50px;
+  display: block;
+  width: 40px;
   margin: 0 auto 3em;
-  border: 0; }
+  border: 0;
+  clear: both; }
   hr:after, hr:before {
     content: '';
     height: 1px;
@@ -426,7 +433,8 @@ hr {
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
     position: absolute;
-    width: 100%; }
+    width: 100%;
+    clear: both; }
   hr:before {
     -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
@@ -803,9 +811,13 @@ article {
       content: '';
       display: block;
       clear: both; }
+    article header img {
+      margin-bottom: 3em; }
     article header h4 {
       font-family: "proxima-nova", sans-serif;
       font-weight: 200; }
+    article header h5 {
+      text-align: left; }
     article header figure {
       padding: 0 3em; }
   article main {

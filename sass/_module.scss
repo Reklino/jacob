@@ -35,10 +35,14 @@ article {
 		text-align: center;
 		padding: 6em 0;
 		@include clearfix;
+		img {
+			margin-bottom: 3em;
+		}
 		h4 {
 			font-family: $sans-serif;
 			font-weight: 200;
 		}
+		h5 { text-align: left; }
 		figure {
 			padding: 0 3em;
 		}

@@ -2,9 +2,11 @@
 
 hr {
   position: relative;
-	width: 50px;
+  display: block;
+	width: 40px;
 	margin: 0 auto 3em;
 	border: 0;
+  clear: both;
   &:after, &:before {
     content: '';
     height: 1px;
@@ -13,6 +15,7 @@ hr {
     transform: rotate(45deg);
     position: absolute;
     width: 100%;
+    clear: both;
   }
   &:before {
     transform: rotate(-45deg);
