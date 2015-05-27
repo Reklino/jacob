@@ -385,6 +385,7 @@ blockquote {
   /* 28 / 36px */
   font-size: 1.4em;
   line-height: 1.07143em;
+  text-align: center;
   color: #b6bec1;
   font-family: "Playfair Display", serif;
   font-weight: 400;

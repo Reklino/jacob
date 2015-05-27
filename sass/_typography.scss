@@ -109,6 +109,7 @@ p {
 
 blockquote {
     @include large;
+    text-align: center;
     color: lighten($body, 10);
     font-family: $serif;
     font-weight: 400;
