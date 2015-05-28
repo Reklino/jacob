@@ -4,85 +4,6 @@ body, html, #masterUI {
 	// background: url(http://subtlepatterns.com/patterns/lightpaperfibers.png);
 }
 
-#masterUI { position: relative; }
-
-.project-view {
-	#projects {
-		transform: translateX(-200%);
-	}
-	#header {
-		transform: translateX(-300%);
-	}
-	#project {
-		transform: translateX(0);
-	}
-	#project-nav {
-		transform: translateX(5em);
-		right: 100%;
-	}
-}
-
-.project-ui {
-	width: 100%;
-	position: fixed;
-	top: 0;
-}
-
-#project-nav {
-	@include slow;
-	transform: translatez(0);
-	right: -5em;
-	position: absolute;
-	z-index: 1;
-	top: 0;
-	height: 100%;
-	width: 90px;
-	text-align: center;
-	background: $header;
-	a {
-		display: block;
-		border-width: 0 0 1px 0;
-		font-weight: 300;
-		font-family: $mono;
-		font-size: 1.5em;
-		text-decoration: none;
-		color: white;
-		@include clickable;
-		.icon {
-			fill: $body;
-			width: 1.25em;
-			height: 1.25em;
-			margin: 1em 0 0;
-		}
-	}
-	.nav-profile {
-		position: absolute;
-		display: block;
-		bottom: 145px;
-		left: -80px;
-		width: 250px;
-
-		text-align: left;
-		@include small;
-		font-family: $sans-serif;
-		transform: rotate(-90deg);
-		text-transform: uppercase;
-		letter-spacing: 1px;
-
-		.name {
-			white-space: nowrap;
-			font-weight: 400;
-			color: lighten($body, 25);
-			margin-right: 2em;
-		}
-		.title {
-			white-space: nowrap;
-			font-weight: 400;
-			color: darken($body, 10);
-		}
-	}
-}
-
 #header {
 	position: relative;
 	@include slow;
@@ -100,17 +21,6 @@ body, html, #masterUI {
 			}
 		}
 	}
-}
-
-#project {
-	@include slow;
-	transform: translatez(0);
-	height: 100%;
-	width: 100%;
-	padding-left: 5em;
-	position: fixed;
-	overflow-y: scroll;
-	left: 0;
 }
 
 #projects {
@@ -165,61 +75,61 @@ footer {
 =            Animations            =
 ==================================*/
 
-@keyframes fadeIn {
-  from {
-    top: -90px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
+.view.ng-enter, .view.ng-leave {
+	position: absolute;
+  @include slow;
 }
 
-.project-ui {
+.view.ng-enter {
+  transform: translateX(100%);
+}
+
+.view.ng-enter-active {
+  transform: translateX(0);
+}
+
+.view.ng-leave {
+  transform: translateX(0); 
+}
+
+.view.ng-leave-active {
+  transform: translateX(-100%);
+}
+
+
+.project-view {
     @include slow;
 }
 
-.project-ui.ng-enter #project {
+.project-view.ng-enter {
 	opacity: 0;
-    transform: translateX(100%);
+	height: 100%;
+	overflow: hidden;
+	transition-delay: 0.15s;
 }
 
-.project-ui.ng-enter.ng-enter-active #project, .project-ui.ng-leave #project {
+.project-view.ng-enter.ng-enter-active,
+.project-view.ng-leave {
 	opacity: 1;
-    transform: translateX(0);
 }
 
-.project-ui.ng-leave.ng-leave-active #project {
+.project-view.ng-leave.ng-leave-active {
 	opacity: 0;
-    transform: translateX(-100%);
 }
 
-.tab { 
+.view { 
 	margin-top: 3em;
 	width: 100%;
 	padding: 0 1em;
 }
 
-.tab.ng-enter, .tab.ng-leave {
-	position: absolute;
-  @include slow;
-}
 
-.tab.ng-enter {
-  transform: translateX(100%);
+.project {
+	overflow: hidden;
 }
-
-.tab.ng-enter-active {
-  transform: translateX(0);
-}
-
-.tab.ng-leave {
-  transform: translateX(0); 
-}
-
-.tab.ng-leave-active {
-  transform: translateX(-100%);
+.project-active .project {
+	height: 0;
+	margin: 0;
 }
 
 

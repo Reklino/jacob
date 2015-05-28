@@ -1,101 +1,20 @@
-<header id="header">
-	<section class="container">
-		<div class="col-8 col-offset-2">
-			<div id="profile"></div>
-			<h2>Frontend Developer &amp; Designer</h2>
-			<br>
-			<p>My name is Jacob. I like making stuff. Click on a project to the right to see something I've made.</p>
-		</div>
-		<div class="col-6 col-offset-3 social">
-			 <a href="">
-			 	<svg class="icon">
-			 	  <use xlink:href="#icon-github-alt"></use>
-			 	</svg>
-			 </a>
-			 <a href="">
-			 	<svg class="icon">
-			 	  <use xlink:href="#icon-codepen"></use>
-			 	</svg>
-			 </a>
-			 <a href="">
-			 	<svg class="icon">
-			 	  <use xlink:href="#icon-twitter"></use>
-			 	</svg>
-			 </a>
-		</div>
-	</section>
-</header>
 
-<main id="projects">
+<div class="project"
+	ng-repeat="project in projects"
+	ng-class="{ 'active': activeProject.id == project.id }">
 
-	<nav class="container">
-		<ul class="col-12">
-			<li><a ng-click="tab = 0" ng-class="{ 'active' : tab == 0 }">Projects</a></li>
-			<li><a ng-click="tab = 1" ng-class="{ 'active' : tab == 1 }">Info</a></li>
-			<li><a ng-click="tab = 2" ng-class="{ 'active' : tab == 2 }">Stats</a></li>
-		</ul>
-	</nav>
-
-	<div class="tabs" ng-switch on="tab">
-
-		<section class="tab container" ng-switch-when="0">
-
-			<div class="project" ng-repeat="project in projects track by $index">
-				<a class="info col-12" ui-sref="projects.detail({id: $index})">
-					<h4>{{ $index }}. {{ project.name }}</h4>
-					<p class="half-bottom">{{ project.desc }}</p>
-					<p class="small">
-						Designer &amp; Developer - <span class="time">{{ project.date }}</span>
-					</p>
-				</a>
-			</div>
-
-		</section>
-
-		<section class="tab container" ng-switch-when="1">
-
-			<div class="col-12">
-				<p class="small">2012 - present</p>
-				<h4>Halifax Media Group</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet velit illum, aliquid laudantium deserunt autem accusantium aliquam libero ratione fugiat eaque, aspernatur iste odio minus, molestias, voluptas temporibus ipsum dignissimos.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet velit illum, aliquid laudantium deserunt autem accusantium aliquam libero ratione fugiat eaque, aspernatur iste odio minus, molestias, voluptas temporibus ipsum dignissimos.</p>
-			</div>
-
-		</section>
-
-		<section class="tab container" ng-switch-when="2">
-			
-			<div class="col-12">
-				<h3>About Me</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet velit illum, aliquid laudantium deserunt autem accusantium aliquam libero ratione fugiat eaque, aspernatur iste odio minus, molestias, voluptas temporibus ipsum dignissimos.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet velit illum, aliquid laudantium deserunt autem accusantium aliquam libero ratione fugiat eaque, aspernatur iste odio minus, molestias, voluptas temporibus ipsum dignissimos.</p>
-			</div>
-
-		</section>
-
-	</div>
-
-</main>
-
-<nav id="project-nav">
-	<a ui-sref="projects">
-		<svg class="icon">
-		  <use xlink:href="#icon-times"></use>
-		</svg>
+	<a class="info col-12" ui-sref="projects.detail({id: $index})">
+		<h4>
+			{{ project.id }}. {{ project.name }}
+		</h4>
+		<p class="half-bottom">
+			{{ project.desc }}
+		</p>
+		<p class="small">
+			Designer &amp; Developer - {{ project.date }}
+		</p>
 	</a>
-	<a ng-show="projects.length > activeProject" ui-sref="projects.detail({id: activeProject - 1})">
-		<svg class="icon">
-		  <use xlink:href="#icon-arrow-left"></use>
-		</svg>
-	</a>
-	<a ng-show="projects.length > activeProject" ui-sref="projects.detail({id: activeProject + 1})">
-		<svg class="icon">
-		  <use xlink:href="#icon-arrow-right"></use>
-		</svg>
-	</a>
-	<span class="nav-profile">
-		<span class="name">Jacob Davidson</span><span class="title">FRONTEND DEVELOPER</span>
-	</span>
-</nav>
 
-<div class="project-ui" ui-view></div>
+</div>
+
+<div class="project-view" ui-view></div>

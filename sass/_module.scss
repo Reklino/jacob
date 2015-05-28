@@ -16,19 +16,18 @@
 	}
 	.time { color: $body; }
 	&:hover {
-		h4 { color: $color2; }
+		h4 { color: $primary; }
 		transform: translateX(15px);
 		background: white;
 	}
 }
 
 .project {
-	margin: 0 0 3em;
+	margin: 0 0 1.5em;
 	@include clearfix;
 }
 
 article {
-	background: white;
 	header {
 		position: relative;
 		z-index: 1;
