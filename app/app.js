@@ -31,16 +31,52 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 
 })
 
-.controller('MainController', function($scope, $rootScope){
+.controller('MainController', function($scope, $rootScope, $window){
 
-	$rootScope.activeProject = {};
+	var pane = document.getElementById('projects');
+
+	$rootScope.view = {};
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-		$rootScope.projectActive = toParams.id ? true : false;
-		$rootScope.activeProject.id = toParams.id ? parseInt(toParams.id) : '';
+		$rootScope.view.mode = toParams.id ? 'project' : 'primary';
+		$rootScope.view.id = toParams.id ? parseInt(toParams.id) : '';
+		pane.scrollTop = 0;
 	})
 
-	$scope.tab = 0;
+	$scope.view.mode = 'primary';
+
+	$scope.tabs = [
+		{
+			'name'	: 'Projects',
+			'href'	: 'projects',
+			'mode'	: 'primary'
+		},
+		{
+			'name'	: 'Info',
+			'href'	: 'info',
+			'mode'	: 'primary'
+		},
+		{
+			'name'	: 'Stats',
+			'href'	: 'stats',
+			'mode'	: 'primary'
+		},
+		{
+			'name'	: 'Previous',
+			'href'	: 'projects.detail({id: view.id - 1})',
+			'mode'	: 'project'
+		},
+		{
+			'name'	: 'Close',
+			'href'	: 'projects',
+			'mode'	: 'project'
+		},
+		{
+			'name'	: 'Next',
+			'href'	: 'projects.detail({id: view.id + 1})',
+			'mode'	: 'project'
+		}
+	];
 
 	$scope.projects = [
 		{

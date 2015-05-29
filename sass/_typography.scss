@@ -20,7 +20,7 @@ body {
 @mixin large {
     /* 28 / 36px */
     font-size: #{28 / $em}em;
-    line-height: ($line-int*1.5) / 28 * 1em;
+    line-height: ($line-int*1) / 28 * 1em;
 }
 
 @mixin huge {
