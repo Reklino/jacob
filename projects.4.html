@@ -1,13 +1,21 @@
 <article id="project">
 	<header class="container">
+		<div class="col-8 col-offset-2">
+			<figure class="screenshot">
+				<span></span>
+				<span></span>
+				<span></span>
+				<img ng-src="{{project.img}}" "header image">
+			</figure>
+		</div>
 		<div class="col-6 col-offset-3">
-			<h1>{{ project.name }}</h1>
+			<h3>{{ project.name }}</h3>
 			<h4>{{ project.desc }}</h4>
 		</div>
 	</header>
 	<hr>
 	<main class="container">
-		<div class="col-8 col-offset-2">
+		<div class="col-10 col-offset-1">
 			<p>
 				More and more, I find myself designing with code, and I don't intend to stop. It's an amazing feeling when you're able to craft a desisn by typing up some html and css, especially when you can do it quickly. Some things, however, are lost in this design process. One of which is visual guides, grids, and layout tools that you find in design &amp; prototyping applications such as photoshop and illustrator.
 			</p>

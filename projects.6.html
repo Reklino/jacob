@@ -1,16 +1,21 @@
 <article id="project">
 	<header class="container">
 		<div class="col-8 col-offset-2">
-			<img src="img/strings-header.svg" alt="string icons">
+			<figure class="screenshot">
+				<span></span>
+				<span></span>
+				<span></span>
+				<img ng-src="{{project.img}}" "header image">
+			</figure>
 		</div>
 		<div class="col-6 col-offset-3">
-			<h1>{{ project.name }}</h1>
+			<h3>{{ project.name }}</h3>
 			<h4>{{ project.desc }}</h4>
 		</div>
 	</header>
 	<hr>
 	<main class="container">
-		<div class="col-8 col-offset-2">
+		<div class="col-10 col-offset-1">
 			<p>Strings was a project I took on to teach myself about designing and deploying icon fonts and/or svg sprites. Plus, I really couldn't find a good free linear icon set that had every icon I needed. The icons were designed on a 20px grid in illustrator.
 			</p>
 			<blockquote>Making scaleable vector icons pixel perfect turned out to be a complicated process.</blockquote>

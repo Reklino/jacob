@@ -31,9 +31,9 @@ article {
 		position: relative;
 		z-index: 1;
 		text-align: center;
-		padding: 6em 0;
+		padding: 3em 0;
 		@include clearfix;
-		img {
+		figure {
 			margin-bottom: 3em;
 		}
 		h4 {
@@ -49,16 +49,6 @@ article {
 		position: relative;
 		z-index: 1;
 		padding: 2em 0;
-		p {
-			&:first-child:first-letter {
-				float: left;
-				@include massive;
-				color: $header;
-				line-height: 1em;
-				padding-right: 0.15em;
-				font-weight: 700;
-			}
-		}
 	}
 	footer {
 		padding: 2em 0 3em;
@@ -70,8 +60,8 @@ article {
 }
 
 
-$screenshot-button-size: 13px;
-$screenshot-border-color: lighten(#e9ecf4, 5);
+$screenshot-button-size: 10px;
+$screenshot-border-color: lighten($body, 30);
 $screenshot-color1: #ea2b0e;
 $screenshot-color2: #ffca41;
 $screenshot-color3: #8bdb30;
@@ -79,11 +69,10 @@ $screenshot-color3: #8bdb30;
 .screenshot {
 	width: 100%;
 	position: relative;
-	background: transparent;
-	margin: 0;
+	background: $screenshot-border-color;
 	text-align: center;
-	padding: $screenshot-button-size*3 $screenshot-button-size/2 $screenshot-button-size/2;
-	border: 3px solid $screenshot-border-color;
+	padding: $screenshot-button-size*3 0 0;
+	border: 1px solid $screenshot-border-color;
 	border-radius: 7px;
 	span {
 		position: absolute;
@@ -97,7 +86,7 @@ $screenshot-color3: #8bdb30;
 		&:nth-child(1) { background: $screenshot-color1; margin-left: $screenshot-button-size; }
 		&:nth-child(3) { background: $screenshot-color3; margin-left: $screenshot-button-size*5; }
 	}
-	img { border-radius: 4px; max-height: 600px; max-width: 100%; }
+	img { border-radius: 0 0 4px 4px; max-height: 600px; max-width: 100%; margin-bottom: -7px; }
 }
 
 

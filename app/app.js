@@ -62,13 +62,13 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'mode'	: 'primary'
 		},
 		{
-			'name'	: 'Previous',
-			'href'	: 'projects.detail({id: view.id - 1})',
+			'name'	: 'Close',
+			'href'	: 'projects',
 			'mode'	: 'project'
 		},
 		{
-			'name'	: 'Close',
-			'href'	: 'projects',
+			'name'	: 'Previous',
+			'href'	: 'projects.detail({id: view.id - 1})',
 			'mode'	: 'project'
 		},
 		{
@@ -84,49 +84,49 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'Sleepy Monkey',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'October 2014',
-			'img_url'  : 'img/sleepymonkey-thumb.png'
+			'img'  : 'img/sleepymonkey-thumb.png'
 		},
 		{
 			'id'	: 1,
 			'name' : 'HmgCSC Portfolio Site',
 			'desc' : 'A multi-functional website for showcasing digital products and sharing resources across designers and sales departments.',
 			'date' : 'January 2014',
-			'img_url'  : 'img/hmgcsc-thumb.png'
+			'img'  : 'img/hmgcsc.jpg'
 		},
 		{
 			'id'	: 2,
 			'name' : 'HmgGo',
 			'desc' : 'A simple splash page with the purpose of linking together different assets of the company.',
 			'date' : 'March 2014',
-			'img_url'  : 'img/hmggo.jpg'
+			'img'  : 'img/hmggo.jpg'
 		},
 		{
 			'id'	: 3,
 			'name' : 'Nobody Delivers Like We Do',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'January 2015',
-			'img_url'  : 'img/nobodydelivers.jpg'
+			'img'  : 'img/nobodydelivers.png'
 		},
 		{
 			'id'	: 4,
 			'name' : 'Ghost Grid',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'April 2015',
-			'img_url'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-8-1000x662.jpg'
+			'img'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-8-1000x662.jpg'
 		},
 		{
 			'id'	: 5,
 			'name' : 'Angular-Resizable',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'March 2015',
-			'img_url'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-4-1000x667.jpg'
+			'img'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-4-1000x667.jpg'
 		},
 		{
 			'id'	: 6,
 			'name' : 'Strings',
 			'desc' : 'A simple linear icon font I built to grow and understand the pros and cons of svg vs fonts.',
 			'date' : 'February 2015',
-			'img_url'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-4-1000x667.jpg'
+			'img'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-4-1000x667.jpg'
 		}
 	];
 

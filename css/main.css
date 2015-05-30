@@ -538,8 +538,8 @@ body, html, #masterUI {
     #header .social a:hover {
       color: #000000; }
     #header .social a .icon {
-      width: 2.5em;
-      height: 2.5em; }
+      width: 2em;
+      height: 2em; }
 
 #projects {
   -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
@@ -625,23 +625,28 @@ footer {
           transform: translateX(-100%); }
 
 .project-view {
-  -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
-          transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
+  -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
+          transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
   position: absolute;
   top: 3em;
   background: white; }
 
 .project-view.ng-enter {
-  opacity: 0;
-  -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s; }
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%); }
 
 .project-view.ng-enter.ng-enter-active,
 .project-view.ng-leave {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
   opacity: 1; }
 
 .project-view.ng-leave.ng-leave-active {
-  opacity: 0; }
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%); }
 
 .view {
   margin-top: 3em;
@@ -676,19 +681,6 @@ footer {
   -webkit-transform: translateX(-110%);
       -ms-transform: translateX(-110%);
           transform: translateX(-110%); }
-  .project-active .project.active {
-    -webkit-transition-delay: 0.1s;
-            transition-delay: 0.1s;
-    -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0);
-    -webkit-animation-name: fade;
-            animation-name: fade;
-    -webkit-animation-duration: 0.3s;
-            animation-duration: 0.3s;
-    -webkit-animation-delay: 0.05s;
-            animation-delay: 0.05s;
-    opacity: 0; }
 
 .nav-tab.ng-enter, .nav-tab.ng-leave {
   position: relative;
@@ -751,12 +743,12 @@ article header {
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 6em 0; }
+  padding: 3em 0; }
   article header:after {
     content: '';
     display: block;
     clear: both; }
-  article header img {
+  article header figure {
     margin-bottom: 3em; }
   article header h4 {
     font-family: "proxima-nova", sans-serif;
@@ -770,15 +762,6 @@ article main {
   position: relative;
   z-index: 1;
   padding: 2em 0; }
-  article main p:first-child:first-letter {
-    float: left;
-    /* 84px / 72px */
-    font-size: 2.8em;
-    line-height: 1.07143em;
-    color: #3A424A;
-    line-height: 1em;
-    padding-right: 0.15em;
-    font-weight: 700; }
 
 article footer {
   padding: 2em 0 3em;
@@ -789,29 +772,29 @@ article footer {
 .screenshot {
   width: 100%;
   position: relative;
-  background: transparent;
-  margin: 0;
+  background: #edeff0;
   text-align: center;
-  padding: 39px 6.5px 6.5px;
-  border: 3px solid #fafbfd;
+  padding: 30px 0 0;
+  border: 1px solid #edeff0;
   border-radius: 7px; }
   .screenshot span {
     position: absolute;
     display: block;
     left: 0;
-    top: 13px;
-    width: 13px;
-    height: 13px;
+    top: 10px;
+    width: 10px;
+    height: 10px;
     border-radius: 100%;
     background: #ffca41;
-    margin-left: 39px; }
+    margin-left: 30px; }
     .screenshot span:nth-child(1) {
       background: #ea2b0e;
-      margin-left: 13px; }
+      margin-left: 10px; }
     .screenshot span:nth-child(3) {
       background: #8bdb30;
-      margin-left: 65px; }
+      margin-left: 50px; }
   .screenshot img {
-    border-radius: 4px;
+    border-radius: 0 0 4px 4px;
     max-height: 600px;
-    max-width: 100%; }
+    max-width: 100%;
+    margin-bottom: -7px; }

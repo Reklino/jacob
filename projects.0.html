@@ -1,13 +1,21 @@
 <article id="project">
 	<header class="container">
+		<div class="col-8 col-offset-2">
+			<figure class="screenshot">
+				<span></span>
+				<span></span>
+				<span></span>
+				<img ng-src="{{project.img}}" "header image">
+			</figure>
+		</div>
 		<div class="col-6 col-offset-3">
-			<h1>{{ project.name }}</h1>
+			<h3>{{ project.name }}</h3>
 			<h4>{{ project.desc }}</h4>
 		</div>
 	</header>
 	<hr>
 	<main class="container">
-		<div class="col-12">
+		<div class="col-10 col-offset-1">
 			<p>
 				My goal with Sleepy Monkey was to make the lives of our digital designers better by simplifying their production process and providing them with new tools that promote learning and consistency. A side goal was to make our manager's lives easier by providing a level of logging and organization that allows them to hold designers accountable and troubleshoot errors more effectively.
 			</p>
