@@ -8,8 +8,8 @@ body {
 
 @mixin small {
     /* 13px / 18px */
-    font-size: #{($font-size*0.8125) / $em}em;
-    line-height: ($line-int*1) / ($font-size*0.8125) * 1em;
+    font-size: #{($font-size*0.75) / $em}em;
+    line-height: ($line-int*1) / ($font-size*0.75) * 1em;
 }
 @mixin normal {
     /* 20px / 28px */
@@ -43,8 +43,9 @@ body {
 
 
 $serif: 'Playfair Display', serif;
-$sans-serif: 'proxima-nova', sans-serif;
+$sans-serif: 'Cutive Mono', sans-serif;
 $mono: 'source-code-pro', sans-serif;
+$small: 'Montserrat', sans-serif;
 
 h1 {
     color: $header;
@@ -62,14 +63,14 @@ h2 {
 }
 h3 {
     color: $header;
-    font-weight: 900;
+    font-weight: 700;
     font-family: $serif;
     @include huge;
     margin: 0 0 ($line-int*1) / 40 * 1em;
 }
 h4 {
     color: $header;
-    font-weight: 900;
+    font-weight: 700;
     font-family: $serif;
     @include large;
     margin: 0 0 ($line-int*1) / 28 * 1em;
@@ -85,7 +86,7 @@ h5 {
 }
 h6 {
     font-weight: 400;
-    font-family: $serif;
+    font-family: $small;
     @include small;
     margin: 0 0 #{$line-int / $em}em;
 }
@@ -99,10 +100,10 @@ p {
 
 .small {
     color: $body;
-    font-weight: 300;
-    font-family: $sans-serif;
+    font-weight: 400;
+    font-family: $small;
     text-transform: uppercase;
-    letter-spacing: .5px;
+    letter-spacing: 2px;
     @include small;
     margin: 0 0 #{$line-int / $em}em;
 }

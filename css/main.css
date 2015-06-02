@@ -53,8 +53,8 @@ table {
 */
 body {
   /* 20px / 28px */
-  font-size: 1em;
-  line-height: 1.5em; }
+  font-size: 0.875em;
+  line-height: 1.66667em; }
 
 .container {
   -webkit-transition: all 0.15s ease-in-out;
@@ -159,8 +159,8 @@ body {
 @media (min-width: 700px) {
   body {
     /* 20px / 28px */
-    font-size: 1.125em;
-    line-height: 1.5em; }
+    font-size: 1em;
+    line-height: 1.66667em; }
   .container {
     max-width: 650px;
     margin-left: auto;
@@ -272,8 +272,8 @@ body {
     margin-left: 50%; }
   body {
     /* 20px / 28px */
-    font-size: 1.1875em;
-    line-height: 1.5em; }
+    font-size: 1.0625em;
+    line-height: 1.66667em; }
   .container {
     max-width: 960px;
     margin-left: auto;
@@ -307,7 +307,7 @@ h1 {
   font-weight: 900;
   font-family: "Playfair Display", serif;
   /* 135px / 120px */
-  font-size: 4em;
+  font-size: 4.44444em;
   line-height: 1.03125em;
   margin: 0 0 0.9375em; }
 
@@ -316,73 +316,73 @@ h2 {
   font-weight: 900;
   font-family: "Playfair Display", serif;
   /* 84px / 72px */
-  font-size: 2.8em;
+  font-size: 3.11111em;
   line-height: 1.07143em;
   margin: 0 0 0.53571em; }
 
 h3 {
   color: #3A424A;
-  font-weight: 900;
+  font-weight: 700;
   font-family: "Playfair Display", serif;
   /* 52px / 48px */
-  font-size: 2em;
+  font-size: 2.22222em;
   line-height: 1.125em;
   margin: 0 0 0.75em; }
 
 h4 {
   color: #3A424A;
-  font-weight: 900;
+  font-weight: 700;
   font-family: "Playfair Display", serif;
   /* 28 / 36px */
-  font-size: 1.4em;
+  font-size: 1.55556em;
   line-height: 1.07143em;
   margin: 0 0 1.07143em; }
 
 h5 {
   color: #3A424A;
   font-weight: 900;
-  font-family: "proxima-nova", sans-serif;
+  font-family: "Cutive Mono", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   /* 20px / 28px */
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.66667em;
   /* 28 */
-  margin: 0 0 1.5em; }
+  margin: 0 0 1.66667em; }
 
 h6 {
   font-weight: 400;
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", sans-serif;
   /* 13px / 18px */
-  font-size: 0.8125em;
-  line-height: 1.84615em;
-  margin: 0 0 1.5em; }
+  font-size: 0.75em;
+  line-height: 2.22222em;
+  margin: 0 0 1.66667em; }
 
 p {
   color: #657379;
   font-weight: 400;
-  font-family: "proxima-nova", sans-serif;
-  margin: 0 0 1.5em; }
+  font-family: "Cutive Mono", sans-serif;
+  margin: 0 0 1.66667em; }
 
 .small {
   color: #9AA5AA;
-  font-weight: 300;
-  font-family: "proxima-nova", sans-serif;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
-  letter-spacing: .5px;
+  letter-spacing: 2px;
   /* 13px / 18px */
-  font-size: 0.8125em;
-  line-height: 1.84615em;
-  margin: 0 0 1.5em; }
+  font-size: 0.75em;
+  line-height: 2.22222em;
+  margin: 0 0 1.66667em; }
 
 .skinny {
-  font-family: "proxima-nova", sans-serif;
+  font-family: "Cutive Mono", sans-serif;
   font-weight: 300;
   text-transform: none; }
 
 blockquote {
   /* 28 / 36px */
-  font-size: 1.4em;
+  font-size: 1.55556em;
   line-height: 1.07143em;
   text-align: center;
   color: #b6bec1;
@@ -444,11 +444,11 @@ hr {
   display: block;
   float: left;
   color: #9AA5AA;
-  font-family: "proxima-nova", sans-serif;
+  font-family: "Cutive Mono", sans-serif;
   font-weight: 300;
   /* 13px / 18px */
-  font-size: 0.8125em;
-  line-height: 1.84615em;
+  font-size: 0.75em;
+  line-height: 2.22222em;
   text-decoration: none;
   padding: 0.5em 1.5em;
   border: 1px solid #dfe3e4; }
@@ -538,8 +538,8 @@ body, html, #masterUI {
     #header .social a:hover {
       color: #000000; }
     #header .social a .icon {
-      width: 2em;
-      height: 2em; }
+      width: 1.5em;
+      height: 1.5em; }
 
 #projects {
   -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
@@ -566,7 +566,7 @@ nav.primary-nav {
     padding: 0 1em;
     margin-right: 2em;
     text-decoration: none;
-    font-family: "proxima-nova", sans-serif;
+    font-family: "Cutive Mono", sans-serif;
     color: #9AA5AA; }
     nav.primary-nav a.active {
       color: #72C336; }
@@ -593,8 +593,8 @@ nav.primary-nav {
 footer {
   padding-top: 2em;
   /* 13px / 18px */
-  font-size: 0.8125em;
-  line-height: 1.84615em; }
+  font-size: 0.75em;
+  line-height: 2.22222em; }
 
 /*==================================
 =            Animations            =
@@ -751,7 +751,7 @@ article header {
   article header figure {
     margin-bottom: 3em; }
   article header h4 {
-    font-family: "proxima-nova", sans-serif;
+    font-family: "Cutive Mono", sans-serif;
     font-weight: 200; }
   article header h5 {
     text-align: left; }
