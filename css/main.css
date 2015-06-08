@@ -305,7 +305,7 @@ body {
 h1 {
   color: #3A424A;
   font-weight: 900;
-  font-family: "Playfair Display", serif;
+  font-family: "futura-pt", serif;
   /* 135px / 120px */
   font-size: 4.44444em;
   line-height: 1.03125em;
@@ -314,7 +314,7 @@ h1 {
 h2 {
   color: #3A424A;
   font-weight: 900;
-  font-family: "Playfair Display", serif;
+  font-family: "futura-pt", serif;
   /* 84px / 72px */
   font-size: 3.11111em;
   line-height: 1.07143em;
@@ -323,7 +323,7 @@ h2 {
 h3 {
   color: #3A424A;
   font-weight: 700;
-  font-family: "Playfair Display", serif;
+  font-family: "futura-pt", serif;
   /* 52px / 48px */
   font-size: 2.22222em;
   line-height: 1.125em;
@@ -332,7 +332,7 @@ h3 {
 h4 {
   color: #3A424A;
   font-weight: 700;
-  font-family: "Playfair Display", serif;
+  font-family: "futura-pt", serif;
   /* 28 / 36px */
   font-size: 1.55556em;
   line-height: 1.07143em;
@@ -341,7 +341,7 @@ h4 {
 h5 {
   color: #3A424A;
   font-weight: 900;
-  font-family: "Cutive Mono", sans-serif;
+  font-family: "source-code-pro", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   /* 20px / 28px */
@@ -352,7 +352,7 @@ h5 {
 
 h6 {
   font-weight: 400;
-  font-family: "Montserrat", sans-serif;
+  font-family: "futura-pt", sans-serif;
   /* 13px / 18px */
   font-size: 0.75em;
   line-height: 2.22222em;
@@ -361,13 +361,13 @@ h6 {
 p {
   color: #657379;
   font-weight: 400;
-  font-family: "Cutive Mono", sans-serif;
+  font-family: "source-code-pro", sans-serif;
   margin: 0 0 1.66667em; }
 
 .small {
   color: #9AA5AA;
   font-weight: 400;
-  font-family: "Montserrat", sans-serif;
+  font-family: "futura-pt", sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   /* 13px / 18px */
@@ -376,7 +376,7 @@ p {
   margin: 0 0 1.66667em; }
 
 .skinny {
-  font-family: "Cutive Mono", sans-serif;
+  font-family: "source-code-pro", sans-serif;
   font-weight: 300;
   text-transform: none; }
 
@@ -386,7 +386,7 @@ blockquote {
   line-height: 1.07143em;
   text-align: center;
   color: #b6bec1;
-  font-family: "Playfair Display", serif;
+  font-family: "futura-pt", serif;
   font-weight: 400;
   font-style: italic;
   margin-bottom: 1.07143em; }
@@ -444,7 +444,7 @@ hr {
   display: block;
   float: left;
   color: #9AA5AA;
-  font-family: "Cutive Mono", sans-serif;
+  font-family: "source-code-pro", sans-serif;
   font-weight: 300;
   /* 13px / 18px */
   font-size: 0.75em;
@@ -530,7 +530,20 @@ body, html, #masterUI {
       -ms-transform: translatez(0);
           transform: translatez(0);
   text-align: center;
-  padding: 3em 0; }
+  padding: 3em 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
   #header .social a {
     color: #d1d6d9;
     margin: 0 0.5em;
@@ -566,7 +579,7 @@ nav.primary-nav {
     padding: 0 1em;
     margin-right: 2em;
     text-decoration: none;
-    font-family: "Cutive Mono", sans-serif;
+    font-family: "source-code-pro", sans-serif;
     color: #9AA5AA; }
     nav.primary-nav a.active {
       color: #72C336; }
@@ -583,7 +596,6 @@ nav.primary-nav {
     overflow: hidden; }
   #projects {
     position: relative;
-    border-left: 1px solid #EFEFEF;
     width: 50%;
     height: 100%;
     overflow-x: hidden;
@@ -751,7 +763,7 @@ article header {
   article header figure {
     margin-bottom: 3em; }
   article header h4 {
-    font-family: "Cutive Mono", sans-serif;
+    font-family: "source-code-pro", sans-serif;
     font-weight: 200; }
   article header h5 {
     text-align: left; }

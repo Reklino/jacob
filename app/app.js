@@ -60,7 +60,10 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name'	: 'Stats',
 			'href'	: 'stats',
 			'mode'	: 'primary'
-		},
+		}
+	];
+
+	$scope.projectTabs = [
 		{
 			'name'	: 'Close',
 			'href'	: 'projects',

@@ -1,7 +1,6 @@
 body, html, #masterUI {
 	overflow: hidden;
 	height: 100%;
-	// background: url(http://subtlepatterns.com/patterns/lightpaperfibers.png);
 }
 
 #header {
@@ -10,6 +9,9 @@ body, html, #masterUI {
 	transform: translatez(0);
 	text-align: center;
 	padding: 3em 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	.social {
 		a {
 			color: lighten($body, 20);
@@ -61,7 +63,6 @@ nav.primary-nav {
 	}
 	#projects {
 		position: relative;
-		border-left: 1px solid #EFEFEF;
 		width: 50%;
 		height: 100%;
 		overflow-x: hidden;
