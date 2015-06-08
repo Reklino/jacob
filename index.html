@@ -23,28 +23,24 @@
     </div>
     <header id="header">
         <section class="container">
-            <div class="col-8 col-offset-2">
-                <div id="profile"></div>
-                <h2>Frontend Developer &amp; Designer</h2>
-                <br>
-                <p>My name is Jacob. I like making stuff. Click on a project to the right to see something I've made.</p>
+            <div class="col-6">
+                <p>
+                    Hello there! My name is Jacob. I'm a designer, developer, illustrator, animator, coffee drinker, and ping pong player. I'm passionate about building useful and attractive experiences that make people happy.
+                </p>
+                <p>I LIKE MAKING STUFF...</p>
             </div>
-            <div class="col-6 col-offset-3 social">
-                 <a href="">
-                    <svg class="icon">
-                      <use xlink:href="#icon-github-alt"></use>
-                    </svg>
-                 </a>
-                 <a href="">
-                    <svg class="icon">
-                      <use xlink:href="#icon-codepen"></use>
-                    </svg>
-                 </a>
-                 <a href="">
-                    <svg class="icon">
-                      <use xlink:href="#icon-twitter"></use>
-                    </svg>
-                 </a>
+            <nav class="col-3 col-offset-3">
+                <ul>
+                    <li ng-repeat="tab in tabs | filter:view.mode:true">
+                        <a ui-sref="{{ tab.href }}">{{ tab.name }}</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="col-12 title">
+                <h1>Jacob<br>Davidson.</h1>
+            </div>
+            <div class="social">
+                <p>You can find me on Codepen, Github, &amp; Twitter.</p>
             </div>
         </section>
     </header>

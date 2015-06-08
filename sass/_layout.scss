@@ -7,21 +7,20 @@ body, html, #masterUI {
 	position: relative;
 	@include slow;
 	transform: translatez(0);
-	text-align: center;
-	padding: 3em 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	.social {
-		a {
-			color: lighten($body, 20);
-			margin: 0 0.5em;
-			text-decoration: none;
-			&:hover { color: $color2; }
-			.icon {
-				width: 1.5em; height: 1.5em;
-			}
+	padding: 3em;
+	.title {
+		position: absolute;
+		bottom: 0; left: 0;
+		padding: 3em;
+		h1 {
+			margin-bottom: 0;
 		}
+	}
+	.social {
+		position: absolute;
+		width: 500px;
+		bottom: 500px; right: -210px;
+		transform: rotate(-90deg);
 	}
 }
 
