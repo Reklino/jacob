@@ -114,7 +114,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		},
 		{
 			'id'	: 1,
-			'name' : 'HmgCSC Portfolio Site',
+			'name' : 'HmgCSC.com',
 			'desc' : 'A multi-functional website for showcasing digital products and sharing resources across designers and sales departments.',
 			'date' : 'January 2014',
 			'img'  : 'img/hmgcsc.jpg'
@@ -155,5 +155,83 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'img'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-4-1000x667.jpg'
 		}
 	];
+
+	$scope.tools = [
+			{
+				'name' : 'Design',
+				'level' : 85,
+				'passion' : 100
+			},
+			{
+				'name' : 'Illustration',
+				'level' : 75,
+				'passion' : 95
+			},
+			{
+				'name' : 'UX',
+				'level' : 55,
+				'passion' : 90
+			},
+			{
+				'name' : 'Plain Ol\' Javascript',
+				'level' : 80,
+				'passion' : 95
+			},
+			{
+				'name' : 'AngularJS',
+				'level' : 70,
+				'passion' : 85
+			},
+			{
+				'name' : 'AJAX',
+				'level' : 75,
+				'passion' : 90
+			},
+			{
+				'name' : 'SASS, CSS',
+				'level' : 90,
+				'passion' : 95
+			},
+			{
+				'name' : 'HTML5',
+				'level' : 75,
+				'passion' : 85
+			},
+			{
+				'name' : 'PHP',
+				'level' : 65,
+				'passion' : 70
+			},
+			{
+				'name' : 'Laravel',
+				'level' : 85,
+				'passion' : 90
+			},
+			{
+				'name' : 'MYSQL',
+				'level' : 70,
+				'passion' : 70
+			},
+			{
+				'name' : 'MongoDB',
+				'level' : 50,
+				'passion' : 90
+			},
+			{
+				'name' : 'Drupal',
+				'level' : 65,
+				'passion' : 55
+			},
+			{
+				'name' : 'Wordpress',
+				'level' : 65,
+				'passion' : 75
+			},
+			{
+				'name' : 'Node',
+				'level' : 50,
+				'passion' : 80
+			}
+		];
 
 })

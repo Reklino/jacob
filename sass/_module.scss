@@ -31,6 +31,55 @@ article {
 	}
 }
 
+/*==============================
+=            Graphs            =
+==============================*/
+
+.compass {
+	margin-bottom: 2em;
+	.skill, .passion {
+		margin-right: 1em;
+		&:before {
+			content: '';
+			border-radius: 100%;
+			position: relative;
+			top: 0.25em;
+			background: #ccc;
+			display: inline-block;
+			width: 1em; height: 1em;
+			margin-right: 1em;
+		}
+	}
+	.passion:before { background: #eee; }
+}
+
+.bar {
+	position: relative;
+	margin-bottom: 1em;
+	width: 100%;
+	overflow: hidden;
+	transition: all 0.5s cubic-bezier(.3,.53,0,1);
+	.name {
+		position: absolute;
+		line-height: 2em;
+		margin-left: 1em;
+	}
+	.skill { height: 1em; background: #ddd; }
+	.passion { height: 1em; background: #eee; }
+}
+.bar.ng-enter { width: 0%; }
+.bar.ng-enter.ng-enter-active, .bar.ng-leave { width: 100%; }
+.bar.ng-leave-active { width: 0%; transition: none; }
+.bar.ng-enter-stagger {
+  /* this will have a 100ms delay between each successive leave animation */
+  transition-delay: 0.05s;
+  transition-duration: 0s;
+}
+
+/*-----  End of Graphs  ------*/
+
+
+
 
 $screenshot-button-size: 10px;
 $screenshot-border-color: lighten($body, 30);

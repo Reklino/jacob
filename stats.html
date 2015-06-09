@@ -5,4 +5,17 @@
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A voluptatem explicabo neque dolorem iusto, delectus ullam nisi facere libero ut, minus quae eos. Voluptatibus exercitationem porro, rem. Beatae, error assumenda.</p>
 	</div>
 
+	<div class="col-12">
+		<div class="compass">
+			<span class="skill">skill</span>		
+			<span class="passion">passion</span>		
+		</div>
+
+		<div class="bar" ng-repeat="tool in tools | filter:search">
+			<span class="name">{{ tool.name }}</span>
+			<div class="skill" ng-style="{ 'width' : tool.level + '%'}"></div>
+			<div class="passion" ng-style="{ 'width' : tool.passion + '%'}"></div>
+		</div>
+	</div>
+
 </section>

@@ -1,9 +1,14 @@
+$serif: 'futura-pt', serif;
+$sans-serif: 'source-code-pro', sans-serif;
+$mono: 'source-code-pro', sans-serif;
+$small: 'source-code-pro', sans-serif;
 
 body {
     /* 20px / 28px */
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
+    font-family: $sans-serif;
 }
 
 @mixin small {
@@ -40,12 +45,6 @@ body {
     font-size: #{80 / $em}em;
     line-height: ($line-int*2.75) / 80 * 1em;
 }
-
-
-$serif: 'futura-pt', serif;
-$sans-serif: 'source-code-pro', sans-serif;
-$mono: 'source-code-pro', sans-serif;
-$small: 'source-code-pro', sans-serif;
 
 h1 {
     color: $header;
