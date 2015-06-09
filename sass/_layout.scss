@@ -16,34 +16,50 @@ body, html, #masterUI {
 			margin-bottom: 0;
 		}
 	}
-	.social {
-		position: absolute;
-		width: 500px;
-		bottom: 500px; right: -210px;
-		transform: rotate(-90deg);
-	}
 }
 
 #projects {
 	@include slow;
 	transform: translatez(0);
-	padding-top: 3em;
+	padding: 3em 3em 3em 0;
+	a {
+		display: block;
+		text-decoration: none;
+		cursor: pointer;
+		padding: 1.5em 0;
+		@include quick;
+		@include clearfix;
+		h4 {
+			@include quick;
+			letter-spacing: normal;
+		}
+		p { margin-bottom: 0 }
+		.time { color: $body; }
+		&:hover {
+			transform: translateX(15px);
+		}
+	}
+
+	.project {
+		border-top: 1px solid $body;
+		@include clearfix;
+		&:first-child {
+			border-width: 0px;
+			a { padding-top: 0; }
+		}
+	}
 }
 
 nav.primary-nav {
-	position: absolute;
-	top: 0; width: 100%;
+	li { margin-bottom: 0.75em; }
 	a {
 		@include clickable;
-		display: block;
-		float: left;
-		height: 3em;
-		line-height: 3em;
-		padding: 0 1em;
-		margin-right: 2em;
-		text-decoration: none;
 		font-family: $sans-serif;
 		color: $body;
+		font-weight: 500;
+		&:hover {
+			color: $header;
+		}
 		&.active {
 			color: $primary;
 		}
@@ -79,9 +95,14 @@ footer {
 =            Animations            =
 ==================================*/
 
+.view { 
+	width: 100%;
+}
+
 .view.ng-enter, .view.ng-leave {
 	position: absolute;
-  @include slow;
+	padding-right: 3em;
+	@include slow;
 }
 
 .view.ng-enter {
@@ -122,12 +143,6 @@ footer {
 	transform: translateX(-100%);
 }
 
-.view { 
-	margin-top: 3em;
-	width: 100%;
-	padding: 0 1em;
-}
-
 @keyframes fade {
 	from {
 		opacity: 1;
@@ -144,28 +159,6 @@ footer {
 }
 .project-active .project {
 	transform: translateX(-110%);
-}
-
-
-.nav-tab.ng-enter, .nav-tab.ng-leave {
-	position: relative;
-	@include slow;
-}
-
-.nav-tab.ng-enter {
-  transform: translateX(100%);
-}
-
-.nav-tab.ng-enter-active {
-  transform: translateX(0);
-}
-
-.nav-tab.ng-leave {
-  transform: translateX(0); 
-}
-
-.nav-tab.ng-leave-active {
-  transform: translateX(-100%);
 }
 
 

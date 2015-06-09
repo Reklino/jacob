@@ -9,18 +9,28 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			templateUrl: 'projects.html',
 			controller: 'MainController'
 		})
-		.state('info', {
-			url: '/info',
+		.state('about', {
+			url: '/about',
+			templateUrl: 'about.html',
+			controller: 'MainController'
+		})
+		.state('resume', {
+			url: '/resume',
 			templateUrl: 'resume.html',
 			controller: 'MainController'
 		})
 		.state('stats', {
 			url: '/stats',
-			templateUrl: 'about.html',
+			templateUrl: 'stats.html',
 			controller: 'MainController'
 		})
-		.state('projects.detail', {
-			url: ':id',
+		.state('contact', {
+			url: '/contact',
+			templateUrl: 'contact.html',
+			controller: 'MainController'
+		})
+		.state('project', {
+			url: '/:id',
 			templateUrl: function(attrs){
 				return "projects." + attrs.id + ".html";
 			},
@@ -41,7 +51,9 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		$rootScope.view.mode = toParams.id ? 'project' : 'primary';
 		$rootScope.view.id = toParams.id ? parseInt(toParams.id) : '';
 		pane.scrollTop = 0;
-	})
+	});
+
+	$scope.background = '';
 
 	$scope.view.mode = 'primary';
 
@@ -52,15 +64,26 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'mode'	: 'primary'
 		},
 		{
-			'name'	: 'Info',
-			'href'	: 'info',
+			'name'	: 'About',
+			'href'	: 'about',
+			'mode'	: 'primary'
+		},
+		{
+			'name'	: 'Resume',
+			'href'	: 'resume',
 			'mode'	: 'primary'
 		},
 		{
 			'name'	: 'Stats',
 			'href'	: 'stats',
 			'mode'	: 'primary'
+		},
+		{
+			'name'	: 'Contact',
+			'href'	: 'contact',
+			'mode'	: 'primary'
 		}
+
 	];
 
 	$scope.projectTabs = [
@@ -87,7 +110,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'Sleepy Monkey',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'October 2014',
-			'img'  : 'img/sleepymonkey-thumb.png'
+			'img'  : 'img/sleepymonkey.png'
 		},
 		{
 			'id'	: 1,
@@ -101,11 +124,11 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'HmgGo',
 			'desc' : 'A simple splash page with the purpose of linking together different assets of the company.',
 			'date' : 'March 2014',
-			'img'  : 'img/hmggo.jpg'
+			'img'  : 'img/hmggo.png'
 		},
 		{
 			'id'	: 3,
-			'name' : 'Nobody Delivers Like We Do',
+			'name' : 'Nobody Delivers',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'January 2015',
 			'img'  : 'img/nobodydelivers.png'

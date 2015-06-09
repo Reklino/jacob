@@ -1,31 +1,3 @@
-#profile {
-	background-image: url(../img/mech-bw.png);
-	background-size: cover;
-	background-position: center center;
-	width: 10em; height: 10em;
-	border-radius: 10em;
-	margin: 0 auto 3em;
-}
-
-.info {
-	text-decoration: none;
-	cursor: pointer;
-	h4 {
-		@include quick;
-		letter-spacing: normal;
-	}
-	.time { color: $body; }
-	&:hover {
-		transform: translateX(15px);
-		background: white;
-	}
-}
-
-.project {
-	margin: 0 0 1.5em;
-	@include clearfix;
-}
-
 article {
 	header {
 		position: relative;

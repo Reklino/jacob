@@ -23,15 +23,15 @@
     </div>
     <header id="header">
         <section class="container">
-            <div class="col-6">
+            <div class="col-7">
                 <p>
                     Hello there! My name is Jacob. I'm a designer, developer, illustrator, animator, coffee drinker, and ping pong player. I'm passionate about building useful and attractive experiences that make people happy.
                 </p>
-                <p>I LIKE MAKING STUFF...</p>
+                <p>You can find me on <a href="http://codepen.io/Reklino/">Codepen</a>, <a href="https://github.com/Reklino">Github</a>, &amp; <a href="https://twitter.com/Reklino">Twitter</a>.</p>
             </div>
-            <nav class="col-3 col-offset-3">
+            <nav class="col-3 col-offset-2 primary-nav">
                 <ul>
-                    <li ng-repeat="tab in tabs | filter:view.mode:true">
+                    <li ng-repeat="tab in tabs">
                         <a ui-sref="{{ tab.href }}">{{ tab.name }}</a>
                     </li>
                 </ul>
@@ -39,23 +39,12 @@
             <div class="col-12 title">
                 <h1>Jacob<br>Davidson.</h1>
             </div>
-            <div class="social">
-                <p>You can find me on Codepen, Github, &amp; Twitter.</p>
-            </div>
         </section>
     </header>
     <main id="projects">
-
-        <nav class="container primary-nav">
-            <ul class="col-12">
-                <li class="nav-tab" ng-repeat="tab in tabs | filter:view.mode:true">
-                    <a ui-sref="{{ tab.href }}">{{ tab.name }}</a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="view" ui-view></div>
-
+        <div class="projects-container">
+            <div class="view" ui-view></div>
+        </div>
     </main>
     <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
     <script type="text/javascript" src="node_modules/angular-ui-router/build/angular-ui-router.min.js"></script>

@@ -1,20 +1,15 @@
-
 <div class="project"
 	ng-repeat="project in projects"
 	ng-class="{ 'active': view.id == project.id }">
 
-	<a class="info col-12" ui-sref="projects.detail({id: $index})">
-		<h4>
-			{{ project.id }}. {{ project.name }}
+	<a class="info"
+		ui-sref="project({id: $index})">
+		<h4 class="col-8 remove-bottom">
+			0{{ project.id + 1 }}. {{ project.name }}
 		</h4>
-		<p class="half-bottom">
-			{{ project.desc }}
-		</p>
-		<p class="small">
-			Designer &amp; Developer - {{ project.date }}
+		<p class="col-4 small">
+			{{ project.date }}
 		</p>
 	</a>
 
 </div>
-
-<div class="project-view" ui-view></div>
