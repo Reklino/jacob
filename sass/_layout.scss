@@ -7,7 +7,7 @@ body, html, #masterUI {
 	position: relative;
 	@include slow;
 	transform: translatez(0);
-	padding: 3em;
+	padding: 3em 0 3em 3em;
 	.title {
 		position: absolute;
 		bottom: 0; left: 0;
@@ -22,7 +22,7 @@ body, html, #masterUI {
 	@include slow;
 	transform: translatez(0);
 	padding: 3em 3em 3em 0;
-	a {
+	a.info {
 		display: block;
 		text-decoration: none;
 		cursor: pointer;
@@ -36,12 +36,12 @@ body, html, #masterUI {
 		p { margin-bottom: 0 }
 		.time { color: $body; }
 		&:hover {
-			transform: translateX(15px);
+			h4 { transform: translateX(10px); }
 		}
 	}
 
 	.project {
-		border-top: 1px solid $body;
+		border-top: 1px solid lighten($body, 25);
 		@include clearfix;
 		&:first-child {
 			border-width: 0px;
@@ -50,15 +50,64 @@ body, html, #masterUI {
 	}
 }
 
+article {
+	header {
+		position: relative;
+		z-index: 1;
+		padding: 3em 0;
+		@include clearfix;
+		figure {
+			margin-bottom: 3em;
+		}
+		h4 {
+			font-family: $sans-serif;
+			font-weight: 200;
+		}
+		h5 { text-align: left; }
+		figure {
+			padding: 0 3em;
+		}
+	}
+	main {
+		position: relative;
+		z-index: 1;
+		padding: 2em 0;
+	}
+	footer {
+		padding: 2em 0 3em;
+		text-align: center;
+		p {
+			color: lighten($body, 15);
+		}
+	}
+}
+
 nav.primary-nav {
 	li { margin-bottom: 0.75em; }
 	a {
+		position: relative;
 		@include clickable;
 		font-family: $sans-serif;
 		color: $body;
 		font-weight: 500;
+		text-transform: uppercase;
+		text-decoration: none;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0; left: 0;
+			width: 100%;
+			border-style: dotted;
+			border-color: $body;
+			border-width: 0 0 1px 0;
+			height: 0px;
+		}
 		&:hover {
 			color: $header;
+			&:after {
+				border-style: solid;
+				border-color: $header;
+			}
 		}
 		&.active {
 			color: $primary;

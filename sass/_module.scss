@@ -1,57 +1,7 @@
-article {
-	header {
-		position: relative;
-		z-index: 1;
-		text-align: center;
-		padding: 3em 0;
-		@include clearfix;
-		figure {
-			margin-bottom: 3em;
-		}
-		h4 {
-			font-family: $sans-serif;
-			font-weight: 200;
-		}
-		h5 { text-align: left; }
-		figure {
-			padding: 0 3em;
-		}
-	}
-	main {
-		position: relative;
-		z-index: 1;
-		padding: 2em 0;
-	}
-	footer {
-		padding: 2em 0 3em;
-		text-align: center;
-		p {
-			color: lighten($body, 15);
-		}
-	}
-}
 
 /*==============================
 =            Graphs            =
 ==============================*/
-
-.compass {
-	margin-bottom: 2em;
-	.skill, .passion {
-		margin-right: 1em;
-		&:before {
-			content: '';
-			border-radius: 100%;
-			position: relative;
-			top: 0.25em;
-			background: #ccc;
-			display: inline-block;
-			width: 1em; height: 1em;
-			margin-right: 1em;
-		}
-	}
-	.passion:before { background: #eee; }
-}
 
 .bar {
 	position: relative;
@@ -61,11 +11,11 @@ article {
 	transition: all 0.5s cubic-bezier(.3,.53,0,1);
 	.name {
 		position: absolute;
-		line-height: 2em;
+		line-height: 1.5em;
 		margin-left: 1em;
+		color: white;
 	}
-	.skill { height: 1em; background: #ddd; }
-	.passion { height: 1em; background: #eee; }
+	.skill { height: 1.5em; background: $header; }
 }
 .bar.ng-enter { width: 0%; }
 .bar.ng-enter.ng-enter-active, .bar.ng-leave { width: 100%; }

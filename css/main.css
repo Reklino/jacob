@@ -288,7 +288,7 @@ body {
 
 @media (min-width: 1600px) {
   body {
-    font-size: 1.1875em;
+    font-size: 1.125em;
     line-height: 1.66667em; }
   .container {
     max-width: 1100px;
@@ -358,8 +358,8 @@ h6 {
   font-weight: 400;
   font-family: "source-code-pro", sans-serif;
   /* 13px / 18px */
-  font-size: 0.75em;
-  line-height: 2.22222em;
+  font-size: 0.85em;
+  line-height: 1.96078em;
   margin: 0 0 1.66667em; }
 
 p {
@@ -375,8 +375,14 @@ p {
   text-transform: uppercase;
   letter-spacing: 2px;
   /* 13px / 18px */
-  font-size: 0.75em;
-  line-height: 2.22222em;
+  font-size: 0.85em;
+  line-height: 1.96078em;
+  margin: 0 0 1.66667em; }
+
+.smaller {
+  /* 13px / 18px */
+  font-size: 0.85em;
+  line-height: 1.96078em;
   margin: 0 0 1.66667em; }
 
 .skinny {
@@ -412,31 +418,23 @@ svg.icon {
 svg use {
   pointer-events: none; }
 
+svg.alabama-icon {
+  fill: #9AA5AA;
+  height: 250px;
+  width: 100%; }
+
 * {
   box-sizing: border-box; }
 
 hr {
   position: relative;
   display: block;
-  width: 40px;
-  margin: 0 auto 3em;
+  width: 75px;
+  height: 3px;
+  background: #3A424A;
+  margin: 3em 0 5em;
   border: 0;
   clear: both; }
-  hr:after, hr:before {
-    content: '';
-    height: 1px;
-    display: block;
-    background: #dfe3e4;
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-    position: absolute;
-    width: 100%;
-    clear: both; }
-  hr:before {
-    -webkit-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-            transform: rotate(-45deg); }
 
 .icon.seperator {
   display: block;
@@ -451,8 +449,8 @@ hr {
   font-family: "source-code-pro", sans-serif;
   font-weight: 300;
   /* 13px / 18px */
-  font-size: 0.75em;
-  line-height: 2.22222em;
+  font-size: 0.85em;
+  line-height: 1.96078em;
   text-decoration: none;
   padding: 0.5em 1.5em;
   border: 1px solid #dfe3e4; }
@@ -533,7 +531,7 @@ body, html, #masterUI {
   -webkit-transform: translatez(0);
       -ms-transform: translatez(0);
           transform: translatez(0);
-  padding: 3em; }
+  padding: 3em 0 3em 3em; }
   #header .title {
     position: absolute;
     bottom: 0;
@@ -549,31 +547,31 @@ body, html, #masterUI {
       -ms-transform: translatez(0);
           transform: translatez(0);
   padding: 3em 3em 3em 0; }
-  #projects a {
+  #projects a.info {
     display: block;
     text-decoration: none;
     cursor: pointer;
     padding: 1.5em 0;
     -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
             transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1); }
-    #projects a:after {
+    #projects a.info:after {
       content: '';
       display: block;
       clear: both; }
-    #projects a h4 {
+    #projects a.info h4 {
       -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
               transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
       letter-spacing: normal; }
-    #projects a p {
+    #projects a.info p {
       margin-bottom: 0; }
-    #projects a .time {
+    #projects a.info .time {
       color: #9AA5AA; }
-    #projects a:hover {
-      -webkit-transform: translateX(15px);
-          -ms-transform: translateX(15px);
-              transform: translateX(15px); }
+    #projects a.info:hover h4 {
+      -webkit-transform: translateX(10px);
+          -ms-transform: translateX(10px);
+              transform: translateX(10px); }
   #projects .project {
-    border-top: 1px solid #9AA5AA; }
+    border-top: 1px solid #dfe3e4; }
     #projects .project:after {
       content: '';
       display: block;
@@ -583,10 +581,40 @@ body, html, #masterUI {
       #projects .project:first-child a {
         padding-top: 0; }
 
+article header {
+  position: relative;
+  z-index: 1;
+  padding: 3em 0; }
+  article header:after {
+    content: '';
+    display: block;
+    clear: both; }
+  article header figure {
+    margin-bottom: 3em; }
+  article header h4 {
+    font-family: "source-code-pro", sans-serif;
+    font-weight: 200; }
+  article header h5 {
+    text-align: left; }
+  article header figure {
+    padding: 0 3em; }
+
+article main {
+  position: relative;
+  z-index: 1;
+  padding: 2em 0; }
+
+article footer {
+  padding: 2em 0 3em;
+  text-align: center; }
+  article footer p {
+    color: #c4cacd; }
+
 nav.primary-nav li {
   margin-bottom: 0.75em; }
 
 nav.primary-nav a {
+  position: relative;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -594,9 +622,24 @@ nav.primary-nav a {
           user-select: none;
   font-family: "source-code-pro", sans-serif;
   color: #9AA5AA;
-  font-weight: 500; }
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none; }
+  nav.primary-nav a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-style: dotted;
+    border-color: #9AA5AA;
+    border-width: 0 0 1px 0;
+    height: 0px; }
   nav.primary-nav a:hover {
     color: #3A424A; }
+    nav.primary-nav a:hover:after {
+      border-style: solid;
+      border-color: #3A424A; }
   nav.primary-nav a.active {
     color: #72C336; }
 
@@ -622,8 +665,8 @@ nav.primary-nav:after {
 footer {
   padding-top: 2em;
   /* 13px / 18px */
-  font-size: 0.75em;
-  line-height: 2.22222em; }
+  font-size: 0.85em;
+  line-height: 1.96078em; }
 
 /*==================================
 =            Animations            =
@@ -711,56 +754,9 @@ footer {
           transform: translateX(-110%); }
 
 /*-----  End of Animations  ------*/
-article header {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 3em 0; }
-  article header:after {
-    content: '';
-    display: block;
-    clear: both; }
-  article header figure {
-    margin-bottom: 3em; }
-  article header h4 {
-    font-family: "source-code-pro", sans-serif;
-    font-weight: 200; }
-  article header h5 {
-    text-align: left; }
-  article header figure {
-    padding: 0 3em; }
-
-article main {
-  position: relative;
-  z-index: 1;
-  padding: 2em 0; }
-
-article footer {
-  padding: 2em 0 3em;
-  text-align: center; }
-  article footer p {
-    color: #c4cacd; }
-
 /*==============================
 =            Graphs            =
 ==============================*/
-.compass {
-  margin-bottom: 2em; }
-  .compass .skill, .compass .passion {
-    margin-right: 1em; }
-    .compass .skill:before, .compass .passion:before {
-      content: '';
-      border-radius: 100%;
-      position: relative;
-      top: 0.25em;
-      background: #ccc;
-      display: inline-block;
-      width: 1em;
-      height: 1em;
-      margin-right: 1em; }
-  .compass .passion:before {
-    background: #eee; }
-
 .bar {
   position: relative;
   margin-bottom: 1em;
@@ -770,14 +766,12 @@ article footer {
           transition: all 0.5s cubic-bezier(0.3, 0.53, 0, 1); }
   .bar .name {
     position: absolute;
-    line-height: 2em;
-    margin-left: 1em; }
+    line-height: 1.5em;
+    margin-left: 1em;
+    color: white; }
   .bar .skill {
-    height: 1em;
-    background: #ddd; }
-  .bar .passion {
-    height: 1em;
-    background: #eee; }
+    height: 1.5em;
+    background: #3A424A; }
 
 .bar.ng-enter {
   width: 0%; }

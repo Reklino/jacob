@@ -1,20 +1,56 @@
 <section class="container">
 
-	<div class="col-12">
-		<h4>2012 - 2015</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A voluptatem explicabo neque dolorem iusto, delectus ullam nisi facere libero ut, minus quae eos. Voluptatibus exercitationem porro, rem. Beatae, error assumenda.</p>
+	<div class="col-4">
+		<h4>Doodle</h4>
+		<p class="smaller">
+			First things first, I have an idea and sketch it out on paper that I then show to other people to make sure I'm not crazier than I thought.
+		</p>
+	</div>
+
+	<div class="col-4">
+		<h4>Design</h4>
+		<p class="smaller">
+			I either design in Photoshop, Illustrator, or straight in the editor depending on the scenario and my familiarity with the style.
+		</p>
+	</div>
+
+	<div class="col-4">
+		<h4>> gulp watch</h4>
+		<p class="smaller">
+			I either design in Photoshop, Illustrator, or straight in the editor depending on the scenario and my familiarity with the style.
+		</p>
+	</div>
+
+	<div class="col-4">
+		<h4>Sassy</h4>
+		<p class="smaller">
+			I write my CSS in SASS (SCSS) and compile it using libSASS and autoprefixer. If the project won't be able to support flexbox, I use Susy for SASS to manage my grid.
+		</p>
+	</div>
+
+	<div class="col-4">
+		<h4>AngularJS</h4>
+		<p class="smaller">
+			If the project is complex enough to need a javascript framework, I generally lean towards AngularJS, but I'm looking for a reason to learn React and Ember.
+		</p>
+	</div>
+
+	<div class="col-4">
+		<h4>Laravel</h4>
+		<p class="smaller">
+			I currently use Laravel for my backend on projects because of how easy and straightforward it is to set up a restful api in a matter of minutes.
+		</p>
 	</div>
 
 	<div class="col-12">
-		<div class="compass">
-			<span class="skill">skill</span>		
-			<span class="passion">passion</span>		
-		</div>
+
+		<hr>
+
+		<h4>Here's a goofy chart that tells you nothing...</h4>
 
 		<div class="bar" ng-repeat="tool in tools | filter:search">
 			<span class="name">{{ tool.name }}</span>
 			<div class="skill" ng-style="{ 'width' : tool.level + '%'}"></div>
-			<div class="passion" ng-style="{ 'width' : tool.passion + '%'}"></div>
 		</div>
 	</div>
 

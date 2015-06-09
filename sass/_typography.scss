@@ -13,8 +13,8 @@ body {
 
 @mixin small {
     /* 13px / 18px */
-    font-size: #{($font-size*0.75) / $em}em;
-    line-height: ($line-int*1) / ($font-size*0.75) * 1em;
+    font-size: #{($font-size*0.85) / $em}em;
+    line-height: ($line-int*1) / ($font-size*0.85) * 1em;
 }
 @mixin normal {
     /* 20px / 28px */
@@ -107,6 +107,11 @@ p {
     margin: 0 0 #{$line-int / $em}em;
 }
 
+.smaller {
+    @include small;
+    margin: 0 0 #{$line-int / $em}em;
+}
+
 .skinny {
     font-family: $sans-serif;
     font-weight: 300;
@@ -148,6 +153,11 @@ svg {
   use {
     pointer-events: none;
   }
+}
+svg.alabama-icon {
+    fill: $body;
+    height: 250px;
+    width: 100%;
 }
 
 

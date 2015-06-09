@@ -45,12 +45,14 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 
 	var pane = document.getElementById('projects');
 
-	$rootScope.view = {};
+	$scope.view = {};
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-		$rootScope.view.mode = toParams.id ? 'project' : 'primary';
-		$rootScope.view.id = toParams.id ? parseInt(toParams.id) : '';
+		$scope.view.name = toState.name;
+		$scope.view.mode = toParams.id ? 'project' : 'primary';
+		$scope.view.id = toParams.id ? parseInt(toParams.id) : '';
 		pane.scrollTop = 0;
+		console.log($scope.view.name);
 	});
 
 	$scope.background = '';

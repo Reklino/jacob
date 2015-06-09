@@ -3,23 +3,12 @@
 hr {
   position: relative;
   display: block;
-	width: 40px;
-	margin: 0 auto 3em;
+	width: 75px;
+  height: 3px;
+  background: $header;
+	margin: 3em 0 5em;
 	border: 0;
   clear: both;
-  &:after, &:before {
-    content: '';
-    height: 1px;
-    display: block;
-    background: lighten($body, 25);
-    transform: rotate(45deg);
-    position: absolute;
-    width: 100%;
-    clear: both;
-  }
-  &:before {
-    transform: rotate(-45deg);
-  }
 }
 .icon.seperator {
   display: block;
