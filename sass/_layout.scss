@@ -15,11 +15,11 @@ body, html {
 
 .project-nav {
 	position: absolute;
-	left: 0; top: 0;
+	left: 0; top: 2.25em;
 	width: 100%;
-	z-index: 1;
+	z-index: 2;
 	@include quick;
-	transform: translateY(-3em);
+	transform: translateY(-6em);
 	text-align: center;
 	.project-nav-item {
 		margin: 0;
@@ -29,7 +29,7 @@ body, html {
 		line-height: 3em;
 		transform: translateY(0em);
 		@include quick;
-		&.hide { transform: translateY(-3em); }
+		&.hide { transform: translateY(-6em); }
 	}
 }
 .project-active .project-nav {
@@ -40,7 +40,7 @@ body, html {
 	@include slow;
 	transform: translatez(0);
 	padding: 1em;
-	a {
+	.project a {
 		display: block;
 		text-decoration: none;
 		cursor: pointer;
@@ -71,19 +71,10 @@ body, html {
 			a { padding-top: 0; height: 3em; }
 		}
 	}
-	.loading-bar {
-		transition: all .3s cubic-bezier(.3,.53,0,1);
-		position: absolute;
-		width: 0;
-		height: 1px;
-		background: $primary;
-		&.loading {
-			width: 100%;
-		}
-	}
 }
 
 article {
+	padding-top: 3em;
 	header {
 		position: relative;
 		z-index: 1;
@@ -185,7 +176,7 @@ nav.primary-nav {
 	}
 	#projects {
 		position: relative;
-		padding: 5em 3em 3em 0;
+		padding: 3em 3em 3em 0;
 		width: 50%;
 		height: 100%;
 		overflow-x: hidden;
