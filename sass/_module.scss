@@ -1,3 +1,21 @@
+/*======================================
+=            Event Timeline            =
+======================================*/
+
+.timeline-event {
+	ul {
+		list-style: circle;
+		padding-left: 1em;
+		color: darken($body, 20);
+	}
+	@include clearfix;
+	margin-bottom: 3em;
+}
+
+/*-----  End of Event Timeline  ------*/
+
+
+
 
 /*==============================
 =            Graphs            =
@@ -10,7 +28,7 @@
 	transition: all 0.5s cubic-bezier(.3,.53,0,1);
 	color: $header;
 	.name, .number {
-		@include small;
+		@include normal;
 	}
 	.number {
 		float: right;

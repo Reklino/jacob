@@ -1,6 +1,14 @@
 <section class="container">
 
 	<div class="col-12">
+
+		<div class="project-object">
+			<h3>
+				These are just some recent selected works. Some are open source projects that have been built in my spare time, others are commercial projects that were built at my current job.
+			</h3>
+			<br>
+		</div>
+
 		<div class="project project-object"
 			ng-repeat="project in projects"
 			ng-class="{ 'active': view.id == project.id }">
@@ -14,13 +22,6 @@
 				</span>
 			</a>
 
-		</div>
-
-		<div class="project-object">
-			<br>
-			<p>
-				These are just some recent selected works. Some are open source projects that have been built in my spare time, others are commercial projects that were built at my current job.
-			</p>
 		</div>
 	</div>
 

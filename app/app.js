@@ -19,6 +19,11 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			templateUrl: 'resume.html',
 			controller: 'MainController'
 		})
+		.state('process', {
+			url: '/process',
+			templateUrl: 'process.html',
+			controller: 'MainController'
+		})
 		.state('stats', {
 			url: '/stats',
 			templateUrl: 'stats.html',
@@ -78,6 +83,11 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		{
 			'name'	: 'Timeline',
 			'href'	: 'resume',
+			'mode'	: 'primary'
+		},
+		{
+			'name'	: 'Process',
+			'href'	: 'process',
 			'mode'	: 'primary'
 		},
 		{
@@ -169,6 +179,50 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'img'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-4-1000x667.jpg'
 		}
 	];
+
+	$scope.timeline = [
+		{
+			"name": "JNJ Apparel",
+			"position": "Designer/Illustrator Intern",
+			"website": "http://jnjapparel.net/",
+			"startDate": "2011-09-01",
+			"endDate": "2011-12-01",
+			"summary": "JNJ Apparel specializes in high quality illustration and graphic design.",
+			"highlights": [
+				"Worked on illustration and design of various T-shirts",
+				"Completed detailed sketches of over 20 buildings on campus (one is featured in a design on their homepage)",
+				"Developed skills for working pen and ink illustration into finished designs"
+			]
+		},
+		{
+			"name": "Halifax Media Group",
+			"position": "Designer",
+			"website": "http://hmgcsc.com/",
+			"startDate": "2012-05-01",
+			"endDate": "2013-08-01",
+			"summary": "I started at Halifax as a print designer in 2012. Halifax Media Group's Creative Services Center is based out of The Tuscaloosa News building and employs 40+ graphic designers of various qualifications. One of my favorite things about working here as a designer was that they nurtured a competitive design atmosphere. After taking initiative in maintaining our digital products, I was promoted to Web Developer position in Q4 2013.",
+			"highlights": [
+				"Aided in branding concepts for company wide programs and initiatives",
+				"Acquired various regional design awards",
+				"Learned how to deal with difficult clients :)"
+			]
+		},
+		{
+			"name": "Halifax Media Group",
+			"position": "Web Developer",
+			"website": "http://hmgcsc.com/",
+			"startDate": "2013-08-01",
+			"summary": "Coming from the designer perspective, I made it my goal as the Web Developer to make the digital designer's jobs easier. I enjoyed being able to make useful tools for my fellow employees while learning a lot in the process. In 2015 Halifax was bought out by Gatehouse Media Group and I was promoted to Digital Product Specialist.",
+			"highlights": [
+				"Helped develop and maintain digital products.",
+				"Designed and developed the portfolio site for the Creative Services Center",
+				"Developed an application for creating, managing, and hosting various web based products.",
+				"Learned a lot about real world web development, managing servers, databases, online transactions, etc.",
+				"Designed HTML emails and trained others how to do so as well.",
+				"Assisted in continued training of fellow designers."
+			]
+		}
+	]
 
 	$scope.tools = [
 			{

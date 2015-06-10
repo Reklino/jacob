@@ -25,10 +25,15 @@ a {
     }
   }
 }
+h3 a {
+  font-family: $serif;
+  font-weight: 700;
+  color: $primary;
+}
 
 img {
   width: 100%;
-  margin-bottom: 1.5em;
+  margin: 1.5em 0;
 }
 
 hr {

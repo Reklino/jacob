@@ -1,8 +1,22 @@
 <section class="container">
 
 	<div class="col-12">
-		<h4>2012 - 2015</h4>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A voluptatem explicabo neque dolorem iusto, delectus ullam nisi facere libero ut, minus quae eos. Voluptatibus exercitationem porro, rem. Beatae, error assumenda.</p>
+		<h3>Over the past few years, I have slowly but surely been finding my way to frontend development.</h3>
+		<br>
+	</div>
+
+	<div class="timeline-event" ng-repeat="event in timeline">
+
+		<div class="col-12">
+			<h5>
+				{{ event.name }} - {{ event.position }}
+			</h5>
+			<p>{{ event.startDate }} to {{ event.endDate }}<br>{{ event.summary }}</p>
+			<ul>
+			    <li ng-repeat="highlight in event.highlights">{{ highlight }}</li>
+			</ul>
+		</div>
+		
 	</div>
 
 </section>

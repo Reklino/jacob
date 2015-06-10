@@ -26,7 +26,7 @@ $line: $line-int / $em;
 
 body {
     /* 20px / 28px */
-    font-size: ($font-size - 3) / 16 * 1em;
+    font-size: ($font-size - 2) / 16 * 1em;
     line-height: #{$line-int / $em}em;
 }
 
@@ -59,7 +59,7 @@ body {
 
   body {
       /* 20px / 28px */
-      font-size: ($font-size - 2) / 16 * 1em;
+      font-size: ($font-size - 3) / 16 * 1em;
       line-height: #{$line-int / $em}em;
   }
 
@@ -102,7 +102,7 @@ body {
 
   body {
       /* 20px / 28px */
-      font-size: ($font-size - 2) / 16 * 1em;
+      font-size: ($font-size - 3) / 16 * 1em;
       line-height: #{$line-int / $em}em;
   }
 
@@ -120,7 +120,7 @@ body {
 @include susy-breakpoint(1450px, $desktop-sm) {
   body {
       /* 20px / 28px */
-      font-size: ($font-size - 1) / 16 * 1em;
+      font-size: ($font-size - 2) / 16 * 1em;
       line-height: #{$line-int / $em}em;
   }
 }

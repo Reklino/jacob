@@ -51,14 +51,16 @@
 
         <nav class="project-nav">
             <ul>
-                <li class="project-nav-item" ng-class="{ 'hide' : view.id == 0 }">
-                    <a ui-sref="project({id: view.id - 1})">Previous</a>
+                <li class="project-nav-item">
+                    <a ng-hide="view.id == 0" ui-sref="project({id: view.id - 1})">Previous</a>
+                    <a ng-show="view.id == 0" ui-sref="project({id: projects.length - 1})">Previous</a>
                 </li>
                 <li class="project-nav-item">
                     <a ui-sref="projects">Close</a>
                 </li>
-                <li class="project-nav-item" ng-class="{ 'hide' : view.id == (projects.length - 1) }">
-                    <a ui-sref="project({id: view.id + 1})">Next</a>
+                <li class="project-nav-item">
+                    <a ng-hide="view.id == (projects.length - 1)" ui-sref="project({id: view.id + 1})">Next</a>
+                    <a ng-show="view.id == (projects.length - 1)" ui-sref="project({id: 0})">Next</a>
                 </li>
             </ul>
         </nav>

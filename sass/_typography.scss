@@ -37,13 +37,13 @@ body {
 @mixin massive {
     /* 84px / 72px */
     font-size: #{64 / $em}em;
-    line-height: ($line-int*3) / 64 * 1em;
+    line-height: ($line-int*2.5) / 64 * 1em;
 }
 
 @mixin gigantic {
     /* 135px / 120px */
-    font-size: #{102 / $em}em;
-    line-height: ($line-int*2.75) / 102 * 1em;
+    font-size: #{112 / $em}em;
+    line-height: ($line-int*3) / 112 * 1em;
 }
 
 h1 {
@@ -51,7 +51,7 @@ h1 {
     font-weight: 900;
     font-family: $serif;
     @include gigantic;
-    margin: 0 0 ($line-int*2.5) / 102 * 1em;
+    margin: 0 0 ($line-int*2.5) / 112 * 1em;
 }
 h2 {
     color: $header;
@@ -70,7 +70,7 @@ h3 {
 h4 {
     color: $header;
     font-weight: 700;
-    font-family: $serif;
+    font-family: $sans-serif;
     @include large;
     margin: 0 0 ($line-int*1) / 28 * 1em;
 }
@@ -119,12 +119,11 @@ p {
 }
 
 blockquote {
-    @include large;
+    @include huge;
     text-align: center;
     color: $header;
     font-family: $serif;
     font-weight: 700;
-    font-style: italic;
     margin-bottom: ($line-int*1) / 28 * 1em;
 }
 
