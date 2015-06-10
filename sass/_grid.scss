@@ -7,7 +7,7 @@ $susy: (
     columns: 3,
     gutters: .75,
     gutter-position: inside,
-    container: 450px
+    container: 600px
 );
 
 $line-int: 30;
@@ -26,7 +26,7 @@ $line: $line-int / $em;
 
 body {
     /* 20px / 28px */
-    font-size: ($font-size - 4) / 16 * 1em;
+    font-size: ($font-size - 3) / 16 * 1em;
     line-height: #{$line-int / $em}em;
 }
 
@@ -34,6 +34,10 @@ body {
     transition: all 0.15s ease-in-out;
     @include container;
     margin: 0 auto;
+}
+
+.row {
+  @include clearfix;
 }
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 { transition: all 0.15s ease-in-out; }
@@ -69,7 +73,7 @@ body {
   }
 
 }
-@include susy-breakpoint(1100px, $desktop-sm) {
+@include susy-breakpoint(1250px, $desktop-sm) {
   .col-1     { @include span(1 of 12); }
   .col-2     { @include span(2 of 12); }
   .col-3     { @include span(3 of 12); }
@@ -98,7 +102,7 @@ body {
 
   body {
       /* 20px / 28px */
-      font-size: ($font-size - 1) / 16 * 1em;
+      font-size: ($font-size - 2) / 16 * 1em;
       line-height: #{$line-int / $em}em;
   }
 
@@ -113,7 +117,15 @@ body {
 
 }
 
-@include susy-breakpoint(1600px, $desktop-lg) {
+@include susy-breakpoint(1450px, $desktop-sm) {
+  body {
+      /* 20px / 28px */
+      font-size: ($font-size - 1) / 16 * 1em;
+      line-height: #{$line-int / $em}em;
+  }
+}
+
+@include susy-breakpoint(1700px, $desktop-lg) {
   body {
       font-size: $font-size  / 16 * 1em;
       line-height: #{$line-int / $em}em;

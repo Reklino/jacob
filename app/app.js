@@ -41,18 +41,23 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 
 })
 
-.controller('MainController', function($scope, $rootScope, $window){
+.controller('MainController', function($scope, $rootScope, $window, $timeout, $urlRouter){
 
 	var pane = document.getElementById('projects');
 
 	$scope.view = {};
+	$scope.view.loading = false;
+
+	$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+	    $scope.view.name = toState.name;
+	    $scope.view.mode = toParams.id ? 'project' : 'primary';
+	    $scope.view.id = toParams.id ? parseInt(toParams.id) : '';
+	    pane.scrollTop = 0;
+	    $scope.view.loading = true;
+	});
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-		$scope.view.name = toState.name;
-		$scope.view.mode = toParams.id ? 'project' : 'primary';
-		$scope.view.id = toParams.id ? parseInt(toParams.id) : '';
-		pane.scrollTop = 0;
-		console.log($scope.view.name);
+		$scope.view.loading = false;
 	});
 
 	$scope.background = '';
@@ -66,12 +71,12 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'mode'	: 'primary'
 		},
 		{
-			'name'	: 'About',
+			'name'	: 'Who?',
 			'href'	: 'about',
 			'mode'	: 'primary'
 		},
 		{
-			'name'	: 'Resume',
+			'name'	: 'Timeline',
 			'href'	: 'resume',
 			'mode'	: 'primary'
 		},
@@ -81,7 +86,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'mode'	: 'primary'
 		},
 		{
-			'name'	: 'Contact',
+			'name'	: 'Say Hi!',
 			'href'	: 'contact',
 			'mode'	: 'primary'
 		}
@@ -96,12 +101,12 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		},
 		{
 			'name'	: 'Previous',
-			'href'	: 'projects.detail({id: view.id - 1})',
+			'href'	: 'project({id: view.id - 1})',
 			'mode'	: 'project'
 		},
 		{
 			'name'	: 'Next',
-			'href'	: 'projects.detail({id: view.id + 1})',
+			'href'	: 'project({id: view.id + 1})',
 			'mode'	: 'project'
 		}
 	];
@@ -112,6 +117,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'Sleepy Monkey',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'October 2014',
+			'role' : 'Developer / Designer',
 			'img'  : 'img/sleepymonkey.png'
 		},
 		{
@@ -119,6 +125,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'HmgCSC.com',
 			'desc' : 'A multi-functional website for showcasing digital products and sharing resources across designers and sales departments.',
 			'date' : 'January 2014',
+			'role' : 'Developer / Designer',
 			'img'  : 'img/hmgcsc.jpg'
 		},
 		{
@@ -126,6 +133,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'HmgGo',
 			'desc' : 'A simple splash page with the purpose of linking together different assets of the company.',
 			'date' : 'March 2014',
+			'role' : 'Developer / Designer',
 			'img'  : 'img/hmggo.png'
 		},
 		{
@@ -133,6 +141,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'Nobody Delivers',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'January 2015',
+			'role' : 'Developer / Designer',
 			'img'  : 'img/nobodydelivers.png'
 		},
 		{
@@ -140,6 +149,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'Ghost Grid',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'April 2015',
+			'role' : 'Developer',
 			'img'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-8-1000x662.jpg'
 		},
 		{
@@ -147,6 +157,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'Angular-Resizable',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'March 2015',
+			'role' : 'Developer',
 			'img'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-4-1000x667.jpg'
 		},
 		{
@@ -154,6 +165,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'Strings',
 			'desc' : 'A simple linear icon font I built to grow and understand the pros and cons of svg vs fonts.',
 			'date' : 'February 2015',
+			'role' : 'Designer',
 			'img'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-4-1000x667.jpg'
 		}
 	];
@@ -161,47 +173,37 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	$scope.tools = [
 			{
 				'name' : 'Design',
-				'level' : 85,
+				'level' : 87,
 				'passion' : false
-			},
-			{
-				'name' : 'Illustration',
-				'level' : 75,
-				'passion' : true
-			},
-			{
-				'name' : 'UX',
-				'level' : 55,
-				'passion' : true
 			},
 			{
 				'name' : 'Plain Ol\' Javascript',
 				'level' : 80,
-				'passion' : true
+				'passion' : false
 			},
 			{
 				'name' : 'AngularJS',
-				'level' : 70,
-				'passion' : true
+				'level' : 75,
+				'passion' : false
 			},
 			{
 				'name' : 'React',
-				'level' : 40,
+				'level' : 35,
 				'passion' : true
 			},
 			{
 				'name' : 'AJAX',
-				'level' : 75,
+				'level' : 85,
 				'passion' : false
 			},
 			{
 				'name' : 'SASS, CSS',
 				'level' : 90,
-				'passion' : true
+				'passion' : false
 			},
 			{
 				'name' : 'HTML5',
-				'level' : 75,
+				'level' : 85,
 				'passion' : false
 			},
 			{
@@ -211,17 +213,17 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			},
 			{
 				'name' : 'Laravel',
-				'level' : 85,
+				'level' : 84,
 				'passion' : false
 			},
 			{
 				'name' : 'MYSQL',
-				'level' : 70,
+				'level' : 72,
 				'passion' : false
 			},
 			{
 				'name' : 'MongoDB',
-				'level' : 50,
+				'level' : 49,
 				'passion' : true
 			},
 			{
@@ -231,12 +233,37 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			},
 			{
 				'name' : 'Wordpress',
-				'level' : 65,
+				'level' : 66,
 				'passion' : false
 			},
 			{
 				'name' : 'Node.js',
-				'level' : 50,
+				'level' : 45,
+				'passion' : true
+			},
+			{
+				'name' : 'Photoshop',
+				'level' : 89,
+				'passion' : false
+			},
+			{
+				'name' : 'Illustrator',
+				'level' : 90,
+				'passion' : false
+			},
+			{
+				'name' : 'Git',
+				'level' : 60,
+				'passion' : false
+			},
+			{
+				'name' : 'CLI',
+				'level' : 75,
+				'passion' : false
+			},
+			{
+				'name' : 'After Effects',
+				'level' : 55,
 				'passion' : true
 			}
 		];

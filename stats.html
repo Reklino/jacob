@@ -1,52 +1,58 @@
 <section class="container">
 
-	<div class="col-4">
-		<h4>Doodle</h4>
-		<p>
-			First things first, I have an idea and sketch it out on paper that I then show to other people to make sure I'm not crazier than I thought.
-		</p>
+	<div class="row">
+		<div class="col-6">
+			<h4>Doodle</h4>
+			<p>
+				First things first, I have an idea and sketch it out on paper that I then show to other people to make sure I'm not crazier than I thought.
+			</p>
+		</div>
+
+		<div class="col-6">
+			<h4>Design</h4>
+			<p>
+				I either design in Photoshop, Illustrator, or straight in the editor depending on the scenario and my familiarity with the style.
+			</p>
+		</div>
 	</div>
 
-	<div class="col-4">
-		<h4>Design</h4>
-		<p>
-			I either design in Photoshop, Illustrator, or straight in the editor depending on the scenario and my familiarity with the style.
-		</p>
+	<div class="row">
+		<div class="col-6">
+			<h4>CLI</h4>
+			<p>
+				I use gulp for compilation of my SASS, minification/validation of my js, and inlining my svg sprites. I use browerSync to set up live reloading of my page during developlment.
+			</p>
+		</div>
+
+		<div class="col-6">
+			<h4>Styles</h4>
+			<p>
+				I write my CSS in SASS (SCSS) and compile it using libSASS and autoprefixer. If the project won't be able to support flexbox, I use Susy for SASS to manage my grid.
+			</p>
+		</div>
 	</div>
 
-	<div class="col-4">
-		<h4>> gulp watch</h4>
-		<p>
-			I either design in Photoshop, Illustrator, or straight in the editor depending on the scenario and my familiarity with the style.
-		</p>
-	</div>
+	<div class="row">
+		<div class="col-6">
+			<h4>Interactivity</h4>
+			<p>
+				If the project is complex enough to need a javascript framework, I generally lean towards AngularJS, but I'm looking for a reason to learn React and Ember.
+			</p>
+		</div>
 
-	<div class="col-4">
-		<h4>Sassy</h4>
-		<p>
-			I write my CSS in SASS (SCSS) and compile it using libSASS and autoprefixer. If the project won't be able to support flexbox, I use Susy for SASS to manage my grid.
-		</p>
-	</div>
-
-	<div class="col-4">
-		<h4>AngularJS</h4>
-		<p>
-			If the project is complex enough to need a javascript framework, I generally lean towards AngularJS, but I'm looking for a reason to learn React and Ember.
-		</p>
-	</div>
-
-	<div class="col-4">
-		<h4>Laravel</h4>
-		<p>
-			I currently use Laravel for my backend on projects because of how easy and straightforward it is to set up a restful api in a matter of minutes.
-		</p>
+		<div class="col-6">
+			<h4>Backend</h4>
+			<p>
+				I currently use Laravel for my backend on projects, but I am hoping to try the MEAN stack for my next big project.
+			</p>
+		</div>
 	</div>
 
 	<div class="col-12">
 		<hr>
 		<p>
 			The chart below represents my comfort level in the following technologies.<br>
-			* passionate about and/or actively learning
+			* low experience, but actively learning
 		</p>
 		<div class="bar" ng-repeat="tool in tools | filter:search | orderBy:'level':true" ng-class="{ 'passionate' : tool.passion }">
 			<span class="name"><span ng-if="tool.passion">* </span>{{ tool.name }}</span>

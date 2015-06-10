@@ -1,24 +1,28 @@
 <section class="container">
 
-	<div class="project"
-		ng-repeat="project in projects"
-		ng-class="{ 'active': view.id == project.id }">
-
-		<a class="info" ui-sref="project({id: $index})">
-			<h4 class="col-8 remove-bottom">
-				0{{ project.id + 1 }}. {{ project.name }}
-			</h4>
-			<p class="col-4 smaller">
-				{{ project.date }}
-			</p>
-		</a>
-	</div>
-
 	<div class="col-12">
-	<br>
-		<p>
-			These are just some recent selected works. Some are open source projects that have been built in my spare time, others are commercial projects that were built at my current job.
-		</p>
+		<div class="project project-object"
+			ng-repeat="project in projects"
+			ng-class="{ 'active': view.id == project.id }">
+
+			<a ui-sref="project({id: $index})">
+				<h4>
+					0{{ project.id + 1 }}. {{ project.name }}
+				</h4>
+				<span>
+					{{ project.role }}
+				</span>
+			</a>
+
+			<span class="loading-bar" ng-class="{ 'loading' : view.id == project.id && view.loading }"></span>
+		</div>
+
+		<div class="project-object">
+			<br>
+			<p>
+				These are just some recent selected works. Some are open source projects that have been built in my spare time, others are commercial projects that were built at my current job.
+			</p>
+		</div>
 	</div>
 
 </section>

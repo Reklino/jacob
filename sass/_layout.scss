@@ -1,5 +1,4 @@
-body, html, #masterUI {
-	overflow: hidden;
+body, html {
 	height: 100%;
 }
 
@@ -7,26 +6,46 @@ body, html, #masterUI {
 	position: relative;
 	@include slow;
 	transform: translatez(0);
-	padding: 3em 0 3em 3em;
+	padding: 5em 1em 1em;
 	.title {
-		position: absolute;
-		bottom: 0; left: 0;
-		padding: 3em;
-		h1 {
-			margin-bottom: 0;
-		}
+		position: relative;
 	}
+}
+
+
+.project-nav {
+	position: absolute;
+	left: 0; top: 0;
+	width: 100%;
+	z-index: 1;
+	@include quick;
+	transform: translateY(-3em);
+	text-align: center;
+	.project-nav-item {
+		margin: 0;
+		width: 33%;
+		float: left;
+		height: 3em;
+		line-height: 3em;
+		transform: translateY(0em);
+		@include quick;
+		&.hide { transform: translateY(-3em); }
+	}
+}
+.project-active .project-nav {
+	transform: translateX(0%);
 }
 
 #projects {
 	@include slow;
 	transform: translatez(0);
-	padding: 3em 3em 3em 0;
-	a.info {
+	padding: 1em;
+	a {
 		display: block;
 		text-decoration: none;
 		cursor: pointer;
-		padding: 1.5em 0;
+		padding-top: 1.5em;
+		padding-bottom: 1.5em;
 		height: 4.5em;
 		@include quick;
 		&:after { display: none; }
@@ -34,18 +53,32 @@ body, html, #masterUI {
 			@include quick;
 			letter-spacing: normal;
 		}
-		p { margin-bottom: 0 }
-		.time { color: $body; }
+		span {
+			bottom: 1.25em;
+			right: 0;
+			position: absolute;
+			margin-bottom: 0;
+			color: $body;
+		}
 		&:hover {
 			h4 { transform: translateX(10px); }
 		}
 	}
-
 	.project {
 		border-bottom: 1px dotted $body;
 		@include clearfix;
 		&:first-child {
 			a { padding-top: 0; height: 3em; }
+		}
+	}
+	.loading-bar {
+		transition: all .3s cubic-bezier(.3,.53,0,1);
+		position: absolute;
+		width: 0;
+		height: 1px;
+		background: $primary;
+		&.loading {
+			width: 100%;
 		}
 	}
 }
@@ -74,8 +107,6 @@ article {
 		padding: 2em 0;
 	}
 	footer {
-		padding: 2em 0 3em;
-		text-align: center;
 		p {
 			color: lighten($body, 15);
 		}
@@ -83,7 +114,13 @@ article {
 }
 
 nav.primary-nav {
-	li { margin-bottom: 0.75em; }
+	position: fixed;
+	top: 1.5em; left: 0;
+	text-align: center;
+	li {
+		display: inline-block;
+		margin: 0 1em;
+	}
 	a {
 		position: relative;
 		@include clickable;
@@ -119,14 +156,36 @@ nav.primary-nav {
 
 
 @include susy-breakpoint(700px, $tablet) {
+	body, html {
+		overflow: hidden;
+	}
+	nav.primary-nav {
+		position: relative;
+		top: 0;
+		text-align: left;
+		li {
+			display: block;
+			margin: 0 0 0.75em;
+		}
+	}
 	#header {
 		width: 50%;
 		height: 100%;
+		padding: 3em 0 3em 3em;
 		float: left;
 		overflow: hidden;
+		.title {
+			position: absolute;
+			bottom: 0; left: 0;
+			padding: 3em;
+			h1 {
+				margin-bottom: 0;
+			}
+		}
 	}
 	#projects {
 		position: relative;
+		padding: 5em 3em 3em 0;
 		width: 50%;
 		height: 100%;
 		overflow-x: hidden;
@@ -203,11 +262,14 @@ footer {
 	}
 }
 
-.project {
+.project-object {
 	@include quick;
 }
-.project-active .project {
-	transform: translateX(-110%);
+.project-active .project-object {
+	opacity: 0.5;
+	&.active {
+		opacity: 1;
+	}
 }
 
 

@@ -1,20 +1,27 @@
 <article id="project">
 	<header class="container">
-		<div class="col-10 col-offset-1">
-			<h1>{{ project.name }}</h1>
-			<h4>{{ project.desc }}</h4>
+		<div class="col-6">
+			<h2>{{ project.name }}</h2>
+		</div>
+		<div class="col-6">
+			<p>{{ project.desc }}</p>
+			<p>{{ project.role }}</p>
+			<p>{{ project.date }}</p>
 		</div>
 	</header>
 	<main class="container">
-		<div class="col-10 col-offset-1">
+		<div class="col-12">
 			<p>
 				My goal with Sleepy Monkey was to make the lives of our digital designers better by simplifying their production process and providing them with new tools that promote learning and consistency. A side goal was to make our manager's lives easier by providing a level of logging and organization that allows them to hold designers accountable and troubleshoot errors more effectively.
 			</p>
+			<blockquote>
+				Sleepy Monkey was a great learning experience that led to happier designers and continues to save a lot of time for the Creative Services Center. 
+			</blockquote>
 			<p>
 				Using Laravel as the backend, I was able to create a RESTful API for Sleepy Monkey backend so that, in the future, it can be integrated across other applications and systems if the need arises. This also keeps things simple for the AngularJS frontend, which uses the JSON response from the API to create views.
 			</p>
 			<p>
-				Learning AngularJS was the most challenging and rewarding part of this project for me. Coming from a jquery background, it took me while to develop that angular mindset of restricting all DOM manipulation to directives, but once I've since grown to love the workflow that comes with it.
+				Learning AngularJS was the most challenging and rewarding part of this project for me. Coming from a jQuery background, it took me while to develop that angular mindset of restricting all DOM manipulation to directives, but once I've since grown to love the workflow that comes with it.
 			</p>
 			<p>
 				After designing a few prototypes in Photoshop, I made the design come to life using a custom framework in SASS. I wanted to avoid bootstrap or any other large framework for my first application design so that I could learn how to create these core components myself. I initially used compass to compile my SASS in this project, but have since moved on to using Gulp and Libsass.
@@ -24,7 +31,4 @@
 			</p>
 		</div>
 	</main>
-	<footer>
-		<p>{{ project.date }}</p>
-	</footer>
 </article>

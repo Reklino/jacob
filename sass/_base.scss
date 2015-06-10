@@ -36,28 +36,10 @@ hr {
   display: block;
 	width: 100%;
   height: 0px;
-  border: 1px dashed $body;
+  border: 1px dotted $body;
   border-width: 0 0 1px 0;
 	margin: 2em 0 3em;
   clear: both;
-  &:before {
-    content:'/*';
-    @include small;
-    position: absolute;
-    top: -0.75em;
-    left: 0;
-    background: white;
-    padding-right: 0.5em;
-  }
-  &:after {
-    content:'*/';
-    @include small;
-    position: absolute;
-    top: -0.75em;
-    right: 0;
-    background: white;
-    padding-left: 0.5em;
-  }
 }
 
 .icon.seperator {
