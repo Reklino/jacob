@@ -2,20 +2,42 @@
 /*==============================
 =            Graphs            =
 ==============================*/
-
 .bar {
 	position: relative;
 	margin-bottom: 1em;
 	width: 100%;
 	overflow: hidden;
 	transition: all 0.5s cubic-bezier(.3,.53,0,1);
-	.name {
-		position: absolute;
-		line-height: 1.5em;
-		margin-left: 1em;
-		color: white;
+	color: $header;
+	.name, .number {
+		@include small;
 	}
-	.skill { height: 1.5em; background: $header; }
+	.number {
+		float: right;
+	}
+	.skill {
+		position: relative;
+		&:after {
+			position: relative;
+			content: '';
+			display: block;
+			width: 100%;
+			height: 0;
+			border-top: 1px solid $header;
+		}
+		&:before {
+			position: absolute;
+			content: '';
+			top: 0;
+			display: block;
+			width: 100%;
+			height: 0;
+			border-top: 1px dotted $body;
+		}
+	}
+	&.passionate {
+		font-weight: 700;
+	}
 }
 .bar.ng-enter { width: 0%; }
 .bar.ng-enter.ng-enter-active, .bar.ng-leave { width: 100%; }

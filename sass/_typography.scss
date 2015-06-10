@@ -14,7 +14,7 @@ body {
 @mixin small {
     /* 13px / 18px */
     font-size: #{($font-size*0.85) / $em}em;
-    line-height: ($line-int*1) / ($font-size*0.85) * 1em;
+    line-height: ($line-int*0.85) / ($font-size*0.85) * 1em;
 }
 @mixin normal {
     /* 20px / 28px */
@@ -23,9 +23,9 @@ body {
 }
 
 @mixin large {
-    /* 28 / 36px */
-    font-size: #{28 / $em}em;
-    line-height: ($line-int*1) / 28 * 1em;
+    /* 24 / 36px */
+    font-size: #{24 / $em}em;
+    line-height: ($line-int*1) / 24 * 1em;
 }
 
 @mixin huge {

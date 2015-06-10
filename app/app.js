@@ -162,77 +162,82 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			{
 				'name' : 'Design',
 				'level' : 85,
-				'passion' : 100
+				'passion' : false
 			},
 			{
 				'name' : 'Illustration',
 				'level' : 75,
-				'passion' : 95
+				'passion' : true
 			},
 			{
 				'name' : 'UX',
 				'level' : 55,
-				'passion' : 90
+				'passion' : true
 			},
 			{
 				'name' : 'Plain Ol\' Javascript',
 				'level' : 80,
-				'passion' : 95
+				'passion' : true
 			},
 			{
 				'name' : 'AngularJS',
 				'level' : 70,
-				'passion' : 85
+				'passion' : true
+			},
+			{
+				'name' : 'React',
+				'level' : 40,
+				'passion' : true
 			},
 			{
 				'name' : 'AJAX',
 				'level' : 75,
-				'passion' : 90
+				'passion' : false
 			},
 			{
 				'name' : 'SASS, CSS',
 				'level' : 90,
-				'passion' : 95
+				'passion' : true
 			},
 			{
 				'name' : 'HTML5',
 				'level' : 75,
-				'passion' : 85
+				'passion' : false
 			},
 			{
 				'name' : 'PHP',
 				'level' : 65,
-				'passion' : 70
+				'passion' : false
 			},
 			{
 				'name' : 'Laravel',
 				'level' : 85,
-				'passion' : 90
+				'passion' : false
 			},
 			{
 				'name' : 'MYSQL',
 				'level' : 70,
-				'passion' : 70
+				'passion' : false
 			},
 			{
 				'name' : 'MongoDB',
 				'level' : 50,
-				'passion' : 90
+				'passion' : true
 			},
 			{
 				'name' : 'Drupal',
 				'level' : 65,
-				'passion' : 55
+				'passion' : false
 			},
 			{
 				'name' : 'Wordpress',
 				'level' : 65,
-				'passion' : 75
+				'passion' : false
 			},
 			{
-				'name' : 'Node',
+				'name' : 'Node.js',
 				'level' : 50,
-				'passion' : 80
+				'passion' : true
 			}
 		];
 
