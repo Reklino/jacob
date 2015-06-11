@@ -6,33 +6,27 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	$stateProvider
 		.state('projects', {
 			url: '/',
-			templateUrl: 'projects.html',
-			controller: 'MainController'
+			templateUrl: 'projects.html'
 		})
 		.state('about', {
 			url: '/about',
-			templateUrl: 'about.html',
-			controller: 'MainController'
+			templateUrl: 'about.html'
 		})
 		.state('resume', {
 			url: '/resume',
-			templateUrl: 'resume.html',
-			controller: 'MainController'
+			templateUrl: 'resume.html'
 		})
 		.state('process', {
 			url: '/process',
-			templateUrl: 'process.html',
-			controller: 'MainController'
+			templateUrl: 'process.html'
 		})
 		.state('stats', {
 			url: '/stats',
-			templateUrl: 'stats.html',
-			controller: 'MainController'
+			templateUrl: 'stats.html'
 		})
 		.state('contact', {
 			url: '/contact',
-			templateUrl: 'contact.html',
-			controller: 'MainController'
+			templateUrl: 'contact.html'
 		})
 		.state('project', {
 			url: '/:id',
@@ -54,11 +48,19 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	$scope.view.loading = false;
 
 	$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+
+		$scope.view.swapProject = $scope.view.id === '' && toParams.id ? true : false;
+		$scope.view.nextProject = $scope.view.id !== '' && toParams.id > $scope.view.id ? true : false;
+		$scope.view.previousProject = $scope.view.id !== '' && toParams.id < $scope.view.id ? true : false;
+		$scope.view.swapMain = $scope.view.id !== '' && toParams.id == undefined ? true : false;
+		$scope.view.loading = true;
+
 	    $scope.view.name = toState.name;
 	    $scope.view.mode = toParams.id ? 'project' : 'primary';
 	    $scope.view.id = toParams.id ? parseInt(toParams.id) : '';
+	    
 	    pane.scrollTop = 0;
-	    $scope.view.loading = true;
+
 	});
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
@@ -207,6 +209,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			"position": "Web Developer",
 			"website": "http://hmgcsc.com/",
 			"startDate": "2013-08-01",
+			"endDate": "present",
 			"summary": "Coming from the designer perspective, I made it my goal as the Web Developer to make the digital designer's jobs easier. I enjoyed being able to make useful tools for my fellow employees while learning a lot in the process. In 2015 Halifax was bought out by Gatehouse Media Group and I was promoted to Digital Product Specialist.",
 			"highlights": [
 				"Helped develop and maintain digital products.",

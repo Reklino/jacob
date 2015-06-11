@@ -5,19 +5,20 @@ body, html {
 #header {
 	position: relative;
 	@include slow;
-	transform: translatez(0);
+	transform: translateX(0);
 	padding: 5em 1em 1em;
 	.title {
 		position: relative;
 	}
 }
+.project-active #header { transform: translateX(-100%); opacity: 0; }
 
 
 .project-nav {
-	position: absolute;
-	left: 0; top: 2.25em;
+	position: relative;
+	left: 0; top: 0;
 	width: 100%;
-	height: 3em;
+	margin-bottom: 3em;
 	overflow: hidden;
 	z-index: 2;
 	@include quick;
@@ -27,8 +28,6 @@ body, html {
 	.project-nav-item {
 		margin: 0 1em;
 		float: left;
-		height: 3em;
-		line-height: 3em;
 	}
 }
 .project-active .project-nav {
@@ -49,10 +48,6 @@ body, html {
 		height: 4.5em;
 		@include quick;
 		&:after { display: none; }
-		h4 {
-			@include quick;
-			letter-spacing: normal;
-		}
 		span {
 			bottom: 1.25em;
 			right: 0;
@@ -61,7 +56,7 @@ body, html {
 			color: $body;
 		}
 		&:hover {
-			h4 { transform: translateX(10px); }
+			padding-left: 1em;
 		}
 	}
 	.project {
@@ -73,8 +68,20 @@ body, html {
 	}
 }
 
+#project-details {
+	position: fixed;
+	z-index: 2;
+	top: 0; left: 0;
+	width: 50%; height: 100%;
+	padding: 3em 1.5em 3em 3em;
+	@include slow;
+	opacity: 0;
+	transform: translateX(-100%);
+	background: white;
+}
+.project-active #project-details { opacity: 1; transform: translateX(0%); }
+
 article {
-	padding-top: 3em;
 	header {
 		position: absolute;
 		width: 50%;
@@ -86,7 +93,7 @@ article {
 	main {
 		position: relative;
 		z-index: 1;
-		padding: 2em 0;
+		padding: 0 0 2em;
 	}
 	footer {
 		p {
@@ -96,12 +103,9 @@ article {
 }
 
 nav.primary-nav {
-	position: fixed;
-	top: 1.5em; left: 0; right: 0;
-	text-align: center;
+	text-align: left;
 	li {
-		display: inline-block;
-		margin: 0 1em;
+		margin: 0 0 0.75em;
 	}
 	a {
 		position: relative;
@@ -167,13 +171,7 @@ nav.primary-nav {
 		float: right;
 	}
 	nav.primary-nav {
-		position: relative;
-		top: 0;
 		text-align: left;
-		li {
-			display: block;
-			margin: 0 0 0.75em;
-		}
 	}
 	#header { padding: 3em 1.5em 3em 3em; }
 	#projects { padding: 3em 3em 3em 1.5em; }
@@ -199,50 +197,25 @@ footer {
 }
 
 .view.ng-enter {
-  transform: translateX(100%);
-}
-
-.view.ng-enter-active {
-  transform: translateX(0);
-}
-
-.view.ng-leave {
-  transform: translateX(0); 
-}
-
-.view.ng-leave-active {
-  transform: translateX(-100%);
-}
-
-
-.project-view {
-    @include slow;
-}
-
-.project-view.ng-enter {
+	opacity: 0;
 	transform: translateX(100%);
 }
 
-.project-view.ng-enter.ng-enter-active,
-.project-view.ng-leave {
-	transform: translateX(0);
+.view.ng-enter-active {
 	opacity: 1;
+	transform: translateX(0);
 }
 
-.project-view.ng-leave.ng-leave-active {
+.view.ng-leave {
+	opacity: 1;
+	transform: translateX(0); 
+}
+
+.view.ng-leave-active {
+	opacity: 0;
 	transform: translateX(-100%);
 }
 
-@keyframes fade {
-	from {
-		opacity: 1;
-		transform: translateX(0);
-	}
-	to {
-		opacity: 0;
-		transform: translateX(-110%);
-	}
-}
 
 .project-object {
 	@include quick;
@@ -253,12 +226,6 @@ footer {
 		opacity: 1;
 	}
 }
-.project-active {
-	.main-pic { display: none; }
-	.main-vid { display: block; }
-}
-.main-pic { display: block; }
-.main-vid { display: none; }
 
 
 
