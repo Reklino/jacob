@@ -1,6 +1,5 @@
 body, html {
 	height: 100%;
-	background: #fff8ef;
 }
 
 #header {
@@ -26,8 +25,7 @@ body, html {
 	transform: translateY(-6em);
 	text-align: center;
 	.project-nav-item {
-		margin: 0;
-		width: 33%;
+		margin: 0 1em;
 		float: left;
 		height: 3em;
 		line-height: 3em;
@@ -78,21 +76,12 @@ body, html {
 article {
 	padding-top: 3em;
 	header {
-		position: relative;
+		position: absolute;
+		width: 50%;
+		left: 0;
 		z-index: 1;
-		padding: 3em 0;
-		@include clearfix;
-		figure {
-			margin-bottom: 3em;
-		}
-		h4 {
-			font-family: $sans-serif;
-			font-weight: 200;
-		}
-		h5 { text-align: left; }
-		figure {
-			padding: 0 3em;
-		}
+		padding: 1em 0;
+
 	}
 	main {
 		position: relative;
@@ -152,13 +141,16 @@ nav.primary-nav {
 }
 
 @include susy-breakpoint(700px, $tablet) {
-	body, html {
-		overflow: hidden;
+	body {
+		overflow-x: hidden;
+		overflow-y: scroll;
 	}
 	#header {
+		position: fixed;
+		z-index: 1;
+		background: white;
 		width: 50%;
 		height: 100%;
-		padding: 5em 0 3em 3em;
 		float: left;
 		overflow: hidden;
 		.title {
@@ -171,19 +163,8 @@ nav.primary-nav {
 		}
 	}
 	#projects {
-		position: relative;
-		padding: 5em 3em 3em 0;
 		width: 50%;
-		height: 100%;
-		overflow-x: hidden;
-		overflow-y: scroll;
-		float: left;
-	}
-}
-
-@include susy-breakpoint(1250px, $desktop-sm) {
-	body, html {
-		overflow: hidden;
+		float: right;
 	}
 	nav.primary-nav {
 		position: relative;
@@ -194,8 +175,8 @@ nav.primary-nav {
 			margin: 0 0 0.75em;
 		}
 	}
-	#header { padding: 3em 0 3em 3em; }
-	#projects { padding: 3em 3em 3em 0; }
+	#header { padding: 3em 1.5em 3em 3em; }
+	#projects { padding: 3em 3em 3em 1.5em; }
 }
 
 footer {
@@ -213,7 +194,7 @@ footer {
 
 .view.ng-enter, .view.ng-leave {
 	position: absolute;
-	padding-right: 3em;
+	padding-right: 4.5em;
 	@include slow;
 }
 
@@ -236,9 +217,6 @@ footer {
 
 .project-view {
     @include slow;
-    position: absolute;
-    top: 3em;
-    background: white;
 }
 
 .project-view.ng-enter {
@@ -275,6 +253,13 @@ footer {
 		opacity: 1;
 	}
 }
+.project-active {
+	.main-pic { display: none; }
+	.main-vid { display: block; }
+}
+.main-pic { display: block; }
+.main-vid { display: none; }
+
 
 
 /*-----  End of Animations  ------*/

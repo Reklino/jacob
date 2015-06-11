@@ -53,8 +53,8 @@ table {
 */
 body {
   /* 20px / 28px */
-  font-size: 1em;
-  line-height: 1.66667em; }
+  font-size: 0.875em;
+  line-height: 1.75em; }
 
 .container {
   -webkit-transition: all 0.15s ease-in-out;
@@ -164,8 +164,8 @@ body {
 @media (min-width: 700px) {
   body {
     /* 20px / 28px */
-    font-size: 0.9375em;
-    line-height: 1.66667em; }
+    font-size: 0.8125em;
+    line-height: 1.75em; }
   .container {
     max-width: 650px;
     margin-left: auto;
@@ -277,8 +277,8 @@ body {
     margin-left: 50%; }
   body {
     /* 20px / 28px */
-    font-size: 0.9375em;
-    line-height: 1.66667em; }
+    font-size: 0.8125em;
+    line-height: 1.75em; }
   .container {
     max-width: 960px;
     margin-left: auto;
@@ -294,13 +294,13 @@ body {
 @media (min-width: 1450px) {
   body {
     /* 20px / 28px */
-    font-size: 1em;
-    line-height: 1.66667em; } }
+    font-size: 0.875em;
+    line-height: 1.75em; } }
 
 @media (min-width: 1700px) {
   body {
-    font-size: 1.125em;
-    line-height: 1.66667em; }
+    font-size: 1em;
+    line-height: 1.75em; }
   .container {
     max-width: 1100px;
     margin-left: auto;
@@ -322,62 +322,62 @@ h1 {
   font-weight: 900;
   font-family: "futura-pt", serif;
   /* 135px / 120px */
-  font-size: 6.22222em;
-  line-height: 0.80357em;
-  margin: 0 0 0.66964em; }
+  font-size: 5.875em;
+  line-height: 0.89362em;
+  margin: 0 0 0.74468em; }
 
 h2 {
   color: #3A424A;
   font-weight: 900;
   font-family: "futura-pt", serif;
   /* 84px / 72px */
-  font-size: 3.55556em;
-  line-height: 1.17188em;
-  margin: 0 0 0.46875em; }
+  font-size: 4em;
+  line-height: 1.09375em;
+  margin: 0 0 0.4375em; }
 
 h3 {
   color: #3A424A;
   font-weight: 700;
   font-family: "futura-pt", serif;
   /* 52px / 48px */
-  font-size: 2.22222em;
-  line-height: 1.125em;
-  margin: 0 0 0.75em; }
+  font-size: 2.5em;
+  line-height: 1.225em;
+  margin: 0 0 0.7em; }
 
 h4 {
   color: #3A424A;
-  font-weight: 700;
+  font-weight: 400;
   font-family: "source-code-pro", sans-serif;
   /* 24 / 36px */
-  font-size: 1.33333em;
-  line-height: 1.25em;
-  margin: 0 0 1.07143em; }
+  font-size: 1.5em;
+  line-height: 1.16667em;
+  margin: 0 0 1em; }
 
 h5 {
   color: #3A424A;
-  font-weight: 900;
+  font-weight: 700;
   font-family: "source-code-pro", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   /* 20px / 28px */
   font-size: 1em;
-  line-height: 1.66667em;
+  line-height: 1.75em;
   /* 28 */
-  margin: 0 0 1.66667em; }
+  margin: 0 0 1.75em; }
 
 h6 {
   font-weight: 400;
   font-family: "source-code-pro", sans-serif;
   /* 13px / 18px */
   font-size: 0.85em;
-  line-height: 1.66667em;
-  margin: 0 0 1.66667em; }
+  line-height: 1.75em;
+  margin: 0 0 1.75em; }
 
 p {
   color: #657379;
   font-weight: 400;
   font-family: "source-code-pro", sans-serif;
-  margin: 0 0 1.66667em; }
+  margin: 0 0 1.75em; }
 
 .small {
   color: #9AA5AA;
@@ -387,14 +387,14 @@ p {
   letter-spacing: 2px;
   /* 13px / 18px */
   font-size: 0.85em;
-  line-height: 1.66667em;
-  margin: 0 0 1.66667em; }
+  line-height: 1.75em;
+  margin: 0 0 1.75em; }
 
 .smaller {
   /* 13px / 18px */
   font-size: 0.85em;
-  line-height: 1.66667em;
-  margin: 0 0 1.66667em; }
+  line-height: 1.75em;
+  margin: 0 0 1.75em; }
 
 .skinny {
   font-family: "source-code-pro", sans-serif;
@@ -402,14 +402,14 @@ p {
   text-transform: none; }
 
 blockquote {
-  /* 52px / 48px */
-  font-size: 2.22222em;
-  line-height: 1.125em;
-  text-align: center;
+  /* 24 / 36px */
+  font-size: 1.5em;
+  line-height: 1.16667em;
+  text-align: left;
   color: #3A424A;
   font-family: "futura-pt", serif;
   font-weight: 700;
-  margin-bottom: 1.07143em; }
+  margin-bottom: 1em; }
 
 svg.icon {
   height: 36px;
@@ -468,9 +468,9 @@ h3 a {
   font-weight: 700;
   color: #3797c3; }
 
-img {
+img, video {
   width: 100%;
-  margin: 1.5em 0; }
+  margin: 0 0 1.5em; }
 
 hr {
   position: relative;
@@ -496,7 +496,7 @@ hr {
   font-weight: 300;
   /* 13px / 18px */
   font-size: 0.85em;
-  line-height: 1.66667em;
+  line-height: 1.75em;
   text-decoration: none;
   padding: 0.5em 1.5em;
   border: 1px solid #dfe3e4; }
@@ -567,8 +567,7 @@ input {
   margin-bottom: 0.75em !important; }
 
 body, html {
-  height: 100%;
-  background: #fff8ef; }
+  height: 100%; }
 
 #header {
   position: relative;
@@ -597,8 +596,7 @@ body, html {
           transform: translateY(-6em);
   text-align: center; }
   .project-nav .project-nav-item {
-    margin: 0;
-    width: 33%;
+    margin: 0 1em;
     float: left;
     height: 3em;
     line-height: 3em; }
@@ -654,22 +652,11 @@ body, html {
 article {
   padding-top: 3em; }
   article header {
-    position: relative;
+    position: absolute;
+    width: 50%;
+    left: 0;
     z-index: 1;
-    padding: 3em 0; }
-    article header:after {
-      content: '';
-      display: block;
-      clear: both; }
-    article header figure {
-      margin-bottom: 3em; }
-    article header h4 {
-      font-family: "source-code-pro", sans-serif;
-      font-weight: 200; }
-    article header h5 {
-      text-align: left; }
-    article header figure {
-      padding: 0 3em; }
+    padding: 1em 0; }
   article main {
     position: relative;
     z-index: 1;
@@ -724,12 +711,15 @@ nav.primary-nav {
     clear: both; }
 
 @media (min-width: 700px) {
-  body, html {
-    overflow: hidden; }
+  body {
+    overflow-x: hidden;
+    overflow-y: scroll; }
   #header {
+    position: fixed;
+    z-index: 1;
+    background: white;
     width: 50%;
     height: 100%;
-    padding: 5em 0 3em 3em;
     float: left;
     overflow: hidden; }
     #header .title {
@@ -740,17 +730,8 @@ nav.primary-nav {
       #header .title h1 {
         margin-bottom: 0; }
   #projects {
-    position: relative;
-    padding: 5em 3em 3em 0;
     width: 50%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    float: left; } }
-
-@media (min-width: 1250px) {
-  body, html {
-    overflow: hidden; }
+    float: right; }
   nav.primary-nav {
     position: relative;
     top: 0;
@@ -759,15 +740,15 @@ nav.primary-nav {
       display: block;
       margin: 0 0 0.75em; }
   #header {
-    padding: 3em 0 3em 3em; }
+    padding: 3em 1.5em 3em 3em; }
   #projects {
-    padding: 3em 3em 3em 0; } }
+    padding: 3em 3em 3em 1.5em; } }
 
 footer {
   padding-top: 2em;
   /* 13px / 18px */
   font-size: 0.85em;
-  line-height: 1.66667em; }
+  line-height: 1.75em; }
 
 /*==================================
 =            Animations            =
@@ -777,7 +758,7 @@ footer {
 
 .view.ng-enter, .view.ng-leave {
   position: absolute;
-  padding-right: 3em;
+  padding-right: 4.5em;
   -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
           transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1); }
 
@@ -803,10 +784,7 @@ footer {
 
 .project-view {
   -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
-          transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
-  position: absolute;
-  top: 3em;
-  background: white; }
+          transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1); }
 
 .project-view.ng-enter {
   -webkit-transform: translateX(100%);
@@ -854,6 +832,18 @@ footer {
   .project-active .project-object.active {
     opacity: 1; }
 
+.project-active .main-pic {
+  display: none; }
+
+.project-active .main-vid {
+  display: block; }
+
+.main-pic {
+  display: block; }
+
+.main-vid {
+  display: none; }
+
 /*-----  End of Animations  ------*/
 /*======================================
 =            Event Timeline            =
@@ -884,7 +874,7 @@ footer {
   .bar .name, .bar .number {
     /* 20px / 28px */
     font-size: 1em;
-    line-height: 1.66667em;
+    line-height: 1.75em;
     /* 28 */ }
   .bar .number {
     float: right; }

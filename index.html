@@ -23,6 +23,16 @@
     </div>
     <header id="header">
         <section class="container">
+            <div class="col-12 main-vid">
+                <video preload="auto" autobuffer="" autoload="" autoplay="" loop="">
+                    <source src="img/sleepymonkey.mp4" type="video/mp4">
+                    <source src="img/sleepymonkey.webm" type="video/webm">
+                    <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/130891/astrochimp.ogg" type="video/ogg">          
+                </video>
+            </div>
+            <div class="col-12 main-pic">
+                <img src="img/mech.jpg" alt="Jacob">
+            </div>
             <div class="col-7">
                 <p>
                     Yo! My name is Jacob. I am a designer turned developer who is passionate about creating unique and useful experiences.
@@ -43,7 +53,7 @@
                 </ul>
             </nav>
             <div class="col-12 title">
-                <h1>Test<br>Page.</h1>
+                <h1>Jacob<br>Davidson.</h1>
             </div>
         </section>
     </header>
@@ -52,22 +62,18 @@
         <nav class="project-nav">
             <ul>
                 <li class="project-nav-item">
-                    <a ng-hide="view.id == 0" ui-sref="project({id: view.id - 1})">Previous</a>
-                    <a ng-show="view.id == 0" ui-sref="project({id: projects.length - 1})">Previous</a>
+                    <a ng-hide="view.id == 0" ui-sref="project({id: view.id - 1})">Previous Project</a>
+                    <a ng-show="view.id == 0" ui-sref="project({id: projects.length - 1})">Previous Project</a>
                 </li>
+                <li class="project-nav-item">/</li>
                 <li class="project-nav-item">
-                    <a ui-sref="projects">Close</a>
-                </li>
-                <li class="project-nav-item">
-                    <a ng-hide="view.id == (projects.length - 1)" ui-sref="project({id: view.id + 1})">Next</a>
-                    <a ng-show="view.id == (projects.length - 1)" ui-sref="project({id: 0})">Next</a>
+                    <a ng-hide="view.id == (projects.length - 1)" ui-sref="project({id: view.id + 1})">Next Project</a>
+                    <a ng-show="view.id == (projects.length - 1)" ui-sref="project({id: 0})">Next Project</a>
                 </li>
             </ul>
         </nav>
 
-        <div class="projects-container">
-            <div class="view" ui-view></div>
-        </div>
+        <div class="view" ui-view></div>
 
     </main>
     <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>

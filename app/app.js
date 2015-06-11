@@ -76,7 +76,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'mode'	: 'primary'
 		},
 		{
-			'name'	: 'Who?',
+			'name'	: 'About',
 			'href'	: 'about',
 			'mode'	: 'primary'
 		},
@@ -93,11 +93,6 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		{
 			'name'	: 'Stats',
 			'href'	: 'stats',
-			'mode'	: 'primary'
-		},
-		{
-			'name'	: 'Say Hi!',
-			'href'	: 'contact',
 			'mode'	: 'primary'
 		}
 
@@ -127,7 +122,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'Sleepy Monkey',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'October 2014',
-			'role' : 'Developer / Designer',
+			'role' : 'Developer & Designer',
 			'img'  : 'img/sleepymonkey.png'
 		},
 		{
@@ -135,7 +130,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'HmgCSC.com',
 			'desc' : 'A multi-functional website for showcasing digital products and sharing resources across designers and sales departments.',
 			'date' : 'January 2014',
-			'role' : 'Developer / Designer',
+			'role' : 'Developer & Designer',
 			'img'  : 'img/hmgcsc.jpg'
 		},
 		{
@@ -143,7 +138,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'HmgGo',
 			'desc' : 'A simple splash page with the purpose of linking together different assets of the company.',
 			'date' : 'March 2014',
-			'role' : 'Developer / Designer',
+			'role' : 'Developer & Designer',
 			'img'  : 'img/hmggo.png'
 		},
 		{
@@ -151,7 +146,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'name' : 'Nobody Delivers',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'January 2015',
-			'role' : 'Developer / Designer',
+			'role' : 'Developer & Designer',
 			'img'  : 'img/nobodydelivers.png'
 		},
 		{

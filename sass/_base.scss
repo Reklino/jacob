@@ -31,9 +31,9 @@ h3 a {
   color: $primary;
 }
 
-img {
+img, video {
   width: 100%;
-  margin: 1.5em 0;
+  margin: 0 0 1.5em;
 }
 
 hr {
