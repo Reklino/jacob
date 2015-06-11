@@ -45,15 +45,11 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	var pane = document.getElementById('projects');
 
 	$scope.view = {};
-	$scope.view.loading = false;
+	$scope.view.swapping = false;
 
 	$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
 
-		$scope.view.swapProject = $scope.view.id === '' && toParams.id ? true : false;
-		$scope.view.nextProject = $scope.view.id !== '' && toParams.id > $scope.view.id ? true : false;
-		$scope.view.previousProject = $scope.view.id !== '' && toParams.id < $scope.view.id ? true : false;
-		$scope.view.swapMain = $scope.view.id !== '' && toParams.id == undefined ? true : false;
-		$scope.view.loading = true;
+		$scope.view.swapping = $scope.view.id === '' && toParams.id || $scope.view.id !== '' && toParams.id == undefined ? true : false;
 
 	    $scope.view.name = toState.name;
 	    $scope.view.mode = toParams.id ? 'project' : 'primary';
@@ -64,7 +60,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	});
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-		$scope.view.loading = false;
+		$scope.view.swapping = false;
 	});
 
 	$scope.background = '';

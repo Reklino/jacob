@@ -2,105 +2,9 @@ body, html {
 	height: 100%;
 }
 
-#header {
-	position: relative;
-	@include slow;
-	transform: translateX(0);
-	padding: 5em 1em 1em;
-	.title {
-		position: relative;
-	}
-}
-.project-active #header { transform: translateX(-100%); opacity: 0; }
-
-
-.project-nav {
-	position: relative;
-	left: 0; top: 0;
-	width: 100%;
-	margin-bottom: 3em;
-	overflow: hidden;
-	z-index: 2;
-	@include quick;
-	opacity: 0;
-	transform: translateY(-6em);
-	text-align: center;
-	.project-nav-item {
-		margin: 0 1em;
-		float: left;
-	}
-}
-.project-active .project-nav {
-	opacity: 1;
-	transform: translateX(0%);
-}
-
-#projects {
-	@include slow;
-	transform: translatez(0);
-	padding: 1em;
-	.project a {
-		display: block;
-		text-decoration: none;
-		cursor: pointer;
-		padding-top: 1.5em;
-		padding-bottom: 1.5em;
-		height: 4.5em;
-		@include quick;
-		&:after { display: none; }
-		span {
-			bottom: 1.25em;
-			right: 0;
-			position: absolute;
-			margin-bottom: 0;
-			color: $body;
-		}
-		&:hover {
-			padding-left: 1em;
-		}
-	}
-	.project {
-		border-bottom: 1px dotted $body;
-		@include clearfix;
-		&:first-child {
-			a { padding-top: 0; height: 3em; }
-		}
-	}
-}
-
-#project-details {
-	position: fixed;
-	z-index: 2;
-	top: 0; left: 0;
-	width: 50%; height: 100%;
-	padding: 3em 1.5em 3em 3em;
-	@include slow;
-	opacity: 0;
-	transform: translateX(-100%);
-	background: white;
-}
-.project-active #project-details { opacity: 1; transform: translateX(0%); }
-
-article {
-	header {
-		position: absolute;
-		width: 50%;
-		left: 0;
-		z-index: 1;
-		padding: 1em 0;
-
-	}
-	main {
-		position: relative;
-		z-index: 1;
-		padding: 0 0 2em;
-	}
-	footer {
-		p {
-			color: lighten($body, 15);
-		}
-	}
-}
+/*==================================
+=            Navigation            =
+==================================*/
 
 nav.primary-nav {
 	text-align: left;
@@ -144,6 +48,108 @@ nav.primary-nav {
 	//border-bottom: 1px solid lighten($body, 20);
 }
 
+/*-----  End of Navigation  ------*/
+
+
+
+/*===========================================
+=            Left Panel / Header            =
+===========================================*/
+
+#header {
+	position: relative;
+	@include slow;
+	transform: translateX(0);
+	padding: 5em 1em 1em;
+	.title {
+		position: relative;
+	}
+}
+.project-active #header { transform: translateX(-100%); opacity: 0; }
+
+/*-----  End of Left Panel / Header  ------*/
+
+
+/*===================================
+=            Right Panel            =
+===================================*/
+
+#projects {
+	@include slow;
+	transform: translatez(0);
+	padding: 1em;
+}
+
+/*-----  End of Right Panel  ------*/
+
+/*===============================
+=            Project            =
+===============================*/
+
+.project-nav {
+	position: relative;
+	left: 0; top: 0;
+	width: 100%;
+	margin-bottom: 3em;
+	overflow: hidden;
+	z-index: 2;
+	@include quick;
+	opacity: 0;
+	transform: translateY(-6em);
+	text-align: center;
+	.project-nav-item {
+		margin: 0 1em;
+		float: left;
+	}
+}
+.project-active .project-nav {
+	opacity: 1;
+	transform: translateX(0%);
+}
+
+.project a {
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+	height: 4.5em;
+	@include quick;
+	&:after { display: none; }
+	span {
+		bottom: 1.25em;
+		right: 0;
+		position: absolute;
+		margin-bottom: 0;
+		color: $body;
+	}
+	&:hover {
+		padding-left: 1em;
+	}
+}
+.project {
+	border-bottom: 1px dotted $body;
+	@include clearfix;
+	&:first-child {
+		a { padding-top: 0; height: 3em; }
+	}
+}
+
+#project-details {
+	position: fixed;
+	z-index: 2;
+	top: 0; left: 0;
+	width: 50%; height: 100%;
+	padding: 3em 1.5em 3em 3em;
+	@include slow;
+	opacity: 0;
+	transform: translateX(-100%);
+	background: white;
+}
+.project-active #project-details { opacity: 1; transform: translateX(0%); }
+
+/*-----  End of Project  ------*/
+
 @include susy-breakpoint(700px, $tablet) {
 	body {
 		overflow-x: hidden;
@@ -177,11 +183,6 @@ nav.primary-nav {
 	#projects { padding: 3em 3em 3em 1.5em; }
 }
 
-footer {
-	padding-top: 2em;
-	@include small;
-}
-
 /*==================================
 =            Animations            =
 ==================================*/
@@ -195,25 +196,28 @@ footer {
 	padding-right: 4.5em;
 	@include slow;
 }
+.swapping .view.ng-leave-active { transform: translateX(100%); }
 
 .view.ng-enter {
 	opacity: 0;
-	transform: translateX(100%);
+	transform: translate3d(100%, 0, 0);
 }
-
-.view.ng-enter-active {
-	opacity: 1;
-	transform: translateX(0);
-}
-
-.view.ng-leave {
-	opacity: 1;
-	transform: translateX(0); 
-}
-
-.view.ng-leave-active {
+.view.ng-leave.ng-leave-active {
 	opacity: 0;
-	transform: translateX(-100%);
+	transform: translate3d(-100%, 0, 0);
+}
+.back.view.ng-enter {
+	opacity: 0;
+	transform: translate3d(-100%, 0, 0);
+}
+.back.view.ng-leave.ng-leave-active {
+	opacity: 0;
+	transform: translate3d(100%, 0, 0);
+}
+.view.ng-leave,
+.view.ng-enter.ng-enter-active {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
 }
 
 
