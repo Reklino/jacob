@@ -1,21 +1,9 @@
 <article id="project">
-	<header class="container">
-		<div class="col-8 col-offset-2">
-			<figure class="screenshot">
-				<span></span>
-				<span></span>
-				<span></span>
-				<img ng-src="{{project.img}}" "header image">
-			</figure>
-		</div>
-		<div class="col-6 col-offset-3">
-			<h3>{{ project.name }}</h3>
-			<h4>{{ project.desc }}</h4>
-		</div>
-	</header>
-	<hr>
 	<main class="container">
-		<div class="col-10 col-offset-1">
+		<div class="col-6 pull-right">
+			<h3>{{ project.desc }}</h3>
+		</div>
+		<div class="col-6">
 			<p>
 				As a part of a company wide branding campaign, I developed a splash page for the digital ads for the purpose of showcasing the community, culture, and people associated with the publication. Each property needed their own custom version of the landing page, so it was important that everything be modular.
 			</p>
@@ -25,7 +13,4 @@
 			</p>
 		</div>
 	</main>
-	<footer>
-		<p>{{ project.date }}</p>
-	</footer>
 </article>

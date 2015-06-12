@@ -701,11 +701,6 @@ nav.primary-nav {
   -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
           transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1); }
 
-.swapping .view.ng-leave-active {
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%); }
-
 .view.ng-enter {
   opacity: 0;
   -webkit-transform: translate3d(100%, 0, 0);
@@ -731,6 +726,11 @@ nav.primary-nav {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0); }
+
+.swapping .back.view.ng-leave-active,
+.swapping .view.ng-leave-active {
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0); }
 
 .project-object {
   -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);

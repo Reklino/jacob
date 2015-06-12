@@ -50,17 +50,23 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
 
 		$scope.view.swapping = $scope.view.id === '' && toParams.id || $scope.view.id !== '' && toParams.id == undefined ? true : false;
-
+		console.log('should be true' + $scope.view.swapping)
 	    $scope.view.name = toState.name;
 	    $scope.view.mode = toParams.id ? 'project' : 'primary';
+	    if(!toParams.id) { $scope.view.back = false; }
 	    $scope.view.id = toParams.id ? parseInt(toParams.id) : '';
+	    if (toParams.id) {  $scope.view.lastId = parseInt(toParams.id); }
 	    
 	    pane.scrollTop = 0;
 
 	});
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-		$scope.view.swapping = false;
+		$timeout(function(){
+			$scope.view.swapping = false;
+			console.log('should be false' + $scope.view.swapping)
+			$scope.$apply();
+		},300)
 	});
 
 	$scope.background = '';
