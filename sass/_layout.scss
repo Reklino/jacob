@@ -87,15 +87,18 @@ nav.primary-nav {
 ===============================*/
 
 .project-nav {
-	position: relative;
-	left: 0; top: 0;
-	width: 100%;
-	margin-bottom: 3em;
+	position: fixed;
+	height: 5em;
+	line-height: 5em;
+	left: 0; bottom: 0;
+	padding-left: 3em;
+	width: 50%;
+	background: white;
 	overflow: hidden;
 	z-index: 2;
 	@include quick;
 	opacity: 0;
-	transform: translateY(-6em);
+	transform: translateY(6em);
 	text-align: center;
 	.project-nav-item {
 		margin: 0 1em;
@@ -136,7 +139,7 @@ nav.primary-nav {
 }
 
 #project-details {
-	position: fixed;
+	position: absolute;
 	z-index: 2;
 	top: 0; left: 0;
 	width: 50%; height: 100%;
@@ -145,6 +148,9 @@ nav.primary-nav {
 	opacity: 0;
 	transform: translateX(-100%);
 	background: white;
+	.pics {
+		padding-bottom: 5em;
+	}
 }
 .project-active #project-details { opacity: 1; transform: translateX(0%); }
 

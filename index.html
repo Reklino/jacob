@@ -30,79 +30,31 @@
     <section id="project-details">
         <div class="container">
             <div class="col-12">
-                <nav class="project-nav">
-                    <ul>
-                        <li class="project-nav-item">
-                            <a ui-sref="projects">Back to Portfolio</a>
-                        </li>
-                        <li class="project-nav-item">/</li>
-                        <li class="project-nav-item">
-                            <a ng-click="view.back = true" ng-hide="view.id == 0" ui-sref="project({id: view.id - 1})">Previous Project</a>
-                            <a ng-click="view.back = true" ng-show="view.id == 0" ui-sref="project({id: projects.length - 1})">Previous Project</a>
-                        </li>
-                        <li class="project-nav-item">/</li>
-                        <li class="project-nav-item">
-                            <a ng-click="view.back = false" ng-hide="view.id == (projects.length - 1)" ui-sref="project({id: view.id + 1})">Next Project</a>
-                            <a ng-click="view.back = false" ng-show="view.id == (projects.length - 1)" ui-sref="project({id: 0})">Next Project</a>
-                        </li>
-                    </ul>
-                </nav>
-                <figure ng-show="view.lastId === 0">
-                    <video preload="auto" autobuffer="" autoload="" autoplay="" loop="">
-                        <source src="img/sleepymonkey.webm" type="video/webm">
-                        <source src="img/sleepymonkey.mp4" type="video/mp4">
-                        <img src="img/sleepymonkey.png" alt="backup image">
-                    </video>
-                </figure>
-                <figure ng-show="view.lastId === 1">
-                    <video preload="auto" autobuffer="" autoload="" autoplay="" loop="">
-                        <source src="img/nobody-delivers_1.webm" type="video/webm">
-                        <source src="img/nobody-delivers.mp4" type="video/mp4">
-                        <img src="img/nobody-delivers.png" alt="backup image">
-                    </video>
-                </figure>
-                <figure ng-show="view.lastId === 2">
-                    <img src="img/hmgcsc.png" alt="backup image">
-                </figure>
-                <figure ng-show="view.lastId === 3">
-                    <video preload="auto" autobuffer="" autoload="" autoplay="" loop="">
-                        <source src="img/nobody-delivers_1.webm" type="video/webm">
-                        <source src="img/nobody-delivers.mp4" type="video/mp4">
-                        <img src="img/nobody-delivers.png" alt="backup image">
-                    </video>
-                </figure>
-                <figure ng-show="view.lastId === 4">
-                    <video preload="auto" autobuffer="" autoload="" autoplay="" loop="">
-                        <source src="img/nobody-delivers_1.webm" type="video/webm">
-                        <source src="img/nobody-delivers.mp4" type="video/mp4">
-                        <img src="img/nobody-delivers.png" alt="backup image">
-                    </video>
-                </figure>
-                <figure ng-show="view.lastId === 5">
-                    <video preload="auto" autobuffer="" autoload="" autoplay="" loop="">
-                        <source src="img/nobody-delivers_1.webm" type="video/webm">
-                        <source src="img/nobody-delivers.mp4" type="video/mp4">
-                        <img src="img/nobody-delivers.png" alt="backup image">
-                    </video>
-                </figure>
-                <figure ng-show="view.lastId === 6">
-                    <video preload="auto" autobuffer="" autoload="" autoplay="" loop="">
-                        <source src="img/nobody-delivers_1.webm" type="video/webm">
-                        <source src="img/nobody-delivers.mp4" type="video/mp4">
-                        <img src="img/nobody-delivers.png" alt="backup image">
-                    </video>
-                </figure>
-            </div>
-            <div class="col-12">
-                <p>
-                    {{ projects[view.id].name }}<br>
-                    {{ projects[view.id].date }}<br>
-                    {{ projects[view.id].role }}
-                </p>
-                <p>{{ view.id + 1 }} / {{ projects.length }}</p>
+                <div class="pics">
+                    <img ng-repeat="pic in projects[view.id].pics"
+                        ng-src="{{ pic }}"
+                        alt="{{ pic }}">
+                </div>
             </div>
         </div>
     </section>
+    <nav class="project-nav">
+        <ul>
+            <li class="project-nav-item">
+                <a ui-sref="projects">Back to Portfolio</a>
+            </li>
+            <li class="project-nav-item">/</li>
+            <li class="project-nav-item">
+                <a ng-click="view.back = true" ng-hide="view.id == 0" ui-sref="project({id: view.id - 1})">Previous</a>
+                <a ng-click="view.back = true" ng-show="view.id == 0" ui-sref="project({id: projects.length - 1})">Previous</a>
+            </li>
+            <li class="project-nav-item">/</li>
+            <li class="project-nav-item">
+                <a ng-click="view.back = false" ng-hide="view.id == (projects.length - 1)" ui-sref="project({id: view.id + 1})">Next</a>
+                <a ng-click="view.back = false" ng-show="view.id == (projects.length - 1)" ui-sref="project({id: 0})">Next</a>
+            </li>
+        </ul>
+    </nav>
 
     <header id="header">
         <section class="container">

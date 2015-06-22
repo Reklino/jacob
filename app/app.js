@@ -127,7 +127,13 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'October 2014',
 			'role' : 'Developer & Designer',
-			'img'  : 'img/sleepymonkey.png'
+			'img'  : 'img/sleepymonkey.png',
+			'pics' : [
+				'resources/sleepymonkey_assets/template.png',
+				'resources/sleepymonkey_assets/Homepage.jpg',
+				'resources/sleepymonkey_assets/ad_jacket.png',
+				'resources/sleepymonkey_assets/ads.png'
+			]
 		},
 		{
 			'id'	: 1,
@@ -135,7 +141,13 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'desc' : 'A multi-functional website for showcasing digital products and sharing resources across designers and sales departments.',
 			'date' : 'January 2014',
 			'role' : 'Developer & Designer',
-			'img'  : 'img/hmgcsc.jpg'
+			'img'  : 'img/hmgcsc.jpg',
+			'pics' : [
+				'resources/sleepymonkey_assets/Homepage.jpg',
+				'resources/sleepymonkey_assets/ads.png',
+				'resources/sleepymonkey_assets/ad_jacket.png',
+				'resources/sleepymonkey_assets/template.png'
+			]
 		},
 		{
 			'id'	: 2,
@@ -143,7 +155,11 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'desc' : 'A simple splash page with the purpose of linking together different assets of the company.',
 			'date' : 'March 2014',
 			'role' : 'Developer & Designer',
-			'img'  : 'img/hmggo.png'
+			'img'  : 'img/hmggo.png',
+			'pics' : [
+				'resources/hmggo_assets/devices.jpg',
+				'resources/hmggo_assets/split.png'
+			]
 		},
 		{
 			'id'	: 3,
@@ -151,7 +167,13 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'January 2015',
 			'role' : 'Developer & Designer',
-			'img'  : 'img/nobodydelivers.png'
+			'img'  : 'img/nobodydelivers.png',
+			'pics' : [
+				'resources/nobody-delivers_assets/Homepage.jpg',
+				'resources/nobody-delivers_assets/ads.png',
+				'resources/nobody-delivers_assets/ad_jacket.png',
+				'resources/nobody-delivers_assets/template.png'
+			]
 		},
 		{
 			'id'	: 4,

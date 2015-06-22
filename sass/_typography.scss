@@ -25,7 +25,7 @@ body {
 @mixin large {
     /* 24 / 36px */
     font-size: #{24 / $em}em;
-    line-height: ($line-int*1) / 24 * 1em;
+    line-height: ($line-int*1.25) / 24 * 1em;
 }
 
 @mixin huge {
@@ -72,16 +72,16 @@ h4 {
     font-weight: 400;
     font-family: $sans-serif;
     @include large;
-    margin: 0 0 ($line-int*1) / 28 * 1em;
+    margin: 0 0 ($line-int*1) / 24 * 1em;
 }
 h5 {
-    color: $header;
+    color: $body;
     font-weight: 700;
     font-family: $sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     @include normal;
-    margin: 0 0 #{$line-int / $em}em;
+    margin: 0 0 #{$line-int/2 / $em}em;
 }
 h6 {
     font-weight: 400;
@@ -123,8 +123,11 @@ blockquote {
     text-align: left;
     color: $header;
     font-family: $serif;
-    font-weight: 700;
-    margin-bottom: ($line-int*1) / 28 * 1em;
+    font-weight: 500;
+    margin-top: ($line-int*2) / 28 * 1em;
+    margin-bottom: ($line-int*2) / 28 * 1em;
+    padding-left: 1em;
+    border-left: 1px dotted $header;
 }
 
 // ==== ICONS ==== //

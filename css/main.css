@@ -73,6 +73,9 @@ body {
   display: block;
   clear: both; }
 
+.row.with-bottom {
+  margin-bottom: 1.75em; }
+
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
   -webkit-transition: all 0.15s ease-in-out;
           transition: all 0.15s ease-in-out; }
@@ -350,11 +353,11 @@ h4 {
   font-family: "source-code-pro", sans-serif;
   /* 24 / 36px */
   font-size: 1.5em;
-  line-height: 1.16667em;
-  margin: 0 0 1em; }
+  line-height: 1.45833em;
+  margin: 0 0 1.16667em; }
 
 h5 {
-  color: #3A424A;
+  color: #9AA5AA;
   font-weight: 700;
   font-family: "source-code-pro", sans-serif;
   text-transform: uppercase;
@@ -363,7 +366,7 @@ h5 {
   font-size: 1em;
   line-height: 1.75em;
   /* 28 */
-  margin: 0 0 1.75em; }
+  margin: 0 0 0.875em; }
 
 h6 {
   font-weight: 400;
@@ -404,12 +407,15 @@ p {
 blockquote {
   /* 24 / 36px */
   font-size: 1.5em;
-  line-height: 1.16667em;
+  line-height: 1.45833em;
   text-align: left;
   color: #3A424A;
   font-family: "futura-pt", serif;
-  font-weight: 700;
-  margin-bottom: 1em; }
+  font-weight: 500;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-left: 1em;
+  border-left: 1px dotted #3A424A; }
 
 svg.icon {
   height: 36px;
@@ -583,19 +589,22 @@ nav.primary-nav {
 =            Project            =
 ===============================*/
 .project-nav {
-  position: relative;
+  position: fixed;
+  height: 5em;
+  line-height: 5em;
   left: 0;
-  top: 0;
-  width: 100%;
-  margin-bottom: 3em;
+  bottom: 0;
+  padding-left: 3em;
+  width: 50%;
+  background: white;
   overflow: hidden;
   z-index: 2;
   -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
           transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
   opacity: 0;
-  -webkit-transform: translateY(-6em);
-      -ms-transform: translateY(-6em);
-          transform: translateY(-6em);
+  -webkit-transform: translateY(6em);
+      -ms-transform: translateY(6em);
+          transform: translateY(6em);
   text-align: center; }
   .project-nav .project-nav-item {
     margin: 0 1em;
@@ -638,7 +647,7 @@ nav.primary-nav {
     height: 3em; }
 
 #project-details {
-  position: fixed;
+  position: absolute;
   z-index: 2;
   top: 0;
   left: 0;
@@ -652,6 +661,8 @@ nav.primary-nav {
       -ms-transform: translateX(-100%);
           transform: translateX(-100%);
   background: white; }
+  #project-details .pics {
+    padding-bottom: 5em; }
 
 .project-active #project-details {
   opacity: 1;
