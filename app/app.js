@@ -40,7 +40,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 
 })
 
-.controller('MainController', function($scope, $rootScope, $window, $timeout, $urlRouter){
+.controller('MainController', function($scope, $rootScope, $state, $window, $timeout, $urlRouter, hotkeys){
 
 	var pane = document.getElementById('projects');
 
@@ -59,6 +59,14 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	    
 	    pane.scrollTop = 0;
 
+	});
+
+	hotkeys.add({
+	    combo: 'left',
+	    description: 'Get previous project.',
+	    callback: function() {
+	    	$state.go('project', { id: $scope.view.id - 1 });
+	    }
 	});
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
@@ -164,15 +172,14 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		{
 			'id'	: 3,
 			'name' : 'Nobody Delivers',
-			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
+			'desc' : 'A special concept for a company wide branding initiative that allowed me to have some fun :).',
 			'date' : 'January 2015',
 			'role' : 'Developer & Designer',
 			'img'  : 'img/nobodydelivers.png',
 			'pics' : [
-				'resources/nobody-delivers_assets/Homepage.jpg',
-				'resources/nobody-delivers_assets/ads.png',
-				'resources/nobody-delivers_assets/ad_jacket.png',
-				'resources/nobody-delivers_assets/template.png'
+				'resources/nobody-delivers_assets/Artboard 1.png',
+				'resources/nobody-delivers_assets/Artboard 2.jpg',
+				'resources/nobody-delivers_assets/Artboard 3.jpg'
 			]
 		},
 		{

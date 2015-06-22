@@ -2,12 +2,21 @@
 	<main class="container">
 		<div class="col-6 pull-right">
 			<h3>{{ project.desc }}</h3>
+			<hr>
+		    <p>
+		        {{ projects[view.id].name }}<br>
+		        {{ projects[view.id].date }}<br>
+		        {{ projects[view.id].role }}
+		    </p>
+		    <p>{{ view.id + 1 }} / {{ projects.length }}</p>
 		</div>
 		<div class="col-6">
 			<p>
-				More and more, I find myself designing with code, and I don't intend to stop. It's an amazing feeling when you're able to craft a desisn by typing up some html and css, especially when you can do it quickly. Some things, however, are lost in this design process. One of which is visual guides, grids, and layout tools that you find in design &amp; prototyping applications such as photoshop and illustrator.
+				<strong>More and more, I find myself designing with code, and I don't intend to stop.</strong> It's an amazing feeling when you're able to craft a desisn from scratch by typing up some html and css, especially when you can do it quickly. Some things, however, are lost in this design process. One of which is visual guides, grids, and layout tools that you find in design &amp; prototyping applications such as photoshop and illustrator.<strong>Ghost Grid was created as a way to visualize complex css grid systems for designers who work in the browser.</strong>
 			</p>
-			<blockquote>Ghost Grid was created as a way to visualize complex css grid systems for designers who work in the browser.</blockquote>
+			<p>
+				This is really my <strong>first public vanilla javascript module</strong> and I'm learing a lot about what the community expects. In the end, the main goal with this project was to learn some best practices and skills.
+			</p>
 			<p>
 				There have been other attempts at bridging this gap which I have taken heavy inspiration from. Most notably is the <a href="#">Golden Grid System</a> and its 'Golden Gridlet' overlay. My goal with Ghost Grid was to simply create an easily customizable, dependency free version of what Joni Korpi did with GGS that had a few more features.
 			</p>

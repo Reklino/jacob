@@ -382,6 +382,11 @@ p {
   font-family: "source-code-pro", sans-serif;
   margin: 0 0 1.75em; }
 
+strong {
+  background: #3A424A;
+  color: white;
+  padding: 0 0.25em; }
+
 .small {
   color: #9AA5AA;
   font-weight: 400;
@@ -410,7 +415,7 @@ blockquote {
   line-height: 1.45833em;
   text-align: left;
   color: #3A424A;
-  font-family: "futura-pt", serif;
+  font-family: "source-code-pro", sans-serif;
   font-weight: 500;
   margin-top: 2em;
   margin-bottom: 2em;
@@ -552,9 +557,9 @@ nav.primary-nav {
     clear: both; }
 
 /*-----  End of Navigation  ------*/
-/*===========================================
-=            Left Panel / Header            =
-===========================================*/
+/*===================================
+=            Main Panels            =
+===================================*/
 #header {
   position: relative;
   -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
@@ -572,10 +577,6 @@ nav.primary-nav {
           transform: translateX(-100%);
   opacity: 0; }
 
-/*-----  End of Left Panel / Header  ------*/
-/*===================================
-=            Right Panel            =
-===================================*/
 #projects {
   -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
           transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
@@ -584,7 +585,7 @@ nav.primary-nav {
           transform: translatez(0);
   padding: 1em; }
 
-/*-----  End of Right Panel  ------*/
+/*-----  End of Main Panels  ------*/
 /*===============================
 =            Project            =
 ===============================*/
@@ -615,6 +616,54 @@ nav.primary-nav {
   -webkit-transform: translateX(0%);
       -ms-transform: translateX(0%);
           transform: translateX(0%); }
+
+/*==========  Project Buttons/Nav  ==========*/
+.project-close, .project-previous, .project-next {
+  position: fixed;
+  z-index: 2;
+  -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
+          transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  background: rgba(58, 66, 74, 0.4); }
+  .project-close a, .project-previous a, .project-next a {
+    box-sizing: content-box;
+    display: block;
+    padding: 0.75em;
+    height: 20px; }
+    .project-close a:after, .project-previous a:after, .project-next a:after {
+      display: none; }
+  .project-close .icon, .project-previous .icon, .project-next .icon {
+    width: 20px;
+    height: 20px;
+    fill: white; }
+
+.project-active .project-close,
+.project-active .project-previous,
+.project-active .project-next {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s; }
+
+.project-close {
+  top: -6em;
+  left: 0.5em; }
+
+.project-active .project-close {
+  top: 0.5em; }
+
+.project-previous {
+  top: 50%;
+  left: -6em; }
+
+.project-active .project-previous {
+  left: 0.5em; }
+
+.project-next {
+  top: 50%;
+  right: -6em; }
+
+.project-active .project-next {
+  right: 0.5em; }
 
 .project a {
   display: block;
@@ -653,7 +702,7 @@ nav.primary-nav {
   left: 0;
   width: 50%;
   height: 100%;
-  padding: 3em 1.5em 3em 3em;
+  padding: 4em 2em 4em 4em;
   -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
           transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
   opacity: 0;
@@ -663,6 +712,8 @@ nav.primary-nav {
   background: white; }
   #project-details .pics {
     padding-bottom: 5em; }
+    #project-details .pics img {
+      display: block; }
 
 .project-active #project-details {
   opacity: 1;
@@ -696,9 +747,9 @@ nav.primary-nav {
   nav.primary-nav {
     text-align: left; }
   #header {
-    padding: 3em 1.5em 3em 3em; }
+    padding: 4em 2em 4em 4em; }
   #projects {
-    padding: 3em 3em 3em 1.5em; } }
+    padding: 4em 4em 4em 2em; } }
 
 /*==================================
 =            Animations            =
@@ -708,7 +759,7 @@ nav.primary-nav {
 
 .view.ng-enter, .view.ng-leave {
   position: absolute;
-  padding-right: 4.5em;
+  padding-right: 6em;
   -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
           transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1); }
 

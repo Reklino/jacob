@@ -2,6 +2,13 @@
 	<main class="container">
 		<div class="col-6 pull-right">
 			<h3>{{ project.desc }}</h3>
+			<hr>
+		    <p>
+		        {{ projects[view.id].name }}<br>
+		        {{ projects[view.id].date }}<br>
+		        {{ projects[view.id].role }}
+		    </p>
+		    <p>{{ view.id + 1 }} / {{ projects.length }}</p>
 		</div>
 		<div class="col-6">
 			<p>
