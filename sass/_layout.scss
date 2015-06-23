@@ -216,7 +216,7 @@ $project-button-size: 20px;
 		.title {
 			position: absolute;
 			bottom: 0; left: 0;
-			padding: 3em;
+			padding: $body-padding;
 			h1 {
 				margin-bottom: 0;
 			}
