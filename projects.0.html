@@ -2,11 +2,12 @@
 	<main class="container">
 		<div class="col-6 pull-right">
 			<h3>{{ project.desc }}</h3>
+			<a class="view-btn" ng-if="project.url" ng-href="{{ project.url }}">View Website</a>
 			<hr>
 		    <p>
-		        {{ projects[view.id].name }}<br>
-		        {{ projects[view.id].date }}<br>
-		        {{ projects[view.id].role }}
+		        {{ project.name }}<br>
+		        {{ project.date }}<br>
+		        {{ project.role }}
 		    </p>
 		    <p>{{ view.id + 1 }} / {{ projects.length }}</p>
 		</div>

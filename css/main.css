@@ -383,8 +383,8 @@ p {
   margin: 0 0 1.75em; }
 
 strong {
-  background: #3A424A;
-  color: white;
+  background: yellow;
+  color: #3A424A;
   padding: 0 0.25em; }
 
 .small {
@@ -589,58 +589,28 @@ nav.primary-nav {
 /*===============================
 =            Project            =
 ===============================*/
-.project-nav {
-  position: fixed;
-  height: 5em;
-  line-height: 5em;
-  left: 0;
-  bottom: 0;
-  padding-left: 3em;
-  width: 50%;
-  background: white;
-  overflow: hidden;
-  z-index: 2;
-  -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
-          transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
-  opacity: 0;
-  -webkit-transform: translateY(6em);
-      -ms-transform: translateY(6em);
-          transform: translateY(6em);
-  text-align: center; }
-  .project-nav .project-nav-item {
-    margin: 0 1em;
-    float: left; }
-
-.project-active .project-nav {
-  opacity: 1;
-  -webkit-transform: translateX(0%);
-      -ms-transform: translateX(0%);
-          transform: translateX(0%); }
-
 /*==========  Project Buttons/Nav  ==========*/
-.project-close, .project-previous, .project-next {
-  position: fixed;
-  z-index: 2;
+.project-close {
+  position: absolute;
+  z-index: 3;
   -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
           transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
   -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-  background: rgba(58, 66, 74, 0.4); }
-  .project-close a, .project-previous a, .project-next a {
+          transition-delay: 0s; }
+  .project-close a {
     box-sizing: content-box;
     display: block;
     padding: 0.75em;
     height: 20px; }
-    .project-close a:after, .project-previous a:after, .project-next a:after {
+    .project-close a:after {
       display: none; }
-  .project-close .icon, .project-previous .icon, .project-next .icon {
+  .project-close .icon {
     width: 20px;
     height: 20px;
-    fill: white; }
+    fill: #3A424A; }
 
 .project-active .project-close,
-.project-active .project-previous,
-.project-active .project-next {
+.project-active .project-nav {
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s; }
 
@@ -651,19 +621,26 @@ nav.primary-nav {
 .project-active .project-close {
   top: 0.5em; }
 
-.project-previous {
-  top: 50%;
-  left: -6em; }
+.project-nav {
+  top: -6em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+  -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
+          transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s; }
+  .project-nav a .icon {
+    width: 20px;
+    height: 20px;
+    fill: #3A424A; }
 
-.project-active .project-previous {
-  left: 0.5em; }
-
-.project-next {
-  top: 50%;
-  right: -6em; }
-
-.project-active .project-next {
-  right: 0.5em; }
+.project-active .project-nav {
+  top: 0.5em; }
 
 .project a {
   display: block;

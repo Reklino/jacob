@@ -84,39 +84,14 @@ $body-padding: 4em;
 =            Project            =
 ===============================*/
 
-.project-nav {
-	position: fixed;
-	height: 5em;
-	line-height: 5em;
-	left: 0; bottom: 0;
-	padding-left: 3em;
-	width: 50%;
-	background: white;
-	overflow: hidden;
-	z-index: 2;
-	@include quick;
-	opacity: 0;
-	transform: translateY(6em);
-	text-align: center;
-	.project-nav-item {
-		margin: 0 1em;
-		float: left;
-	}
-}
-.project-active .project-nav {
-	opacity: 1;
-	transform: translateX(0%);
-}
-
 /*==========  Project Buttons/Nav  ==========*/
 $project-button-size: 20px;
 
-.project-close, .project-previous, .project-next {
-	position: fixed;
-	z-index: 2;
+.project-close {
+	position: absolute;
+	z-index: 3;
 	@include quick;
 	transition-delay: 0s;
-	background: rgba($header, 0.4);
 	a {
 		box-sizing: content-box;
 		display: block;
@@ -128,12 +103,11 @@ $project-button-size: 20px;
 	}
 	.icon {
 		width: $project-button-size; height: $project-button-size;
-		fill: white;
+		fill: $header;
 	}
 }
 .project-active .project-close,
-.project-active .project-previous,
-.project-active .project-next {
+.project-active .project-nav {
 	transition-delay: 0.3s;
 }
 .project-close {
@@ -141,17 +115,21 @@ $project-button-size: 20px;
 	left: 0.5em;
 }
 .project-active .project-close { top: 0.5em; }
-.project-previous {
-	top: 50%;
-	left: -6em;
-}
-.project-active .project-previous { left: 0.5em; }
-.project-next {
-	top: 50%;
-	right: -6em;
-}
-.project-active .project-next { right: 0.5em; }
 
+.project-nav {
+	top: -6em; left: 0; right: 0; margin: 0 auto;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	z-index: 2;
+	@include quick;
+	transition-delay: 0s;
+	a .icon {
+		width: $project-button-size; height: $project-button-size;
+		fill: $header;
+	}
+}
+.project-active .project-nav { top: 0.5em; }
 
 .project a {
 	display: block;

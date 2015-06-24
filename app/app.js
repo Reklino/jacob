@@ -65,7 +65,15 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	    combo: 'left',
 	    description: 'Get previous project.',
 	    callback: function() {
-	    	$state.go('project', { id: $scope.view.id - 1 });
+	    	$scope.view.id == 0 ? $state.go('project', { id: $scope.projects.length - 1 }) : $state.go('project', { id: $scope.view.id - 1 });
+	    }
+	});
+
+	hotkeys.add({
+	    combo: 'right',
+	    description: 'Get next project.',
+	    callback: function() {
+	    	$scope.view.id == $scope.projects.length - 1 ? $state.go('project', { id: 0 }) : $state.go('project', { id: $scope.view.id + 1 });
 	    }
 	});
 
@@ -146,6 +154,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		{
 			'id'	: 1,
 			'name' : 'HmgCSC.com',
+			'url'  : 'http://hmgcsc.com',
 			'desc' : 'A multi-functional website for showcasing digital products and sharing resources across designers and sales departments.',
 			'date' : 'January 2014',
 			'role' : 'Developer & Designer',
@@ -172,6 +181,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		{
 			'id'	: 3,
 			'name' : 'Nobody Delivers',
+			'url'  : 'http://hmgcsc.com',
 			'desc' : 'A special concept for a company wide branding initiative that allowed me to have some fun :).',
 			'date' : 'January 2015',
 			'role' : 'Developer & Designer',
@@ -185,6 +195,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		{
 			'id'	: 4,
 			'name' : 'Ghost Grid',
+			'url'  : 'http://hmgcsc.com',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'April 2015',
 			'role' : 'Developer',
@@ -193,6 +204,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		{
 			'id'	: 5,
 			'name' : 'Angular-Resizable',
+			'url'  : 'http://hmgcsc.com',
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'March 2015',
 			'role' : 'Developer',
@@ -201,6 +213,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		{
 			'id'	: 6,
 			'name' : 'Strings',
+			'url'  : 'http://hmgcsc.com',
 			'desc' : 'A simple linear icon font I built to grow and understand the pros and cons of svg vs fonts.',
 			'date' : 'February 2015',
 			'role' : 'Designer',
