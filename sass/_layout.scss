@@ -2,6 +2,8 @@ body, html {
 	height: 100%;
 }
 
+$body-padding: 4em;
+
 /*==================================
 =            Navigation            =
 ==================================*/
@@ -11,41 +13,7 @@ nav.primary-nav {
 	li {
 		margin: 0 0 0.75em;
 	}
-	a {
-		position: relative;
-		@include clickable;
-		font-family: $sans-serif;
-		color: $body;
-		font-weight: 500;
-		text-transform: uppercase;
-		text-decoration: none;
-		&:after {
-			content: '';
-			position: absolute;
-			bottom: 0; left: 0;
-			width: 100%;
-			border-style: dotted;
-			border-color: $body;
-			border-width: 0 0 1px 0;
-			height: 0px;
-		}
-		&:hover {
-			color: $header;
-			&:after {
-				border-style: solid;
-				border-color: $header;
-			}
-		}
-		&.active {
-			color: $primary;
-			&:after {
-				border-style: solid;
-				border-color: $primary;
-			}
-		}
-	}
 	@include clearfix;
-	//border-bottom: 1px solid lighten($body, 20);
 }
 
 /*-----  End of Navigation  ------*/
@@ -56,16 +24,11 @@ nav.primary-nav {
 =            Main Panels            =
 ===================================*/
 
-$body-padding: 4em;
-
 #header {
 	position: relative;
 	@include slow;
 	transform: translateX(0);
 	padding: 5em 1em 1em;
-	.title {
-		position: relative;
-	}
 }
 .project-active #header { transform: translateX(-100%); opacity: 0; }
 
@@ -84,7 +47,39 @@ $body-padding: 4em;
 =            Project            =
 ===============================*/
 
-/*==========  Project Buttons/Nav  ==========*/
+// list item on projects page
+.project {
+	border-bottom: 1px dotted $body;
+	@include clearfix;
+	a {
+		display: block;
+		text-decoration: none;
+		padding-top: 1.5em;
+		padding-bottom: 1.5em;
+		height: 4.5em;
+		@include quick;
+		&:after { display: none; }
+		span {
+			bottom: 1.25em;
+			right: 0;
+			position: absolute;
+			margin-bottom: 0;
+			color: $body;
+		}
+		&:hover {
+			padding-left: 1em;
+		}
+	} 
+	&:first-child {
+		a {
+			padding-top: 0;
+			height: 3em;
+		}
+	}
+}
+
+
+// project navigation
 $project-button-size: 20px;
 
 .project-close {
@@ -131,34 +126,8 @@ $project-button-size: 20px;
 }
 .project-active .project-nav { top: 0.5em; }
 
-.project a {
-	display: block;
-	text-decoration: none;
-	cursor: pointer;
-	padding-top: 1.5em;
-	padding-bottom: 1.5em;
-	height: 4.5em;
-	@include quick;
-	&:after { display: none; }
-	span {
-		bottom: 1.25em;
-		right: 0;
-		position: absolute;
-		margin-bottom: 0;
-		color: $body;
-	}
-	&:hover {
-		padding-left: 1em;
-	}
-}
-.project {
-	border-bottom: 1px dotted $body;
-	@include clearfix;
-	&:first-child {
-		a { padding-top: 0; height: 3em; }
-	}
-}
 
+// project details panel
 #project-details {
 	position: absolute;
 	z-index: 2;
@@ -177,6 +146,10 @@ $project-button-size: 20px;
 .project-active #project-details { opacity: 1; transform: translateX(0%); }
 
 /*-----  End of Project  ------*/
+
+/*=====================================
+=            Media Queries            =
+=====================================*/
 
 @include susy-breakpoint(700px, $tablet) {
 	body {
@@ -210,6 +183,10 @@ $project-button-size: 20px;
 	#header { padding: $body-padding $body-padding/2 $body-padding $body-padding; }
 	#projects { padding: $body-padding $body-padding $body-padding $body-padding/2; }
 }
+
+/*-----  End of Media Queries  ------*/
+
+
 
 /*==================================
 =            Animations            =
@@ -260,7 +237,5 @@ $project-button-size: 20px;
 		opacity: 1;
 	}
 }
-
-
 
 /*-----  End of Animations  ------*/

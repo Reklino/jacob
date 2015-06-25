@@ -50,7 +50,6 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
 
 		$scope.view.swapping = $scope.view.id === '' && toParams.id || $scope.view.id !== '' && toParams.id == undefined ? true : false;
-		console.log('should be true' + $scope.view.swapping)
 	    $scope.view.name = toState.name;
 	    $scope.view.mode = toParams.id ? 'project' : 'primary';
 	    if(!toParams.id) { $scope.view.back = false; }
@@ -65,7 +64,9 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	    combo: 'left',
 	    description: 'Get previous project.',
 	    callback: function() {
-	    	$scope.view.id == 0 ? $state.go('project', { id: $scope.projects.length - 1 }) : $state.go('project', { id: $scope.view.id - 1 });
+	    	if($scope.view.mode === 'project') {
+	    		$scope.view.id == 0 ? $state.go('project', { id: $scope.projects.length - 1 }) : $state.go('project', { id: $scope.view.id - 1 });
+	    	}
 	    }
 	});
 
@@ -73,7 +74,9 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	    combo: 'right',
 	    description: 'Get next project.',
 	    callback: function() {
-	    	$scope.view.id == $scope.projects.length - 1 ? $state.go('project', { id: 0 }) : $state.go('project', { id: $scope.view.id + 1 });
+	    	if($scope.view.mode === 'project') {
+		    	$scope.view.id == $scope.projects.length - 1 ? $state.go('project', { id: 0 }) : $state.go('project', { id: $scope.view.id + 1 });
+		    }
 	    }
 	});
 
@@ -116,24 +119,6 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'mode'	: 'primary'
 		}
 
-	];
-
-	$scope.projectTabs = [
-		{
-			'name'	: 'Close',
-			'href'	: 'projects',
-			'mode'	: 'project'
-		},
-		{
-			'name'	: 'Previous',
-			'href'	: 'project({id: view.id - 1})',
-			'mode'	: 'project'
-		},
-		{
-			'name'	: 'Next',
-			'href'	: 'project({id: view.id + 1})',
-			'mode'	: 'project'
-		}
 	];
 
 	$scope.projects = [

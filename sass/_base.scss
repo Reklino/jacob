@@ -14,7 +14,7 @@
 a {
   position: relative;
   @include clickable;
-  font-family: $sans-serif;
+  font-family: $mono-space;
   color: $body;
   font-weight: 500;
   text-decoration: none;
@@ -33,6 +33,13 @@ a {
     &:after {
       border-style: solid;
       border-color: $header;
+    }
+  }
+  &.active {
+    color: $primary;
+    &:after {
+      border-style: solid;
+      border-color: $primary;
     }
   }
 }
