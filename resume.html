@@ -12,6 +12,10 @@
 				{{ event.position }} at {{ event.name }}
 			</h4>
 			<h5>{{ event.startDate }} to {{ event.endDate }}</h5>
+			<p>{{ event.summary }}</p>
+			<ul>
+				<li ng-repeat="highlight in event.highlights">{{ highlight }}</li>
+			</ul>
 		</div>
 		
 	</div>

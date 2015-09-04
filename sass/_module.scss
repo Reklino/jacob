@@ -9,7 +9,10 @@
 		color: darken($body, 20);
 	}
 	@include clearfix;
+	padding-bottom: 3em;
 	margin-bottom: 3em;
+	border-bottom: 1px dotted $body;
+	&:last-child { border: none; }
 }
 
 /*-----  End of Event Timeline  ------*/

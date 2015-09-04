@@ -128,7 +128,6 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
 			'date' : 'October 2014',
 			'role' : 'Developer & Designer',
-			'img'  : 'img/sleepymonkey.png',
 			'pics' : [
 				'resources/sleepymonkey_assets/template.png',
 				'resources/sleepymonkey_assets/Homepage.jpg',
@@ -143,12 +142,8 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'desc' : 'A multi-functional website for showcasing digital products and sharing resources across designers and sales departments.',
 			'date' : 'January 2014',
 			'role' : 'Developer & Designer',
-			'img'  : 'img/hmgcsc.jpg',
 			'pics' : [
-				'resources/sleepymonkey_assets/Homepage.jpg',
-				'resources/sleepymonkey_assets/ads.png',
-				'resources/sleepymonkey_assets/ad_jacket.png',
-				'resources/sleepymonkey_assets/template.png'
+				'resources/hmgcsc_assets/ads.jpg'
 			]
 		},
 		{
@@ -157,7 +152,6 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			'desc' : 'A simple splash page with the purpose of linking together different assets of the company.',
 			'date' : 'March 2014',
 			'role' : 'Developer & Designer',
-			'img'  : 'img/hmggo.png',
 			'pics' : [
 				'resources/hmggo_assets/devices.jpg',
 				'resources/hmggo_assets/split.png'
@@ -166,11 +160,9 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		{
 			'id'	: 3,
 			'name' : 'Nobody Delivers',
-			'url'  : 'http://hmgcsc.com',
 			'desc' : 'A special concept for a company wide branding initiative that allowed me to have some fun :).',
 			'date' : 'January 2015',
 			'role' : 'Developer & Designer',
-			'img'  : 'img/nobodydelivers.png',
 			'pics' : [
 				'resources/nobody-delivers_assets/Artboard 1.png',
 				'resources/nobody-delivers_assets/Artboard 2.jpg',
@@ -180,29 +172,35 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		{
 			'id'	: 4,
 			'name' : 'Ghost Grid',
-			'url'  : 'http://hmgcsc.com',
-			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
-			'date' : 'April 2015',
+			'url'  : 'https://github.com/Reklino/ghost-grid',
+			'desc' : 'Vanilla javacript module for visualizing fluid grids.',
+			'date' : 'May 2015',
 			'role' : 'Developer',
-			'img'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-8-1000x662.jpg'
+			'pics' : [
+				'resources/ghost-grid_assets/Homepage.gif'
+			]
 		},
 		{
 			'id'	: 5,
 			'name' : 'Angular-Resizable',
-			'url'  : 'http://hmgcsc.com',
-			'desc' : 'Angular application to optimize creation & hosting of landing pages and other content.',
+			'url'  : 'https://github.com/Reklino/angular-resizable',
+			'desc' : 'Simple little angular directive for creating resizable conainers that are compatible with flexbox.',
 			'date' : 'March 2015',
 			'role' : 'Developer',
-			'img'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-4-1000x667.jpg'
+			'pics' : [
+				'resources/angular-resizable_assets/Homepage.jpg'
+			]
 		},
 		{
 			'id'	: 6,
 			'name' : 'Strings',
-			'url'  : 'http://hmgcsc.com',
+			'url'  : 'https://github.com/Reklino/strings',
 			'desc' : 'A simple linear icon font I built to grow and understand the pros and cons of svg vs fonts.',
 			'date' : 'February 2015',
 			'role' : 'Designer',
-			'img'  : 'http://publicdomainarchive.com/wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-4-1000x667.jpg'
+			'pics' : [
+				'resources/strings_assets/Homepage.jpg'
+			]
 		}
 	];
 
@@ -211,8 +209,8 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			"name": "JNJ Apparel",
 			"position": "Designer/Illustrator Intern",
 			"website": "http://jnjapparel.net/",
-			"startDate": "2011-09-01",
-			"endDate": "2011-12-01",
+			"startDate": "September 2011",
+			"endDate": "December 2011",
 			"summary": "JNJ Apparel specializes in high quality illustration and graphic design.",
 			"highlights": [
 				"Worked on illustration and design of various T-shirts",
@@ -224,8 +222,8 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			"name": "Halifax Media Group",
 			"position": "Designer",
 			"website": "http://hmgcsc.com/",
-			"startDate": "2012-05-01",
-			"endDate": "2013-08-01",
+			"startDate": "May 2012",
+			"endDate": "August 2013",
 			"summary": "I started at Halifax as a print designer in 2012. Halifax Media Group's Creative Services Center is based out of The Tuscaloosa News building and employs 40+ graphic designers of various qualifications. One of my favorite things about working here as a designer was that they nurtured a competitive design atmosphere. After taking initiative in maintaining our digital products, I was promoted to Web Developer position in Q4 2013.",
 			"highlights": [
 				"Aided in branding concepts for company wide programs and initiatives",
@@ -237,8 +235,8 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			"name": "Halifax Media Group",
 			"position": "Web Developer",
 			"website": "http://hmgcsc.com/",
-			"startDate": "2013-08-01",
-			"endDate": "present",
+			"startDate": "August 2013",
+			"endDate": "June 2015",
 			"summary": "Coming from the designer perspective, I made it my goal as the Web Developer to make the digital designer's jobs easier. I enjoyed being able to make useful tools for my fellow employees while learning a lot in the process. In 2015 Halifax was bought out by Gatehouse Media Group and I was promoted to Digital Product Specialist.",
 			"highlights": [
 				"Helped develop and maintain digital products.",
@@ -248,28 +246,36 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 				"Designed HTML emails and trained others how to do so as well.",
 				"Assisted in continued training of fellow designers."
 			]
+		},
+		{
+			"name": "Gatehouse Media Group",
+			"position": "Digital Ad Specialist & Frontend Dev",
+			"website": "http://hmgcsc.com/",
+			"startDate": "June 2015",
+			"endDate": "present",
+			"summary": "In 2015, Halifax was purchased by Gatehouse Media Group. Gatehouse is a much larger company that owns 300+ newspapers across the country. They snagged me from the Halifax Group soon after the buyout.",
+			"highlights": [
+				"Developed a dashboard application for sales staff company wide using d3.js, angular, and laravel.",
+				"Helped develop workflows for HTML5 advertising and build out HTML5 and Rich Media ad types.",
+				"Developed Rich Media ad types."
+			]
 		}
 	]
 
 	$scope.tools = [
 			{
-				'name' : 'Design',
-				'level' : 87,
-				'passion' : false
-			},
-			{
 				'name' : 'Plain Ol\' Javascript',
-				'level' : 80,
+				'level' : 85,
 				'passion' : false
 			},
 			{
 				'name' : 'AngularJS',
-				'level' : 75,
+				'level' : 80,
 				'passion' : false
 			},
 			{
 				'name' : 'React',
-				'level' : 35,
+				'level' : 50,
 				'passion' : true
 			},
 			{
@@ -279,22 +285,22 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			},
 			{
 				'name' : 'SASS, CSS',
-				'level' : 90,
+				'level' : 95,
 				'passion' : false
 			},
 			{
 				'name' : 'HTML5',
-				'level' : 85,
+				'level' : 90,
 				'passion' : false
 			},
 			{
 				'name' : 'PHP',
-				'level' : 65,
+				'level' : 70,
 				'passion' : false
 			},
 			{
 				'name' : 'Laravel',
-				'level' : 84,
+				'level' : 90,
 				'passion' : false
 			},
 			{
@@ -304,7 +310,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			},
 			{
 				'name' : 'MongoDB',
-				'level' : 49,
+				'level' : 55,
 				'passion' : true
 			},
 			{
@@ -314,12 +320,12 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			},
 			{
 				'name' : 'Wordpress',
-				'level' : 66,
+				'level' : 76,
 				'passion' : false
 			},
 			{
 				'name' : 'Node.js',
-				'level' : 45,
+				'level' : 55,
 				'passion' : true
 			},
 			{
@@ -334,12 +340,12 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			},
 			{
 				'name' : 'Git',
-				'level' : 60,
+				'level' : 75,
 				'passion' : false
 			},
 			{
 				'name' : 'CLI',
-				'level' : 75,
+				'level' : 85,
 				'passion' : false
 			},
 			{

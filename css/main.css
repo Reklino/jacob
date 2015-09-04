@@ -586,7 +586,7 @@ nav.primary-nav {
   .project-close a {
     box-sizing: content-box;
     display: block;
-    padding: 1.5em;
+    padding: 1em 1.5em;
     height: 20px; }
     .project-close a:after {
       display: none; }
@@ -602,8 +602,7 @@ nav.primary-nav {
 
 .project-close {
   top: -6em;
-  left: 0em;
-  border-right: 1px solid #d7dbdf; }
+  left: 0em; }
 
 .project-active .project-close {
   top: 0; }
@@ -616,7 +615,6 @@ nav.primary-nav {
   position: absolute;
   text-align: center;
   color: #3A424A;
-  border-bottom: 1px solid #e5e8eb;
   width: 100%;
   z-index: 2;
   -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
@@ -626,10 +624,8 @@ nav.primary-nav {
   .project-nav a {
     box-sizing: content-box;
     display: inline-block;
-    padding: 1.5em;
-    height: 20px;
-    border: 1px solid #d7dbdf;
-    border-width: 0 1px; }
+    padding: 1em 1.5em;
+    height: 20px; }
     .project-nav a:after {
       display: none; }
   .project-nav a .icon {
@@ -641,7 +637,7 @@ nav.primary-nav {
     box-sizing: content-box;
     display: inline-block;
     height: 20px;
-    padding: 1.5em; }
+    padding: 1em 1.5em; }
 
 .project-active .project-nav {
   top: 0; }
@@ -653,7 +649,7 @@ nav.primary-nav {
   left: 0;
   width: 50%;
   height: 100%;
-  padding: 8em 2em 4em 4em;
+  padding: 4em 2em 4em 4em;
   -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
           transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
   opacity: 0;
@@ -734,7 +730,7 @@ nav.primary-nav {
     padding: 4em 4em 4em 2em; } }
 
 .project-active #projects {
-  padding: 8em 4em 4em 2em; }
+  padding: 4em 4em 4em 2em; }
 
 /*-----  End of Media Queries  ------*/
 /*==================================
@@ -794,7 +790,9 @@ nav.primary-nav {
 =            Event Timeline            =
 ======================================*/
 .timeline-event {
-  margin-bottom: 3em; }
+  padding-bottom: 3em;
+  margin-bottom: 3em;
+  border-bottom: 1px dotted #9AA5AA; }
   .timeline-event ul {
     list-style: circle;
     padding-left: 1em;
@@ -803,6 +801,8 @@ nav.primary-nav {
     content: '';
     display: block;
     clear: both; }
+  .timeline-event:last-child {
+    border: none; }
 
 /*-----  End of Event Timeline  ------*/
 /*==============================
