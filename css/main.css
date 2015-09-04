@@ -586,7 +586,7 @@ nav.primary-nav {
   .project-close a {
     box-sizing: content-box;
     display: block;
-    padding: 0.75em;
+    padding: 1.5em;
     height: 20px; }
     .project-close a:after {
       display: none; }
@@ -602,10 +602,11 @@ nav.primary-nav {
 
 .project-close {
   top: -6em;
-  left: 0.5em; }
+  left: 0em;
+  border-right: 1px solid #d7dbdf; }
 
 .project-active .project-close {
-  top: 0.5em; }
+  top: 0; }
 
 .project-nav {
   top: -6em;
@@ -614,19 +615,36 @@ nav.primary-nav {
   margin: 0 auto;
   position: absolute;
   text-align: center;
+  color: #3A424A;
+  border-bottom: 1px solid #e5e8eb;
   width: 100%;
   z-index: 2;
   -webkit-transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
           transition: all 0.25s cubic-bezier(0.3, 0.53, 0, 1);
   -webkit-transition-delay: 0s;
           transition-delay: 0s; }
+  .project-nav a {
+    box-sizing: content-box;
+    display: inline-block;
+    padding: 1.5em;
+    height: 20px;
+    border: 1px solid #d7dbdf;
+    border-width: 0 1px; }
+    .project-nav a:after {
+      display: none; }
   .project-nav a .icon {
     width: 20px;
     height: 20px;
     fill: #3A424A; }
+  .project-nav span {
+    vertical-align: top;
+    box-sizing: content-box;
+    display: inline-block;
+    height: 20px;
+    padding: 1.5em; }
 
 .project-active .project-nav {
-  top: 0.5em; }
+  top: 0; }
 
 #project-details {
   position: absolute;
@@ -635,7 +653,7 @@ nav.primary-nav {
   left: 0;
   width: 50%;
   height: 100%;
-  padding: 4em 2em 4em 4em;
+  padding: 8em 2em 4em 4em;
   -webkit-transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
           transition: all 0.6s cubic-bezier(0.3, 0.53, 0, 1);
   opacity: 0;
@@ -655,10 +673,38 @@ nav.primary-nav {
           transform: translateX(0%); }
 
 /*-----  End of Project  ------*/
+/*========================================
+=            no mobile yet...            =
+========================================*/
+#header, #projects, nav, #project-details, #project-close {
+  display: none; }
+
+#no-mobile {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2em;
+  width: 100%;
+  height: 100%; }
+
+/*=====  End of no mobile yet...  ======*/
 /*=====================================
 =            Media Queries            =
 =====================================*/
 @media (min-width: 700px) {
+  #header, #projects, nav, #project-details, #project-close {
+    display: block; }
+  #no-mobile {
+    display: none; }
   body {
     overflow-x: hidden;
     overflow-y: scroll; }
@@ -686,6 +732,9 @@ nav.primary-nav {
     padding: 4em 2em 4em 4em; }
   #projects {
     padding: 4em 4em 4em 2em; } }
+
+.project-active #projects {
+  padding: 8em 4em 4em 2em; }
 
 /*-----  End of Media Queries  ------*/
 /*==================================
