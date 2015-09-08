@@ -2,7 +2,7 @@ body, html {
 	height: 100%;
 }
 
-$body-padding: 4em;
+$body-padding: 3.5em;
 
 /*==================================
 =            Navigation            =
@@ -83,28 +83,49 @@ nav.primary-nav {
 }
 a.view-btn {
 	&:after { display: none; }
+	@include quick;
 	position: relative;
 	color: $header;
 	display: inline-block;
 	text-decoration: none;
-	border: 1px solid $header;
-	border-radius: 3.5em;
+	border: 1px solid lighten($body, 23);
+	background: white;
+	border-radius: .75em;
 	line-height: 3em;
 	padding: 0 1.25em 0 1.35em;
+	margin-bottom: 2em;
 	&:before {
 		content: '';
+		@include quick;
 		display: block;
 		background: $header;
 		height: 1px;
-		width: 15px;
+		width: 0;
 		position: absolute;
-		right: 1.45em; top: 1.45em;
+		right: 1.5em; top: 1.45em;
 	}
 	.icon {
+		@include quick;
 		height: 3em;
 		width: 12px;
-		margin-left: 10px;
+		margin-left: 5px;
 		vertical-align: bottom;
+	}
+	&:hover {
+		border-color: $header;
+		padding-right: 1.45em;
+		.icon {
+			margin-right: -.2em;
+			margin-left: 10px;
+		}
+		&:before {
+			width: 16px;
+			right: 1.25;
+		}
+	}
+	&:active {
+		background: $primary;
+		border-color: $primary;
 	}
 }
 
@@ -150,25 +171,48 @@ $project-button-size: 20px;
 	z-index: 2;
 	@include quick;
 	transition-delay: 0s;
-	a {
-		box-sizing: content-box;
-		display: inline-block;
-		padding: 1em 1.5em;
-		height: $project-button-size;
-		&:after {
-			display: none;
-		}
-	}
-	a .icon {
-		width: $project-button-size; height: $project-button-size;
-		fill: $header;
-	}
 	span {
 		vertical-align: top;
 		box-sizing: content-box;
 		display: inline-block;
 		height: $project-button-size;
 		padding: 1em 1.5em;
+	}
+	a.nav-arrow-right, a.nav-arrow-left {
+		&:after { display: none; }
+		position: relative;
+		color: $header;
+		display: inline-block;
+		text-decoration: none;
+		line-height: $project-button-size;
+		padding: 0 1.25em 0 1.35em;
+		margin-bottom: 2em;
+		&:before {
+			@include quick;
+			content: '';
+			display: block;
+			background: $header;
+			height: 1px;
+			width: 15px;
+			position: absolute;
+			right: 1.45em; top: 1.7em;
+		}
+		.icon {
+			height: 45px;
+			width: 12px;
+			vertical-align: bottom;
+		}
+		&:hover {
+			&:before {
+				width: 30px;
+			}
+		}
+	}
+	a.nav-arrow-left {
+		&:before {
+			right: none;
+			left: 1.55em;
+		}
 	}
 }
 .project-active .project-nav { top: 0; }

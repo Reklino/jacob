@@ -101,7 +101,7 @@ b {
 }
 strong {
     //background: $primary;
-    color: $header;
+    color: darken($body, 30);
     font-weight: 700;
 }
 

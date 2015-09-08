@@ -2,14 +2,17 @@
 	<main class="container">
 		<div class="col-6 pull-right">
 			<h3>{{ project.desc }}</h3>
-			<a class="view-btn" ng-if="project.url" ng-href="{{ project.url }}">View Website</a>
-			<hr>
+			<a class="view-btn" ng-if="project.url" ng-href="{{ project.url }}">
+				View Website
+				<svg class="icon">
+				    <use xlink:href="#icon-arrow-right"></use>
+				</svg>
+			</a>
 		    <p>
 		        {{ project.name }}<br>
 		        {{ project.date }}<br>
 		        {{ project.role }}
 		    </p>
-		    <p>{{ view.id + 1 }} / {{ projects.length }}</p>
 		</div>
 		<div class="col-6">
 			<p>

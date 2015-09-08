@@ -208,23 +208,23 @@
     </div>
 
     <nav class="project-nav">
-        <a ng-click="view.back = true" ng-hide="view.id == 0" ui-sref="project({id: view.id - 1})">
+        <a class="nav-arrow-left" ng-click="view.back = true" ng-hide="view.id == 0" ui-sref="project({id: view.id - 1})">
             <svg class="icon">
                 <use xlink:href="#icon-arrow-left"></use>
             </svg>
         </a>
-        <a ng-click="view.back = true" ng-show="view.id == 0" ui-sref="project({id: projects.length - 1})">
+        <a class="nav-arrow-left" ng-click="view.back = true" ng-show="view.id == 0" ui-sref="project({id: projects.length - 1})">
             <svg class="icon">
                 <use xlink:href="#icon-arrow-left"></use>
             </svg>
         </a>
-        <span>{{ view.id + 1 }} / {{ projects.length }}</span>
-        <a ng-click="view.back = false" ng-hide="view.id == (projects.length - 1)" ui-sref="project({id: view.id + 1})">
+        <span>{{ view.id + 1 }} outta {{ projects.length }}</span>
+        <a class="nav-arrow-right" ng-click="view.back = false" ng-hide="view.id == (projects.length - 1)" ui-sref="project({id: view.id + 1})">
             <svg class="icon">
                 <use xlink:href="#icon-arrow-right"></use>
             </svg>
         </a>
-        <a ng-click="view.back = false" ng-show="view.id == (projects.length - 1)" ui-sref="project({id: 0})">
+        <a class="nav-arrow-right" ng-click="view.back = false" ng-show="view.id == (projects.length - 1)" ui-sref="project({id: 0})">
             <svg class="icon">
                 <use xlink:href="#icon-arrow-right"></use>
             </svg>
