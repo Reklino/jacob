@@ -5,8 +5,6 @@
     <title>X_X</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Base HREF for routing -->
-
     <!-- Typekit -->
     <script src="//use.typekit.net/mcc6liw.js"></script>
     <script>
@@ -19,7 +17,9 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body ng-controller="MainController" ng-class="{ 'project-active' : view.mode == 'project', 'swapping' : view.swapping }">
+<body
+    ng-controller="MainController"
+    ng-class="{ 'project-active' : view.mode == 'project', 'swapping' : view.swapping }">
 
     <!-- SVG Inline Stuffs -->
     <div style="height: 0; width: 0; position: absolute; visibility: hidden">
@@ -142,6 +142,48 @@
         <h4>Yeah... still working on a mobile friendly version. Sorry for the inconvenience :)</h4>
     </div>
 
+
+    <!-- Name n stuff -->
+    <header id="header">
+        <section class="container">
+            <div class="col-7">
+                <p>
+                    Hi! My name is Jacob. I am a designer turned developer who is passionate about creating unique and useful experiences.
+                </p>
+                <p>
+                    This site is dedicated to showcasing my recent projects, but you can also find me on <a href="http://codepen.io/Reklino/">Codepen</a> &amp; <a href="https://github.com/Reklino">Github</a>
+                </p>
+            </div>
+            <nav class="col-3 col-offset-2 primary-nav">
+                <ul>
+                    <li ng-repeat="tab in tabs">
+                        <a ui-sref="{{ tab }}" ng-class="{ 'active' : tab == $parent.view.name }">{{ tab | properCase }}</a>
+                    </li>
+                    <li>
+                        <svg class="icon">
+                            <use xlink:href="#icon-arrow-up"></use>
+                        </svg>
+                        <svg class="icon">
+                            <use xlink:href="#icon-arrow-down"></use>
+                        </svg>
+                    </li>
+                </ul>
+            </nav>
+            <div class="col-12 title">
+                <h1>Jacob<br>Davidson.</h1>
+            </div>
+        </section>
+    </header>
+
+
+    <!-- Pages -->
+    <main id="projects">
+
+        <div class="view" ng-class="{ 'back' : view.back }" ui-view></div>
+
+    </main>
+
+
     <!-- Project Details Section -->
     <section id="project-details">
         <div class="container">
@@ -164,6 +206,7 @@
             </svg>
         </a>
     </div>
+
     <nav class="project-nav">
         <a ng-click="view.back = true" ng-hide="view.id == 0" ui-sref="project({id: view.id - 1})">
             <svg class="icon">
@@ -187,39 +230,6 @@
             </svg>
         </a>
     </nav>
-
-
-    <!-- Left Section -->
-    <header id="header">
-        <section class="container">
-            <div class="col-7">
-                <p>
-                    Hello! My name is Jacob. I am a designer turned developer who is passionate about creating unique and useful experiences.
-                </p>
-                <p>
-                    This page is dedicated to showcasing my recent projects, but you can also find me on <a href="http://codepen.io/Reklino/">Codepen</a> &amp; <a href="https://github.com/Reklino">Github</a>
-                </p>
-            </div>
-            <nav class="col-3 col-offset-2 primary-nav">
-                <ul>
-                    <li ng-repeat="tab in tabs">
-                        <a ui-sref="{{ tab }}" ng-class="{ 'active' : tab == $parent.view.name }">{{ tab | properCase }}</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="col-12 title">
-                <h1>Jacob<br>Davidson.</h1>
-            </div>
-        </section>
-    </header>
-
-
-    <!-- Right Section -->
-    <main id="projects">
-
-        <div class="view" ng-class="{ 'back' : view.back }" ui-view></div>
-
-    </main>
 
     <!-- Scripties -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>

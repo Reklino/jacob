@@ -7,11 +7,13 @@
 
 	<div class="timeline-event" ng-repeat="event in timeline">
 
-		<div class="col-12">
-
+		<div class="col-5">
 			<h4>
 				{{ event.position }} at {{ event.name }} from {{ event.startDate }} to {{ event.endDate }}
 			</h4>
+		</div>
+
+		<div class="col-7">
 			
 			<p>{{ event.summary }}</p>
 			<ul class="list">

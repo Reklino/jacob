@@ -2,7 +2,12 @@
 	<main class="container">
 		<div class="col-6 pull-right">
 			<h3>{{ project.desc }}</h3>
-			<a class="view-btn" ng-if="project.url" ng-href="{{ project.url }}">View Website</a>
+			<a class="view-btn" ng-if="project.url" ng-href="{{ project.url }}">
+				View Website
+				<svg class="icon">
+				    <use xlink:href="#icon-arrow-right"></use>
+				</svg>
+			</a>
 			<hr>
 		    <p>
 		        {{ projects[view.id].name }}<br>

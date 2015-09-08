@@ -530,6 +530,9 @@ nav.primary-nav {
   text-align: left; }
   nav.primary-nav li {
     margin: 0 0 0.75em; }
+    nav.primary-nav li .icon {
+      width: 18px;
+      color: #9AA5AA; }
   nav.primary-nav:after {
     content: '';
     display: block;
@@ -593,6 +596,32 @@ nav.primary-nav {
   .project:first-child a {
     padding-top: 0;
     height: 3em; }
+
+a.view-btn {
+  position: relative;
+  color: #3A424A;
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #3A424A;
+  border-radius: 3.5em;
+  line-height: 3em;
+  padding: 0 1.25em 0 1.35em; }
+  a.view-btn:after {
+    display: none; }
+  a.view-btn:before {
+    content: '';
+    display: block;
+    background: #3A424A;
+    height: 1px;
+    width: 15px;
+    position: absolute;
+    right: 1.45em;
+    top: 1.45em; }
+  a.view-btn .icon {
+    height: 3em;
+    width: 12px;
+    margin-left: 10px;
+    vertical-align: bottom; }
 
 .project-close {
   position: absolute;

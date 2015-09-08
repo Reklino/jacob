@@ -12,6 +12,10 @@ nav.primary-nav {
 	text-align: left;
 	li {
 		margin: 0 0 0.75em;
+		.icon {
+			width: 18px;
+			color: $body;
+		}
 	}
 	@include clearfix;
 }
@@ -75,6 +79,32 @@ nav.primary-nav {
 			padding-top: 0;
 			height: 3em;
 		}
+	}
+}
+a.view-btn {
+	&:after { display: none; }
+	position: relative;
+	color: $header;
+	display: inline-block;
+	text-decoration: none;
+	border: 1px solid $header;
+	border-radius: 3.5em;
+	line-height: 3em;
+	padding: 0 1.25em 0 1.35em;
+	&:before {
+		content: '';
+		display: block;
+		background: $header;
+		height: 1px;
+		width: 15px;
+		position: absolute;
+		right: 1.45em; top: 1.45em;
+	}
+	.icon {
+		height: 3em;
+		width: 12px;
+		margin-left: 10px;
+		vertical-align: bottom;
 	}
 }
 
