@@ -74,7 +74,7 @@ h4 {
 }
 h5 {
     color: $body;
-    font-weight: 700;
+    font-weight: 400;
     font-family: $mono-space;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -95,10 +95,14 @@ p {
     margin: 0 0 #{$line-int / $em}em;
 }
 
-strong {
-    background: lighten($body, 30);
+b {
     color: $header;
-    padding: 0 0.25em;
+    font-weight: 700;
+}
+strong {
+    //background: $primary;
+    color: $header;
+    font-weight: 700;
 }
 
 .small {
@@ -120,6 +124,10 @@ strong {
     font-family: $mono-space;
     font-weight: 300;
     text-transform: none;
+}
+
+.subtle {
+    color: lighten($body, 25);
 }
 
 blockquote {

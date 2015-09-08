@@ -197,16 +197,13 @@
                     Hello! My name is Jacob. I am a designer turned developer who is passionate about creating unique and useful experiences.
                 </p>
                 <p>
-                    This page is dedicated to showcasing my recent projects, but you can also find me here:
-                </p>
-                <p>
-                    <a href="http://codepen.io/Reklino/">Codepen</a> / <a href="https://github.com/Reklino">Github</a>
+                    This page is dedicated to showcasing my recent projects, but you can also find me on <a href="http://codepen.io/Reklino/">Codepen</a> &amp; <a href="https://github.com/Reklino">Github</a>
                 </p>
             </div>
             <nav class="col-3 col-offset-2 primary-nav">
                 <ul>
                     <li ng-repeat="tab in tabs">
-                        <a ui-sref="{{ tab.href }}" ng-class="{ 'active' : tab.href == $parent.view.name }">{{ tab.name }}</a>
+                        <a ui-sref="{{ tab }}" ng-class="{ 'active' : tab == $parent.view.name }">{{ tab | properCase }}</a>
                     </li>
                 </ul>
             </nav>

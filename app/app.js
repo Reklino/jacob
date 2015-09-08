@@ -1,5 +1,10 @@
-angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
-.config(function($stateProvider, $urlRouterProvider) {
+angular
+	.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
+	.filter('properCase', properCase)
+	.config(config)
+	.controller('MainController', MainController);
+
+function config($stateProvider, $urlRouterProvider) {
 	
 	$urlRouterProvider.otherwise("/");
 
@@ -38,9 +43,9 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			}
 		})
 
-})
+}
 
-.controller('MainController', function($scope, $rootScope, $state, $window, $timeout, $urlRouter, hotkeys){
+function MainController($scope, $rootScope, $state, $window, $timeout, $urlRouter, hotkeys) {
 
 	var pane = document.getElementById('projects');
 
@@ -80,10 +85,33 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	    }
 	});
 
+	hotkeys.add({
+	    combo: 'up',
+	    description: 'Get next project.',
+	    callback: function(e) {
+	    	e.preventDefault();
+	    	var i = $scope.tabs.indexOf($scope.view.name),
+	    		l = $scope.tabs.length - 1;
+	    	console.log(i + ', ' + l)
+	    	i == 0 ? $state.go($scope.tabs[l]) : $state.go($scope.tabs[i-1]);
+	    }
+	});
+
+	hotkeys.add({
+	    combo: 'down',
+	    description: 'Get next project.',
+	    callback: function(e) {
+	    	e.preventDefault();
+	    	var i = $scope.tabs.indexOf($scope.view.name),
+	    		l = $scope.tabs.length - 1;
+	    	console.log(i + ', ' + l)
+	    	i == l ? $state.go($scope.tabs[0]) : $state.go($scope.tabs[i+1]);
+	    }
+	});
+
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
 		$timeout(function(){
 			$scope.view.swapping = false;
-			console.log('should be false' + $scope.view.swapping)
 			$scope.$apply();
 		},300)
 	});
@@ -93,32 +121,11 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	$scope.view.mode = 'primary';
 
 	$scope.tabs = [
-		{
-			'name'	: 'Projects',
-			'href'	: 'projects',
-			'mode'	: 'primary'
-		},
-		{
-			'name'	: 'About',
-			'href'	: 'about',
-			'mode'	: 'primary'
-		},
-		{
-			'name'	: 'Timeline',
-			'href'	: 'resume',
-			'mode'	: 'primary'
-		},
-		{
-			'name'	: 'Process',
-			'href'	: 'process',
-			'mode'	: 'primary'
-		},
-		{
-			'name'	: 'Stats',
-			'href'	: 'stats',
-			'mode'	: 'primary'
-		}
-
+		'projects',
+		'about',
+		'resume',
+		'process',
+		'stats'
 	];
 
 	$scope.projects = [
@@ -209,9 +216,9 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			"name": "JNJ Apparel",
 			"position": "Designer/Illustrator Intern",
 			"website": "http://jnjapparel.net/",
-			"startDate": "September 2011",
-			"endDate": "December 2011",
-			"summary": "JNJ Apparel specializes in high quality illustration and graphic design.",
+			"startDate": "Sept 2011",
+			"endDate": "Dec 2011",
+			"summary": "JNJ Apparel specializes in high quality illustration and graphic design. I was an intern here my senior year of college, and found my place by providing detailed technical drawings for their designs.",
 			"highlights": [
 				"Worked on illustration and design of various T-shirts",
 				"Completed detailed sketches of over 20 buildings on campus (one is featured in a design on their homepage)",
@@ -223,7 +230,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			"position": "Designer",
 			"website": "http://hmgcsc.com/",
 			"startDate": "May 2012",
-			"endDate": "August 2013",
+			"endDate": "Aug 2013",
 			"summary": "I started at Halifax as a print designer in 2012. Halifax Media Group's Creative Services Center is based out of The Tuscaloosa News building and employs 40+ graphic designers of various qualifications. One of my favorite things about working here as a designer was that they nurtured a competitive design atmosphere. After taking initiative in maintaining our digital products, I was promoted to Web Developer position in Q4 2013.",
 			"highlights": [
 				"Aided in branding concepts for company wide programs and initiatives",
@@ -235,7 +242,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			"name": "Halifax Media Group",
 			"position": "Web Developer",
 			"website": "http://hmgcsc.com/",
-			"startDate": "August 2013",
+			"startDate": "Aug 2013",
 			"endDate": "June 2015",
 			"summary": "Coming from the designer perspective, I made it my goal as the Web Developer to make the digital designer's jobs easier. I enjoyed being able to make useful tools for my fellow employees while learning a lot in the process. In 2015 Halifax was bought out by Gatehouse Media Group and I was promoted to Digital Product Specialist.",
 			"highlights": [
@@ -249,15 +256,15 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 		},
 		{
 			"name": "Gatehouse Media Group",
-			"position": "Digital Ad Specialist & Frontend Dev",
+			"position": "Frontend Dev & Digital Product Specialist",
 			"website": "http://hmgcsc.com/",
 			"startDate": "June 2015",
-			"endDate": "present",
+			"endDate": "Present",
 			"summary": "In 2015, Halifax was purchased by Gatehouse Media Group. Gatehouse is a much larger company that owns 300+ newspapers across the country. They snagged me from the Halifax Group soon after the buyout.",
 			"highlights": [
 				"Developed a dashboard application for sales staff company wide using d3.js, angular, and laravel.",
 				"Helped develop workflows for HTML5 advertising and build out HTML5 and Rich Media ad types.",
-				"Developed Rich Media ad types."
+				"Developed HTML5 Rich Media ad types."
 			]
 		}
 	]
@@ -265,17 +272,17 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 	$scope.tools = [
 			{
 				'name' : 'Plain Ol\' Javascript',
-				'level' : 85,
+				'level' : 90,
 				'passion' : false
 			},
 			{
 				'name' : 'AngularJS',
-				'level' : 80,
+				'level' : 85,
 				'passion' : false
 			},
 			{
 				'name' : 'React',
-				'level' : 50,
+				'level' : 55,
 				'passion' : true
 			},
 			{
@@ -295,7 +302,7 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			},
 			{
 				'name' : 'PHP',
-				'level' : 70,
+				'level' : 75,
 				'passion' : false
 			},
 			{
@@ -305,12 +312,12 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			},
 			{
 				'name' : 'MYSQL',
-				'level' : 72,
+				'level' : 75,
 				'passion' : false
 			},
 			{
 				'name' : 'MongoDB',
-				'level' : 55,
+				'level' : 60,
 				'passion' : true
 			},
 			{
@@ -320,17 +327,17 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			},
 			{
 				'name' : 'Wordpress',
-				'level' : 76,
+				'level' : 80,
 				'passion' : false
 			},
 			{
 				'name' : 'Node.js',
-				'level' : 55,
+				'level' : 60,
 				'passion' : true
 			},
 			{
 				'name' : 'Photoshop',
-				'level' : 89,
+				'level' : 90,
 				'passion' : false
 			},
 			{
@@ -355,4 +362,11 @@ angular.module('app', ['ngAnimate', 'cfp.hotkeys', 'ui.router'])
 			}
 		];
 
-})
+}
+
+function properCase($filter) {
+	return function(text) {
+		var str = text.replace(/_/g, " ");
+	    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+	}
+}

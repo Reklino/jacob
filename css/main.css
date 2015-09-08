@@ -358,7 +358,7 @@ h4 {
 
 h5 {
   color: #9AA5AA;
-  font-weight: 700;
+  font-weight: 400;
   font-family: "source-code-pro", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -382,10 +382,13 @@ p {
   font-family: "source-code-pro", sans-serif;
   margin: 0 0 1.75em; }
 
-strong {
-  background: #edeff0;
+b {
   color: #3A424A;
-  padding: 0 0.25em; }
+  font-weight: 700; }
+
+strong {
+  color: #3A424A;
+  font-weight: 700; }
 
 .small {
   color: #9AA5AA;
@@ -408,6 +411,9 @@ strong {
   font-family: "source-code-pro", sans-serif;
   font-weight: 300;
   text-transform: none; }
+
+.subtle {
+  color: #dfe3e4; }
 
 blockquote {
   /* 24 / 36px */
@@ -469,10 +475,10 @@ a {
       border-style: solid;
       border-color: #3A424A; }
   a.active {
-    color: #3797c3; }
+    color: #3A424A; }
     a.active:after {
       border-style: solid;
-      border-color: #3797c3; }
+      border-color: #3A424A; }
 
 img, video {
   width: 100%;
@@ -487,6 +493,18 @@ hr {
   border-width: 0 0 1px 0;
   margin: 2em 0 3em;
   clear: both; }
+
+section header, article header {
+  margin-bottom: 2em; }
+
+ul.list {
+  list-style: circle;
+  padding-left: 1em;
+  margin-bottom: 2em;
+  color: #657379; }
+  ul.list li {
+    margin-left: 0.4em;
+    margin-bottom: 0.75em; }
 
 /*-----  End of Base Elements  ------*/
 /*======================================
@@ -791,18 +809,11 @@ nav.primary-nav {
 ======================================*/
 .timeline-event {
   padding-bottom: 3em;
-  margin-bottom: 3em;
-  border-bottom: 1px dotted #9AA5AA; }
-  .timeline-event ul {
-    list-style: circle;
-    padding-left: 1em;
-    color: #657379; }
+  margin-bottom: 3em; }
   .timeline-event:after {
     content: '';
     display: block;
     clear: both; }
-  .timeline-event:last-child {
-    border: none; }
 
 /*-----  End of Event Timeline  ------*/
 /*==============================
