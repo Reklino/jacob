@@ -277,12 +277,12 @@ function MainController($scope, $rootScope, $state, $window, $timeout, $urlRoute
 			},
 			{
 				'name' : 'AngularJS',
-				'level' : 85,
+				'level' : 90,
 				'passion' : false
 			},
 			{
 				'name' : 'React',
-				'level' : 55,
+				'level' : 60,
 				'passion' : true
 			},
 			{
@@ -302,7 +302,7 @@ function MainController($scope, $rootScope, $state, $window, $timeout, $urlRoute
 			},
 			{
 				'name' : 'PHP',
-				'level' : 75,
+				'level' : 80,
 				'passion' : false
 			},
 			{
@@ -317,12 +317,12 @@ function MainController($scope, $rootScope, $state, $window, $timeout, $urlRoute
 			},
 			{
 				'name' : 'MongoDB',
-				'level' : 60,
+				'level' : 65,
 				'passion' : true
 			},
 			{
 				'name' : 'Drupal',
-				'level' : 65,
+				'level' : 70,
 				'passion' : false
 			},
 			{
@@ -358,6 +358,16 @@ function MainController($scope, $rootScope, $state, $window, $timeout, $urlRoute
 			{
 				'name' : 'After Effects',
 				'level' : 55,
+				'passion' : true
+			},
+			{
+				'name' : 'D3.js',
+				'level' : 75,
+				'passion' : false
+			},
+			{
+				'name' : 'ECMAScript6',
+				'level' : 70,
 				'passion' : true
 			}
 		];

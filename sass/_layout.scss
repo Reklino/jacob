@@ -1,5 +1,6 @@
 body, html {
 	height: 100%;
+	background: $bg;
 }
 
 $body-padding: 3.5em;
@@ -89,7 +90,7 @@ a.view-btn {
 	display: inline-block;
 	text-decoration: none;
 	border: 1px solid lighten($body, 23);
-	background: white;
+	background: $bg;
 	border-radius: .75em;
 	line-height: 3em;
 	padding: 0 1.25em 0 1.35em;
@@ -228,7 +229,7 @@ $project-button-size: 20px;
 	@include slow;
 	opacity: 0;
 	transform: translateX(-100%);
-	background: white;
+	background: $bg;
 	.pics {
 		padding-bottom: 5em;
 		img	{ display: block; }
@@ -271,7 +272,7 @@ $project-button-size: 20px;
 	#header {
 		position: fixed;
 		z-index: 1;
-		background: white;
+		background: $bg;
 		width: 50%;
 		height: 100%;
 		float: left;
